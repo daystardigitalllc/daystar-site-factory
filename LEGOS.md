@@ -21,6 +21,8 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
     *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `primaryCtaTextOverride`, `primaryCtaHrefOverride`, `imageSrcOverride`, `imageAltOverride`.
 *   **[`ScrollGradientHero.astro`](file:///templates/starter/src/components/ScrollGradientHero.astro)**: Premium tech/industrial landing page opener with parallax scrolling background image, ambient glowing live status indicators, and an address/lead qualification search bar. Best for green-energy, climate-tech, smart-home systems, or industrial contractor services.
     *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `buttonTextOverride`, `placeholderOverride`, `bgImageOverride`.
+*   **[`HeroRecruit.astro`](file:///templates/starter/src/components/HeroRecruit.astro)**: High-impact corporate/agency hero section featuring a dark semi-transparent image background overlay, bold left-aligned typography with capitalized orange highlights, and a clean outline button link.
+    *   **Props**: `badgeOverride`, `headingOverride`, `buttonTextOverride`, `buttonHrefOverride`, `bgImageOverride`.
 *   **[`HeroChip.astro`](file:///templates/starter/src/components/HeroChip.astro)**: A pill-shaped micro-action alert badge. Designed to sit inside heroes or headers to highlight news, versions, or special discount promos.
     *   **Props**: `text`, `link`, `icon`, `class`.
 *   **[`PromoBanner.astro`](file:///templates/starter/src/components/PromoBanner.astro)**: High-visibility announcement bar that sits at the very top of the webpage. Features a CTA link and a persistent dismiss close button that saves visitor preferences in LocalStorage.
@@ -32,6 +34,8 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
 ### 🛠️ Services Grids
 *   **[`Services.astro`](file:///templates/starter/src/components/Services.astro) (Standard)**: Renders service card details in a clean flat grid with numbered badge indicators.
 *   **[`Services.astro`](file:///templates/starter/src/components/Services.astro) (Aspect Image)**: Renders cards featuring a top-aspect ratio image block and high-contrast link anchors. Perfect for visual service industries (landscaping, remodeling).
+*   **[`ServicesRecruit.astro`](file:///templates/starter/src/components/ServicesRecruit.astro)**: Clean, high-shadow cards grid where hover states lift and remove the shadow (`hover:shadow-none`) to create a reverse hover-depth effect. Excellent for corporate agencies or professional consultants.
+    *   **Props**: `badgeOverride`, `headingOverride`, `servicesOverride` (array of `ServiceItem` objects).
 *   **[`PricingTable.astro`](file:///templates/starter/src/components/PricingTable.astro)**: High-performance plan comparison table. Features responsive cards, highlight badges, custom feature checklists, and a billing cycle toggle (Monthly vs. Annually) that dynamically swaps pricing and notes.
     *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `plansOverride` (array of `Plan` items), `currencySymbol`.
 
@@ -57,6 +61,12 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
     *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `itemsOverride` (array of `{ src, alt, title, description, overlayType: 'none' | 'notification' | 'dialogue', overlayTitle, overlayText }`).
 *   **[`TeamSpotlight.astro`](file:///templates/starter/src/components/TeamSpotlight.astro)**: Editorial about/profile section featuring a large landscape team/workshop photo, structured mission statement paragraphs, and a primary CTA link.
     *   **Props**: `badgeOverride`, `headingOverride`, `descriptionOverride1`, `descriptionOverride2`, `imageSrcOverride`, `imageAltOverride`, `ctaTextOverride`, `ctaHrefOverride`.
+*   **[`MissionRecruit.astro`](file:///templates/starter/src/components/MissionRecruit.astro)**: Split-screen mission callout showing standard title/copy sections and a square next-arrow link alongside a large landscape image. Supports responsive layout swapping on desktop.
+    *   **Props**: `badgeOverride`, `headingOverride`, `descriptionOverride`, `buttonHrefOverride`, `imageSrcOverride`, `imageAltOverride`.
+*   **[`JobGrid.astro`](file:///templates/starter/src/components/JobGrid.astro)**: Dynamic careers opening board. Renders a grid of position listings where the first card is highlighted in the brand's primary color and the others are styled in a dark slate, each with salary metrics and quick-apply tags.
+    *   **Props**: `badgeOverride`, `headingOverride`, `jobsOverride` (array of `JobItem` items), `allJobsHref`.
+*   **[`FormRecruit.astro`](file:///templates/starter/src/components/FormRecruit.astro)**: Split-layout application/contact lead capture section. The left column houses direct phone numbers and descriptions, while the right column renders full-name, email, and phone input validation forms.
+    *   **Props**: `badgeOverride`, `headingOverride`, `descriptionOverride`, `apiEndpoint`.
 
 ### 🦶 Footers
 *   **[`Footer.astro`](file:///templates/starter/src/components/Footer.astro)**: Standard 4-column footer (brand/socials, services, locations, contact) with a legal bottom bar. The safe default.
