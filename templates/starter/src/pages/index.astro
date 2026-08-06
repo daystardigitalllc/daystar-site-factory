@@ -22,12 +22,16 @@ import StoryGrid from '../components/StoryGrid.astro';
 import FeatureBento from '../components/FeatureBento.astro';
 import TeamSpotlight from '../components/TeamSpotlight.astro';
 import CtaAccentCard from '../components/CtaAccentCard.astro';
+import ScrollGradientHero from '../components/ScrollGradientHero.astro';
+import UspScrollCards from '../components/UspScrollCards.astro';
+import StepScroller from '../components/StepScroller.astro';
 
 // Map component names to actual Astro exports
 const ComponentMap: Record<string, any> = {
   Hero,
   HeroAnimatedEntry,
   HeroCozy,
+  ScrollGradientHero,
   Marquee,
   TrustBar,
   Services,
@@ -43,7 +47,9 @@ const ComponentMap: Record<string, any> = {
   StoryGrid,
   FeatureBento,
   TeamSpotlight,
-  CtaAccentCard
+  CtaAccentCard,
+  UspScrollCards,
+  StepScroller
 };
 
 // Retrieve array of section names from contentData
