@@ -1,5 +1,74 @@
 {
+  "navbarPill": {
+    "links": [
+      { "label": "Home", "href": "/" },
+      { "label": "Services", "href": "#services" },
+      { "label": "Reviews", "href": "#reviews" },
+      { "label": "FAQ", "href": "#faq" }
+    ]
+  },
+  "footerBigText": {
+    "tagline": "Let's build something that lasts."
+  },
   "home": {
+    "heroAnimated": {
+      "badge": "⭐⭐⭐⭐⭐ Top Rated Local Business",
+      "heading": "Premium Home Services You Can Count On",
+      "subtitle": "Fully licensed, local professionals specializing in Roofing, HVAC, Plumbing, and Electrical services across Greater Nashville.",
+      "primaryCtaText": "Get Your Free Quote",
+      "primaryCtaHref": "#quote-funnel",
+      "secondaryCtaText": "Call Us Now",
+      "secondaryCtaHref": "tel:"
+    },
+    "featureCards": {
+      "badge": "Why Homeowners Choose Us",
+      "heading": "Built On Trust, Backed By Results",
+      "subtitle": "Hover a card to see what sets our service apart.",
+      "items": [
+        {
+          "src": "/feature-warranty.jpg",
+          "alt": "Roofer shaking hands with a satisfied homeowner",
+          "icon": "fa-solid fa-shield-halved",
+          "title": "Lifetime Workmanship Warranty",
+          "description": "Every project is backed by our signature warranty, so defects never become your problem."
+        },
+        {
+          "src": "/feature-pricing.jpg",
+          "alt": "Estimator reviewing an itemized quote with a client",
+          "icon": "fa-solid fa-file-invoice-dollar",
+          "title": "Transparent, Itemized Pricing",
+          "description": "Upfront estimates with no hidden fees, so you always know exactly what you're paying for."
+        },
+        {
+          "src": "/feature-response.jpg",
+          "alt": "Technician arriving at a job site in a branded truck",
+          "icon": "fa-solid fa-bolt",
+          "title": "Fast Emergency Response",
+          "description": "Same-day and emergency service available when storms or breakdowns can't wait."
+        },
+        {
+          "src": "/feature-bbb.jpg",
+          "alt": "A+ BBB accreditation seal",
+          "icon": "fa-solid fa-award",
+          "title": "A+ BBB Rated",
+          "description": "A long track record of excellence, backed by real reviews from Tennessee homeowners."
+        },
+        {
+          "src": "/feature-crew.jpg",
+          "alt": "Licensed and insured crew working on a residential job",
+          "icon": "fa-solid fa-user-check",
+          "title": "Licensed & Insured Crews",
+          "description": "Every technician is fully licensed, background-checked, and insured for your peace of mind."
+        },
+        {
+          "src": "/feature-financing.jpg",
+          "alt": "Homeowner reviewing financing options on a tablet",
+          "icon": "fa-solid fa-hand-holding-dollar",
+          "title": "Flexible Financing",
+          "description": "0% interest plans and flexible monthly payments available for qualified customers."
+        }
+      ]
+    },
     "hero": {
       "h1": "Premium Local Contractor Serving Greater Nashville",
       "supporting": "Get reliable, industry-leading workmanship for your home. Fully licensed, local professionals specializing in Roofing, HVAC, Plumbing, and Electrical services.",
