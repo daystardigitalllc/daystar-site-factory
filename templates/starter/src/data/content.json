@@ -10,6 +10,21 @@
       "title": "Trusted by Over 1,500 Homeowners in Tennessee",
       "text": "For over 10 years, Daystar Demo Contractor has been the name Tennessee homeowners count on. We believe in transparency, premium materials, and unparalleled service. Our team of certified professionals handles everything from emergency repairs to complete system replacements."
     },
+    "scrollShowcase": {
+      "badge": "Our Craftsmanship",
+      "heading": "See Daystar Demo in Action",
+      "subtitle": "Scroll to watch a few of our favorite Tennessee projects come together.",
+      "images": {
+        "topLeft": { "src": "/gallery-1.jpg", "alt": "Precision tree removal near a residential roof" },
+        "topRight": { "src": "/gallery-2.jpg", "alt": "Emergency storm cleanup crew clearing debris" },
+        "bottomLeft": { "src": "/gallery-3.jpg", "alt": "Canopy pruning and thinning on a large oak" },
+        "bottomRight": { "src": "/gallery-4.jpg", "alt": "Full stump grinding down to grade" },
+        "hero": { "src": "/gallery-hero.jpg", "alt": "Finished roofing project on a Nashville home" }
+      },
+      "heroCaption": "Our Signature Work",
+      "ctaText": "Get Your Free Quote",
+      "ctaHref": "#quote-funnel"
+    },
     "whyChooseUs": {
       "title": "Why Choose Daystar Demo",
       "subtitle": "We set a higher standard for local home services.",
