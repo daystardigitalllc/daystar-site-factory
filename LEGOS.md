@@ -21,6 +21,10 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
     *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `primaryCtaTextOverride`, `primaryCtaHrefOverride`, `imageSrcOverride`, `imageAltOverride`.
 *   **[`ScrollGradientHero.astro`](file:///templates/starter/src/components/ScrollGradientHero.astro)**: Premium tech/industrial landing page opener with parallax scrolling background image, ambient glowing live status indicators, and an address/lead qualification search bar. Best for green-energy, climate-tech, smart-home systems, or industrial contractor services.
     *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `buttonTextOverride`, `placeholderOverride`, `bgImageOverride`.
+*   **[`HeroChip.astro`](file:///templates/starter/src/components/HeroChip.astro)**: A pill-shaped micro-action alert badge. Designed to sit inside heroes or headers to highlight news, versions, or special discount promos.
+    *   **Props**: `text`, `link`, `icon`, `class`.
+*   **[`PromoBanner.astro`](file:///templates/starter/src/components/PromoBanner.astro)**: High-visibility announcement bar that sits at the very top of the webpage. Features a CTA link and a persistent dismiss close button that saves visitor preferences in LocalStorage.
+    *   **Props**: `text`, `ctaText`, `ctaHref`, `id`, `class`.
 
 ### 🎀 Highlight ribbons
 *   **[`Marquee.astro`](file:///templates/starter/src/components/Marquee.astro)**: Infinite looping marquee track. Fits right below the Hero to immediately build trust using FontAwesome icons.
@@ -28,6 +32,8 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
 ### 🛠️ Services Grids
 *   **[`Services.astro`](file:///templates/starter/src/components/Services.astro) (Standard)**: Renders service card details in a clean flat grid with numbered badge indicators.
 *   **[`Services.astro`](file:///templates/starter/src/components/Services.astro) (Aspect Image)**: Renders cards featuring a top-aspect ratio image block and high-contrast link anchors. Perfect for visual service industries (landscaping, remodeling).
+*   **[`PricingTable.astro`](file:///templates/starter/src/components/PricingTable.astro)**: High-performance plan comparison table. Features responsive cards, highlight badges, custom feature checklists, and a billing cycle toggle (Monthly vs. Annually) that dynamically swaps pricing and notes.
+    *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `plansOverride` (array of `Plan` items), `currencySymbol`.
 
 ### 🖼️ Showcase & Work Portfolios
 *   **[`Gallery.astro`](file:///templates/starter/src/components/Gallery.astro)**: Renders a 4-column portfolio overlay grid. Shows location badges, dynamic job labels, and hover details.
@@ -64,6 +70,12 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
 ### 📢 Call to Action Blocks
 *   **[`CtaAccentCard.astro`](file:///templates/starter/src/components/CtaAccentCard.astro)**: High-impact CTA banner housed within a rounded capsule, featuring bold gradient backgrounds, custom mascot illustrations, and contrasting pill action buttons. Best for email signups, beta program announcements, or newsletter signups.
     *   **Props**: `titleOverride`, `descriptionOverride`, `bgGradientClass`, `ctaTextOverride`, `ctaHrefOverride`, `mascotSrcOverride`.
+
+### ⚙️ Interactive & Utility Elements
+*   **[`Reveal.astro`](file:///templates/starter/src/components/Reveal.astro)**: Scroll animation wrapper. Intercepts viewport entries and fades/slides any nested content into view. Driven by a single shared `IntersectionObserver` on the client, and respects `prefers-reduced-motion`.
+    *   **Props**: `delay` (in ms), `class`, `from` (`'up' | 'left' | 'right' | 'none'`), `as` (HTML wrapping tag).
+*   **[`AddToCalendarButton.astro`](file:///templates/starter/src/components/AddToCalendarButton.astro)**: Clean dropdown menu helper that generates event invite links for Google Calendar, Yahoo, Outlook, and a download link for iCal / Apple calendar. Fully self-contained.
+    *   **Props**: `name`, `description`, `location`, `startDate` (ISO string), `duration` (in minutes), `class`.
 
 ### ❓ FAQ Layouts
 *   **[`FAQ.astro`](file:///templates/starter/src/components/FAQ.astro) (Accordion)**: Standard single-column centered list of toggle-able questions.
