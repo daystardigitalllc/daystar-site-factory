@@ -86,6 +86,16 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
     *   **Props**: `delay` (in ms), `class`, `from` (`'up' | 'left' | 'right' | 'none'`), `as` (HTML wrapping tag).
 *   **[`AddToCalendarButton.astro`](file:///templates/starter/src/components/AddToCalendarButton.astro)**: Clean dropdown menu helper that generates event invite links for Google Calendar, Yahoo, Outlook, and a download link for iCal / Apple calendar. Fully self-contained.
     *   **Props**: `name`, `description`, `location`, `startDate` (ISO string), `duration` (in minutes), `class`.
+*   **[`FileTree.astro`](file:///templates/starter/src/components/FileTree.astro)**: Monospace directory structure viewer in the Exquisitus editorial style. Renders folder paths, file icons, connecting lines, and highlighted files.
+    *   **Props**: `title`, `structure` (array of `FileNode` elements), `class`.
+*   **[`AsideExquisitus.astro`](file:///templates/starter/src/components/AsideExquisitus.astro)**: Notice callout bubbles. Features 4 notice types (`note`, `tip`, `caution`, `danger`) with outline accent rings, background colors, and title headers.
+    *   **Props**: `type`, `title`, `class`.
+*   **[`TabsExquisitus.astro`](file:///templates/starter/src/components/TabsExquisitus.astro)**: Structured tab group swapper with border-transition navigation controls and panel hiding logic.
+    *   **Props**: `tabs` (array of tab labels), `id`, `class`.
+*   **[`StepsExquisitus.astro`](file:///templates/starter/src/components/StepsExquisitus.astro)**: Step-by-step instruction vertical timeline with tabular circular counters and fading vertical guide lines.
+    *   **Props**: `steps` (array of `StepItem` structures), `class`.
+*   **[`BadgeExquisitus.astro`](file:///templates/starter/src/components/BadgeExquisitus.astro)**: Small pill-shaped status tags (`note`, `success`, `warning`, `danger`, `info`).
+    *   **Props**: `text`, `type`, `class`.
 
 ### ❓ FAQ Layouts
 *   **[`FAQ.astro`](file:///templates/starter/src/components/FAQ.astro) (Accordion)**: Standard single-column centered list of toggle-able questions.
