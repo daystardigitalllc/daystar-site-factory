@@ -23,6 +23,8 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
     *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `buttonTextOverride`, `placeholderOverride`, `bgImageOverride`.
 *   **[`HeroRecruit.astro`](file:///templates/starter/src/components/HeroRecruit.astro)**: High-impact corporate/agency hero section featuring a dark semi-transparent image background overlay, bold left-aligned typography with capitalized orange highlights, and a clean outline button link.
     *   **Props**: `badgeOverride`, `headingOverride`, `buttonTextOverride`, `buttonHrefOverride`, `bgImageOverride`.
+*   **[`HeroContractor.astro`](file:///templates/starter/src/components/HeroContractor.astro)**: High-fidelity contractor landing page hero. Renders a split layout with bold headings and benefit bullets on the left, and a floating white estimate request form card on the right.
+    *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `bgImageOverride`, `formTitle`.
 *   **[`HeroChalet.astro`](file:///templates/starter/src/components/HeroChalet.astro)**: Cozy, warm alpine-editorial hero section featuring a full-width background photo, bold serif typography, custom bulleted highlights, and a signature **mountain-ridge SVG divider** that clips the bottom edge of the banner.
     *   **Props**: `eyebrowOverride`, `headingOverride`, `subtitleOverride`, `primaryCtaText`, `primaryCtaHref`, `secondaryCtaText`, `secondaryCtaHref`, `bgImageOverride`, `dividerColorClass`.
 *   **[`HeroKepler.astro`](file:///templates/starter/src/components/HeroKepler.astro)**: Neo-brutalist Saturn-themed opener with background radial glows, floating stickers, a custom hand-drawn SVG title underline, and an active revolving CSS planet orbit system on the right.
@@ -42,6 +44,10 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
     *   **Props**: `badgeOverride`, `headingOverride`, `servicesOverride` (array of `ServiceItem` objects).
 *   **[`ServicesChalet.astro`](file:///templates/starter/src/components/ServicesChalet.astro)**: Cozy, warm alpine-style service list. Cards are detailed with large faded background indexes (`01`, `02`), clean outline SVG icon shapes, and border highlights.
     *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `servicesOverride` (array of `ServiceItem` objects).
+*   **[`PestRibbon.astro`](file:///templates/starter/src/components/PestRibbon.astro)**: Accent red banner showing service categories. Renders a grid of rounded white pill boxes containing custom icons and labels, completed with an accent bottom callout.
+    *   **Props**: `badgeOverride`, `headingOverride`, `pestsOverride` (array of `PestItem` objects), `ctaText`, `ctaHref`.
+*   **[`PlansThreeTier.astro`](file:///templates/starter/src/components/PlansThreeTier.astro)**: Three-tier service plan comparison cards matching the WordPress mockup colors: Gold, Red, and Dark Grey accent banners, detailed checklists, and request CTAs.
+    *   **Props**: `badgeOverride`, `headingOverride`, `plansOverride` (array of `Plan` values).
 *   **[`FeaturesKepler.astro`](file:///templates/starter/src/components/FeaturesKepler.astro)**: Neo-brutalist features card board. Renders 6 staggered rotating cards (`rotate-1` / `-rotate-1`) that flatten and pop with deep offset borders and shadow layers on hover. Features retro geometric symbols (triangles, squares, rings).
     *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `featuresOverride` (array of `FeatureItem` structures).
 *   **[`PricingKepler.astro`](file:///templates/starter/src/components/PricingKepler.astro)**: Staggered neo-brutalist plan tier table. Standard cards flank a highlighted center card scaled up with an elevated "MOST POPULAR" banner. Features a custom billing period switcher (Monthly/Yearly) to toggle rates.
@@ -73,6 +79,8 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
     *   **Props**: `badgeOverride`, `headingOverride`, `descriptionOverride1`, `descriptionOverride2`, `imageSrcOverride`, `imageAltOverride`, `ctaTextOverride`, `ctaHrefOverride`.
 *   **[`MissionRecruit.astro`](file:///templates/starter/src/components/MissionRecruit.astro)**: Split-screen mission callout showing standard title/copy sections and a square next-arrow link alongside a large landscape image. Supports responsive layout swapping on desktop.
     *   **Props**: `badgeOverride`, `headingOverride`, `descriptionOverride`, `buttonHrefOverride`, `imageSrcOverride`, `imageAltOverride`.
+*   **[`FeatureCardsDoa.astro`](file:///templates/starter/src/components/FeatureCardsDoa.astro)**: "The DOA Difference" 3-column feature grid. Each card details a value proposition and features a red circular number badge overlapping the bottom border.
+    *   **Props**: `badgeOverride`, `headingOverride`, `featuresOverride` (array of `FeatureCard` elements).
 *   **[`StoryChalet.astro`](file:///templates/starter/src/components/StoryChalet.astro)**: Cozy, split-screen about storytelling section in the Chalet alpine-editorial style. Pairs a clean floured workspace photo on one side with structured paragraph copy on the other.
     *   **Props**: `badgeOverride`, `headingOverride`, `paragraph1Override`, `paragraph2Override`, `imageSrcOverride`, `imageAltOverride`.
 *   **[`InfoChalet.astro`](file:///templates/starter/src/components/InfoChalet.astro)**: Practical notice board split panel. Renders a structured day-by-day weekly opening hours table on one side, and map location pointers/action dials on the other.
@@ -121,6 +129,8 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
 *   **[`FAQ.astro`](file:///templates/starter/src/components/FAQ.astro) (Double Column)**: Left column features a sticky lead CTA, right column houses the accordions. Great for heavy FAQ list profiles.
 *   **[`FaqKepler.astro`](file:///templates/starter/src/components/FaqKepler.astro)**: Neo-brutalist FAQ accordions. Features solid borders, heavy shadows, and interactive expand/collapse states where the plus (+) indicator rotates 45 degrees into an exit symbol.
     *   **Props**: `badgeOverride`, `headingOverride`, `faqsOverride` (array of `FaqItem` objects).
+*   **[`FaqAccordionDoa.astro`](file:///templates/starter/src/components/FaqAccordionDoa.astro)**: WordPress-styled accordion query list for contractors. Features border notice tabs, toggle chevron animations, and a red bottom CTA link.
+    *   **Props**: `badgeOverride`, `headingOverride`, `faqsOverride` (array of `FaqItem` objects), `ctaText`, `ctaHref`.
 
 ---
 
