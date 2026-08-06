@@ -70,8 +70,9 @@ export const POST: APIRoute = async ({ request }) => {
       return new Response(JSON.stringify({ success: false, error: 'Slug is required' }), { status: 400 });
     }
 
+    const homeDir = process.env.USERPROFILE || 'C:\\Users\\AustinHayes';
     const clientSlug = slug.toLowerCase().replace(/[^a-z0-9-_]/g, '');
-    const clientDir = path.join('C:\\Users\\austi\\Documents\\Websites', clientSlug);
+    const clientDir = path.join(homeDir, 'Documents', 'Websites', clientSlug);
 
     if (fs.existsSync(clientDir)) {
       return new Response(JSON.stringify({ success: false, error: 'A directory for this client already exists' }), { status: 400 });
@@ -193,7 +194,46 @@ export const POST: APIRoute = async ({ request }) => {
       };
     });
 
+    let layoutArray = data.layout;
+    if (!layoutArray || !Array.isArray(layoutArray)) {
+      if (theme?.style === 'oak-city') {
+        layoutArray = [
+          'Hero',
+          'Marquee',
+          'TrustBar',
+          'Services',
+          'CTA',
+          'Reviews',
+          'GalleryScrollChoreography',
+          'FAQ',
+          'QuoteFunnel'
+        ];
+      } else if (theme?.style === 'split') {
+        layoutArray = [
+          'Hero',
+          'TrustBar',
+          'Services',
+          'FeatureOverlayCards',
+          'Reviews',
+          'FAQ',
+          'QuoteFunnel'
+        ];
+      } else {
+        layoutArray = [
+          'Hero',
+          'TrustBar',
+          'Services',
+          'CTA',
+          'Reviews',
+          'Gallery',
+          'FAQ',
+          'QuoteFunnel'
+        ];
+      }
+    }
+
     const contentJson = {
+      layout: layoutArray,
       home: {
         hero: {
           h1: copy.heroH1 || `Premium ${industry} Services`,

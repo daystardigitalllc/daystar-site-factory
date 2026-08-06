@@ -1,42 +1,62 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import contentData from '../data/content.json';
+
+// Import all layout components
 import Hero from '../components/Hero.astro';
+import HeroAnimatedEntry from '../components/HeroAnimatedEntry.astro';
 import Marquee from '../components/Marquee.astro';
 import TrustBar from '../components/TrustBar.astro';
 import Services from '../components/Services.astro';
 import Reviews from '../components/Reviews.astro';
 import Gallery from '../components/Gallery.astro';
+import GalleryScrollChoreography from '../components/GalleryScrollChoreography.astro';
+import CompareSlider from '../components/CompareSlider.astro';
+import FeatureOverlayCards from '../components/FeatureOverlayCards.astro';
+import CardsCarousel from '../components/CardsCarousel.astro';
 import FAQ from '../components/FAQ.astro';
 import CTA from '../components/CTA.astro';
 import QuoteFunnel from '../components/QuoteFunnel.astro';
-import businessData from '../data/business.json';
+
+// Map component names to actual Astro exports
+const ComponentMap: Record<string, any> = {
+  Hero,
+  HeroAnimatedEntry,
+  Marquee,
+  TrustBar,
+  Services,
+  Reviews,
+  Gallery,
+  GalleryScrollChoreography,
+  CompareSlider,
+  FeatureOverlayCards,
+  CardsCarousel,
+  FAQ,
+  CTA,
+  QuoteFunnel
+};
+
+// Retrieve array of section names from contentData
+const layout: string[] = contentData.layout || [
+  'Hero',
+  'Marquee',
+  'TrustBar',
+  'Services',
+  'CTA',
+  'Reviews',
+  'Gallery',
+  'FAQ',
+  'QuoteFunnel'
+];
 ---
 
 <MainLayout>
-  <!-- Hero Section -->
-  <Hero />
-
-  <!-- Infinite Scrolling Marquee (Only active for Oak City theme) -->
-  <Marquee />
-
-  <!-- Trust Seal / Review Summary -->
-  <TrustBar />
-
-  <!-- Services Grid -->
-  <Services />
-
-  <!-- Core Conversion Section -->
-  <CTA />
-
-  <!-- Reviews Testimonials Section -->
-  <Reviews />
-
-  <!-- Work Portfolio Gallery -->
-  <Gallery />
-
-  <!-- Interactive FAQ -->
-  <FAQ />
-
-  <!-- Lead Capture Funnel -->
-  <QuoteFunnel />
+  {layout.map((componentName) => {
+    const Component = ComponentMap[componentName];
+    if (!Component) {
+      console.warn(`Component "${componentName}" was listed in layout but not found in ComponentMap.`);
+      return null;
+    }
+    return <Component />;
+  })}
 </MainLayout>
