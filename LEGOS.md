@@ -23,6 +23,8 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
     *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `buttonTextOverride`, `placeholderOverride`, `bgImageOverride`.
 *   **[`HeroRecruit.astro`](file:///templates/starter/src/components/HeroRecruit.astro)**: High-impact corporate/agency hero section featuring a dark semi-transparent image background overlay, bold left-aligned typography with capitalized orange highlights, and a clean outline button link.
     *   **Props**: `badgeOverride`, `headingOverride`, `buttonTextOverride`, `buttonHrefOverride`, `bgImageOverride`.
+*   **[`HeroChalet.astro`](file:///templates/starter/src/components/HeroChalet.astro)**: Cozy, warm alpine-editorial hero section featuring a full-width background photo, bold serif typography, custom bulleted highlights, and a signature **mountain-ridge SVG divider** that clips the bottom edge of the banner.
+    *   **Props**: `eyebrowOverride`, `headingOverride`, `subtitleOverride`, `primaryCtaText`, `primaryCtaHref`, `secondaryCtaText`, `secondaryCtaHref`, `bgImageOverride`, `dividerColorClass`.
 *   **[`HeroKepler.astro`](file:///templates/starter/src/components/HeroKepler.astro)**: Neo-brutalist Saturn-themed opener with background radial glows, floating stickers, a custom hand-drawn SVG title underline, and an active revolving CSS planet orbit system on the right.
     *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `primaryCtaText`, `primaryCtaHref`, `secondaryCtaText`, `secondaryCtaHref`.
 *   **[`HeroChip.astro`](file:///templates/starter/src/components/HeroChip.astro)**: A pill-shaped micro-action alert badge. Designed to sit inside heroes or headers to highlight news, versions, or special discount promos.
@@ -38,6 +40,8 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
 *   **[`Services.astro`](file:///templates/starter/src/components/Services.astro) (Aspect Image)**: Renders cards featuring a top-aspect ratio image block and high-contrast link anchors. Perfect for visual service industries (landscaping, remodeling).
 *   **[`ServicesRecruit.astro`](file:///templates/starter/src/components/ServicesRecruit.astro)**: Clean, high-shadow cards grid where hover states lift and remove the shadow (`hover:shadow-none`) to create a reverse hover-depth effect. Excellent for corporate agencies or professional consultants.
     *   **Props**: `badgeOverride`, `headingOverride`, `servicesOverride` (array of `ServiceItem` objects).
+*   **[`ServicesChalet.astro`](file:///templates/starter/src/components/ServicesChalet.astro)**: Cozy, warm alpine-style service list. Cards are detailed with large faded background indexes (`01`, `02`), clean outline SVG icon shapes, and border highlights.
+    *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `servicesOverride` (array of `ServiceItem` objects).
 *   **[`FeaturesKepler.astro`](file:///templates/starter/src/components/FeaturesKepler.astro)**: Neo-brutalist features card board. Renders 6 staggered rotating cards (`rotate-1` / `-rotate-1`) that flatten and pop with deep offset borders and shadow layers on hover. Features retro geometric symbols (triangles, squares, rings).
     *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `featuresOverride` (array of `FeatureItem` structures).
 *   **[`PricingKepler.astro`](file:///templates/starter/src/components/PricingKepler.astro)**: Staggered neo-brutalist plan tier table. Standard cards flank a highlighted center card scaled up with an elevated "MOST POPULAR" banner. Features a custom billing period switcher (Monthly/Yearly) to toggle rates.
@@ -69,6 +73,11 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
     *   **Props**: `badgeOverride`, `headingOverride`, `descriptionOverride1`, `descriptionOverride2`, `imageSrcOverride`, `imageAltOverride`, `ctaTextOverride`, `ctaHrefOverride`.
 *   **[`MissionRecruit.astro`](file:///templates/starter/src/components/MissionRecruit.astro)**: Split-screen mission callout showing standard title/copy sections and a square next-arrow link alongside a large landscape image. Supports responsive layout swapping on desktop.
     *   **Props**: `badgeOverride`, `headingOverride`, `descriptionOverride`, `buttonHrefOverride`, `imageSrcOverride`, `imageAltOverride`.
+*   **[`StoryChalet.astro`](file:///templates/starter/src/components/StoryChalet.astro)**: Cozy, split-screen about storytelling section in the Chalet alpine-editorial style. Pairs a clean floured workspace photo on one side with structured paragraph copy on the other.
+    *   **Props**: `badgeOverride`, `headingOverride`, `paragraph1Override`, `paragraph2Override`, `imageSrcOverride`, `imageAltOverride`.
+*   **[`InfoChalet.astro`](file:///templates/starter/src/components/InfoChalet.astro)**: Practical notice board split panel. Renders a structured day-by-day weekly opening hours table on one side, and map location pointers/action dials on the other.
+    *   **Props**: `badgeOverride`, `headingOverride`, `hoursOverride` (array of `OpeningHour` objects), `addressOverride`, `phoneOverride`, `directionsUrl`.
+    *   **Props**: `badgeOverride`, `headingOverride`, `descriptionOverride`, `buttonHrefOverride`, `imageSrcOverride`, `imageAltOverride`.
 *   **[`JobGrid.astro`](file:///templates/starter/src/components/JobGrid.astro)**: Dynamic careers opening board. Renders a grid of position listings where the first card is highlighted in the brand's primary color and the others are styled in a dark slate, each with salary metrics and quick-apply tags.
     *   **Props**: `badgeOverride`, `headingOverride`, `jobsOverride` (array of `JobItem` items), `allJobsHref`.
 *   **[`FormRecruit.astro`](file:///templates/starter/src/components/FormRecruit.astro)**: Split-layout application/contact lead capture section. The left column houses direct phone numbers and descriptions, while the right column renders full-name, email, and phone input validation forms.
@@ -84,6 +93,8 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
 *   **[`Reviews.astro`](file:///templates/starter/src/components/Reviews.astro) (Snap Slider)**: Touch-enabled horizontal scrolling swipe track. Perfect for mobile UI/UX.
 *   **[`ReviewsKepler.astro`](file:///templates/starter/src/components/ReviewsKepler.astro)**: Staggered neo-brutalist customer quote cards. Features offset solid colored shadows and cards that rotate slightly, straightening smoothly on hover.
     *   **Props**: `badgeOverride`, `headingOverride`, `reviewsOverride` (array of `ReviewItem` elements).
+*   **[`ReviewsChalet.astro`](file:///templates/starter/src/components/ReviewsChalet.astro)**: Cozy customer review board. Features a header displaying overall rating scores and stars next to a 3-column review card grid featuring giant quotation mark tags ("“") and initial avatars.
+    *   **Props**: `badgeOverride`, `headingOverride`, `ratingScore`, `ratingLabel`, `reviewsOverride` (array of `ReviewItem` entries), `googleReviewUrl`.
 
 ### 📢 Call to Action Blocks
 *   **[`CtaAccentCard.astro`](file:///templates/starter/src/components/CtaAccentCard.astro)**: High-impact CTA banner housed within a rounded capsule, featuring bold gradient backgrounds, custom mascot illustrations, and contrasting pill action buttons. Best for email signups, beta program announcements, or newsletter signups.
