@@ -17,6 +17,8 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
 *   **[`HeroVideo.astro`](file:///templates/starter/src/components/Hero.astro)** (Oak City style): Best for contractor/home maintenance services (tree care, roofing, plumbing). Features centered emblem logo, loop-enabled HTML5 background video, and animated typewriter title hook.
 *   **[`HeroAnimatedEntry.astro`](file:///templates/starter/src/components/HeroAnimatedEntry.astro)**: Centered, minimal hero with a staggered word-by-word entrance animation on the headline (concept inspired by the "Simple with entry animation" hero in Aceternity UI's hero collection). Pure CSS animation (per-word `animation-delay`, no JS), respects `prefers-reduced-motion`. Badge + headline + subtitle + a primary CTA and a secondary "Call Us" CTA. Best for brands that want a punchy, fast-loading, animation-forward first impression without a form or video — startups-y service brands, agencies, or as a lighter opener above `Services.astro`.
     *   **Props**: all optional, falling back to `content.json`'s `home.heroAnimated` block (and `business.json` for phone/CTA): `badgeOverride`, `headingOverride`, `subtitleOverride`, `primaryCtaTextOverride`, `primaryCtaHrefOverride`, `secondaryCtaTextOverride`, `secondaryCtaHrefOverride`.
+*   **[`HeroCozy.astro`](file:///templates/starter/src/components/HeroCozy.astro)**: Warm, elegant, centered product-focused hero section. Features a serif font heading, soft cream lighting, and a large elevated product/device showcase mockup card in the center. Best for premium consumer hardware, digital products, apps, or lifestyle service brands wanting a cozy, high-end feel.
+    *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `primaryCtaTextOverride`, `primaryCtaHrefOverride`, `imageSrcOverride`, `imageAltOverride`.
 
 ### 🎀 Highlight ribbons
 *   **[`Marquee.astro`](file:///templates/starter/src/components/Marquee.astro)**: Infinite looping marquee track. Fits right below the Hero to immediately build trust using FontAwesome icons.
@@ -33,10 +35,16 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
     *   **Props**: all optional, falling back to `content.json`'s `home.cardsCarousel` block: `badgeOverride`, `headingOverride`, `subtitleOverride`, `itemsOverride` (array of `{ src, alt, category, title, content }`, where `content` is an array of paragraph strings shown in the expanded modal).
 *   **[`CompareSlider.astro`](file:///templates/starter/src/components/CompareSlider.astro)**: Before/after image comparison slider (concept inspired by Aceternity UI's Compare component) — drag or hover to reveal the "before" photo over the "after" photo via a `clip-path` reveal, with an optional autoplay ping-pong mode. Pure Astro + vanilla JS (pointer events, no React/framer-motion). Renders a responsive grid of comparisons, so it works with one job or several. Best for any visually-transformative service: roofing, remodeling, landscaping/lawn care, painting, tree removal, storm cleanup, deck/fence building. Skip it for businesses without a clear visual before/after (accountants, consultants, etc.).
     *   **Props**: all optional, falling back to `content.json`'s `home.compareShowcase` block: `badgeOverride`, `headingOverride`, `subtitleOverride`, `itemsOverride` (array of `{ before: { src, alt }, after: { src, alt }, label }`), `modeOverride` (`'drag' | 'hover'`, default `'drag'`), `initialPercentageOverride` (0-100, default `50`), `showHandleOverride` (boolean, default `true`), `autoplayOverride` (boolean, default `false`), `autoplayDurationOverride` (ms, default `4000`).
+*   **[`StoryGrid.astro`](file:///templates/starter/src/components/StoryGrid.astro)**: Clean, portrait-style horizontal media rail (shows 4 portrait card slots) with media play indicator buttons and smooth zoom hover effects. Best for showcasing customer testimonial videos, real-use stories, or social media showcases.
+    *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `itemsOverride` (array of `{ src, alt, label, title }`), `ctaTextOverride`, `ctaHrefOverride`.
 
 ### ✨ Feature / Highlight Grids
 *   **[`FeatureOverlayCards.astro`](file:///templates/starter/src/components/FeatureOverlayCards.astro)**: Grid of image cards where hovering (or tapping on touch) reveals an extended description over a gradient overlay (concept inspired by the "Background Overlay Card" style in Aceternity UI's card collection). Pure CSS `group-hover` — no JS. Best for a compact "why choose us" / guarantees grid with photo backing rather than plain icon cards; pairs well below `HeroAnimatedEntry.astro` or `Services.astro`.
     *   **Props**: all optional, falling back to `content.json`'s `home.featureCards` block: `badgeOverride`, `headingOverride`, `subtitleOverride`, `itemsOverride` (array of `{ src, alt, icon, title, description }`, `icon` being a Font Awesome class string).
+*   **[`FeatureBento.astro`](file:///templates/starter/src/components/FeatureBento.astro)**: Bento-style 2x2 feature grid. Features customizable floating interface elements (mock notifications or dialogue bubbles) overlaying high-quality aspect-ratio photos. Perfect for detailing tech features, consumer app highlights, or complex service guarantees in a premium, engaging grid.
+    *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `itemsOverride` (array of `{ src, alt, title, description, overlayType: 'none' | 'notification' | 'dialogue', overlayTitle, overlayText }`).
+*   **[`TeamSpotlight.astro`](file:///templates/starter/src/components/TeamSpotlight.astro)**: Editorial about/profile section featuring a large landscape team/workshop photo, structured mission statement paragraphs, and a primary CTA link.
+    *   **Props**: `badgeOverride`, `headingOverride`, `descriptionOverride1`, `descriptionOverride2`, `imageSrcOverride`, `imageAltOverride`, `ctaTextOverride`, `ctaHrefOverride`.
 
 ### 🦶 Footers
 *   **[`Footer.astro`](file:///templates/starter/src/components/Footer.astro)**: Standard 4-column footer (brand/socials, services, locations, contact) with a legal bottom bar. The safe default.
@@ -46,6 +54,10 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
 ### 💬 Social Proof & Reviews
 *   **[`Reviews.astro`](file:///templates/starter/src/components/Reviews.astro) (Grid)**: Standard 3-column masonry grid layout. Displays client name, locations, and ratings.
 *   **[`Reviews.astro`](file:///templates/starter/src/components/Reviews.astro) (Snap Slider)**: Touch-enabled horizontal scrolling swipe track. Perfect for mobile UI/UX.
+
+### 📢 Call to Action Blocks
+*   **[`CtaAccentCard.astro`](file:///templates/starter/src/components/CtaAccentCard.astro)**: High-impact CTA banner housed within a rounded capsule, featuring bold gradient backgrounds, custom mascot illustrations, and contrasting pill action buttons. Best for email signups, beta program announcements, or newsletter signups.
+    *   **Props**: `titleOverride`, `descriptionOverride`, `bgGradientClass`, `ctaTextOverride`, `ctaHrefOverride`, `mascotSrcOverride`.
 
 ### ❓ FAQ Layouts
 *   **[`FAQ.astro`](file:///templates/starter/src/components/FAQ.astro) (Accordion)**: Standard single-column centered list of toggle-able questions.

@@ -17,11 +17,17 @@ import CardsCarousel from '../components/CardsCarousel.astro';
 import FAQ from '../components/FAQ.astro';
 import CTA from '../components/CTA.astro';
 import QuoteFunnel from '../components/QuoteFunnel.astro';
+import HeroCozy from '../components/HeroCozy.astro';
+import StoryGrid from '../components/StoryGrid.astro';
+import FeatureBento from '../components/FeatureBento.astro';
+import TeamSpotlight from '../components/TeamSpotlight.astro';
+import CtaAccentCard from '../components/CtaAccentCard.astro';
 
 // Map component names to actual Astro exports
 const ComponentMap: Record<string, any> = {
   Hero,
   HeroAnimatedEntry,
+  HeroCozy,
   Marquee,
   TrustBar,
   Services,
@@ -33,7 +39,11 @@ const ComponentMap: Record<string, any> = {
   CardsCarousel,
   FAQ,
   CTA,
-  QuoteFunnel
+  QuoteFunnel,
+  StoryGrid,
+  FeatureBento,
+  TeamSpotlight,
+  CtaAccentCard
 };
 
 // Retrieve array of section names from contentData
