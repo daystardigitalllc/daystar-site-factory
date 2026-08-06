@@ -10,6 +10,28 @@
       "title": "Trusted by Over 1,500 Homeowners in Tennessee",
       "text": "For over 10 years, Daystar Demo Contractor has been the name Tennessee homeowners count on. We believe in transparency, premium materials, and unparalleled service. Our team of certified professionals handles everything from emergency repairs to complete system replacements."
     },
+    "compareShowcase": {
+      "badge": "Real Results",
+      "heading": "See the Transformation",
+      "subtitle": "Drag the slider to compare before and after on a few recent jobs.",
+      "mode": "drag",
+      "initialPercentage": 50,
+      "showHandle": true,
+      "autoplay": false,
+      "autoplayDuration": 4000,
+      "items": [
+        {
+          "before": { "src": "/compare-roof-before.jpg", "alt": "Worn shingle roof before replacement" },
+          "after": { "src": "/compare-roof-after.jpg", "alt": "New architectural shingle roof after replacement" },
+          "label": "Full Roof Replacement — Nashville, TN"
+        },
+        {
+          "before": { "src": "/compare-yard-before.jpg", "alt": "Overgrown storm-damaged yard before cleanup" },
+          "after": { "src": "/compare-yard-after.jpg", "alt": "Cleared and restored yard after storm cleanup" },
+          "label": "Storm Damage Cleanup — Murfreesboro, TN"
+        }
+      ]
+    },
     "cardsCarousel": {
       "badge": "Explore",
       "heading": "Get to Know Daystar Demo",
