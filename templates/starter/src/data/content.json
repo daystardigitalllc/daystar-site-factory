@@ -10,6 +10,59 @@
       "title": "Trusted by Over 1,500 Homeowners in Tennessee",
       "text": "For over 10 years, Daystar Demo Contractor has been the name Tennessee homeowners count on. We believe in transparency, premium materials, and unparalleled service. Our team of certified professionals handles everything from emergency repairs to complete system replacements."
     },
+    "cardsCarousel": {
+      "badge": "Explore",
+      "heading": "Get to Know Daystar Demo",
+      "subtitle": "A closer look at the services and guarantees homeowners count on.",
+      "items": [
+        {
+          "src": "/card-roofing.jpg",
+          "alt": "Roofing crew installing architectural shingles",
+          "category": "Roofing",
+          "title": "Premium Roofing Services",
+          "content": [
+            "Your roof is your home's first line of defense. We provide complete architectural shingle replacements, metal roofing installation, leakage diagnostics, and certified storm damage inspections.",
+            "Using premium GAF materials, we guarantee a roof that will protect your family for decades."
+          ]
+        },
+        {
+          "src": "/card-hvac.jpg",
+          "alt": "Technician servicing an outdoor HVAC unit",
+          "category": "HVAC",
+          "title": "Expert HVAC Services",
+          "content": [
+            "Keep your home comfortable all year long. From high-efficiency heat pumps to routine filter maintenance and system tune-ups, our certified technicians ensure your HVAC runs at peak performance."
+          ]
+        },
+        {
+          "src": "/card-warranty.jpg",
+          "alt": "Contractor shaking hands with a homeowner",
+          "category": "Guarantee",
+          "title": "Guaranteed Workmanship",
+          "content": [
+            "Every project we complete is backed by our signature lifetime workmanship warranty, so you never have to worry about hidden defects down the line."
+          ]
+        },
+        {
+          "src": "/card-pricing.jpg",
+          "alt": "Estimator reviewing a project quote with a client",
+          "category": "Pricing",
+          "title": "Transparent Pricing",
+          "content": [
+            "We offer upfront, itemized estimates with no hidden fees and no sudden surprise costs, so you always know exactly what you're paying for."
+          ]
+        },
+        {
+          "src": "/card-bbb.jpg",
+          "alt": "A+ BBB accreditation seal on an office window",
+          "category": "Trust",
+          "title": "A+ BBB Rating",
+          "content": [
+            "Our long track record of excellence shows in our review history and ratings. It's one more reason over 1,500 Tennessee homeowners trust us with their homes."
+          ]
+        }
+      ]
+    },
     "scrollShowcase": {
       "badge": "Our Craftsmanship",
       "heading": "See Daystar Demo in Action",
