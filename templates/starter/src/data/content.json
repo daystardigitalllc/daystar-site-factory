@@ -1,0 +1,126 @@
+{
+  "home": {
+    "hero": {
+      "h1": "Premium Local Contractor Serving Greater Nashville",
+      "supporting": "Get reliable, industry-leading workmanship for your home. Fully licensed, local professionals specializing in Roofing, HVAC, Plumbing, and Electrical services.",
+      "ctaText": "Get Your Free Quote",
+      "badge": "⭐⭐⭐⭐⭐ Top Rated Local Business"
+    },
+    "about": {
+      "title": "Trusted by Over 1,500 Homeowners in Tennessee",
+      "text": "For over 10 years, Daystar Demo Contractor has been the name Tennessee homeowners count on. We believe in transparency, premium materials, and unparalleled service. Our team of certified professionals handles everything from emergency repairs to complete system replacements."
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Daystar Demo",
+      "subtitle": "We set a higher standard for local home services.",
+      "items": [
+        {
+          "title": "Guaranteed Workmanship",
+          "description": "Every project we complete is backed by our signature lifetime workmanship warranty."
+        },
+        {
+          "title": "Transparent Pricing",
+          "description": "We offer upfront, itemized estimates. No hidden fees, no sudden surprise costs."
+        },
+        {
+          "title": "A+ BBB Rating",
+          "description": "Our long track record of excellence shows in our review history and ratings."
+        }
+      ]
+    }
+  },
+  "services": [
+    {
+      "slug": "roofing",
+      "title": "Premium Roofing Services",
+      "shortDescription": "Full-service roof installations, leaks, shingle replacements, and inspections.",
+      "longDescription": "Your roof is your home's first line of defense. We provide complete architectural shingle replacements, metal roofing installation, leakage diagnostics, and certified storm damage inspections. Using premium GAF materials, we guarantee a roof that will protect your family for decades.",
+      "features": [
+        "Architectural & Metal Roofing",
+        "Leak Detection & Repairs",
+        "Storm Damage Restoration",
+        "50-Year GAF Warranty"
+      ],
+      "faq": [
+        {
+          "q": "How long does a typical roof replacement take?",
+          "a": "Most residential roof replacements are completed in just 1-2 days, depending on weather and size."
+        },
+        {
+          "q": "Do you work with homeowners insurance?",
+          "a": "Yes! We work directly with insurance adjusters to document storm damage and process claims."
+        }
+      ]
+    },
+    {
+      "slug": "hvac",
+      "title": "Expert HVAC Services",
+      "shortDescription": "High-efficiency heating, cooling, and air quality system maintenance.",
+      "longDescription": "Keep your home comfortable all year long. From high-efficiency heat pumps to routine filter maintenance and system tune-ups, our certified technicians ensure your HVAC runs at peak performance, saving you money on utility bills.",
+      "features": [
+        "High-Efficiency AC & Heating",
+        "Smart Thermostat Installs",
+        "Preventative Maintenance Plans",
+        "Emergency AC Repair"
+      ],
+      "faq": [
+        {
+          "q": "How often should I service my HVAC system?",
+          "a": "We recommend professional service twice a year—once in spring for AC, once in autumn for heating."
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "slug": "nashville",
+      "name": "Nashville",
+      "seoTitle": "Premium Local Contractor in Nashville TN | Daystar Demo",
+      "seoDescription": "Need expert home services in Nashville, TN? Daystar Demo Contractor offers premium roofing, HVAC, and plumbing with guaranteed satisfaction.",
+      "intro": "Daystar Demo Contractor proudly serves the city of Nashville, TN. From historic East Nashville properties to modern builds, we provide residential services designed for Tennessee weather.",
+      "ctaText": "Book a Nashville Specialist"
+    },
+    {
+      "slug": "murfreesboro",
+      "name": "Murfreesboro",
+      "seoTitle": "Reliable Home Contractor in Murfreesboro TN",
+      "seoDescription": "Top-rated Murfreesboro home services. Contact Daystar Demo Contractor today for professional roofing and HVAC repair services near you.",
+      "intro": "As one of Murfreesboro's most trusted service providers, we handle local roofing replacements and emergency AC outages with speed and expertise.",
+      "ctaText": "Call Our Murfreesboro Office"
+    }
+  ],
+  "reviews": [
+    {
+      "author": "Mark S.",
+      "location": "Nashville, TN",
+      "rating": 5,
+      "text": "The roofing team was professional, fast, and cleaned up everything. Best contractor experience I've had!"
+    },
+    {
+      "author": "Jessica L.",
+      "location": "Murfreesboro, TN",
+      "rating": 5,
+      "text": "My AC went out in 90-degree weather. They showed up within two hours and fixed the capacitor in 15 minutes. Absolute lifesavers."
+    },
+    {
+      "author": "David R.",
+      "location": "Franklin, TN",
+      "rating": 5,
+      "text": "Daystar replaced our plumbing lines and did an exceptional job. Fair price and great crew."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Are you fully licensed and insured?",
+      "a": "Yes, we are fully licensed and hold $2M general liability insurance for your complete peace of mind."
+    },
+    {
+      "q": "Do you offer financing?",
+      "a": "Yes! We partner with premier lenders to offer flexible monthly payments and 0% interest programs for qualified customers."
+    },
+    {
+      "q": "How do I get an estimate?",
+      "a": "Click any of our CTA buttons or give us a call at (555) 019-2834 to schedule a free onsite assessment."
+    }
+  ]
+}

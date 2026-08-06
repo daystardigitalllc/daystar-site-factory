@@ -1,0 +1,638 @@
+---
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daystar Site Factory | Blueprint & Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen relative overflow-x-hidden selection:bg-indigo-500/20 selection:text-indigo-300">
+  <!-- Glowing Background elements -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px]"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px]"></div>
+  </div>
+
+  <header class="border-b border-slate-800/80 bg-slate-950/50 backdrop-blur-md py-6 px-8 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center font-extrabold text-lg shadow-lg shadow-indigo-600/30">
+          D
+        </div>
+        <div>
+          <h1 class="text-xl font-bold tracking-tight">Daystar Site Factory</h1>
+          <p class="text-xs text-slate-500 font-medium">Astro + Tailwind v4 Automation Dashboard</p>
+        </div>
+      </div>
+      <div class="text-xs font-semibold px-3.5 py-1.5 rounded-full border border-slate-800 bg-slate-900/50 text-indigo-400">
+        Local Engine Active
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10">
+    
+    <!-- Intake & Design Panel -->
+    <form id="intake-form" class="lg:col-span-8 space-y-8">
+      
+      <!-- Card 1: Business Details -->
+      <section class="glass-panel p-8 sm:p-10 rounded-3xl bg-slate-950/40 border border-slate-800/80 space-y-6">
+        <h2 class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+          <span class="w-6 h-6 rounded bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xs">1</span>
+          Business Profile Blueprint
+        </h2>
+        <p class="text-sm text-slate-400">Specify core metadata and locations served. Used to generate Schema.org tags and local SEO routing.</p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Unique Project URL Slug</label>
+            <input type="text" name="slug" placeholder="e.g. smithroofing" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-600" required />
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Business Name</label>
+            <input type="text" name="businessName" placeholder="e.g. Smith Roofing & Repair" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-600" required />
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Industry Pack Category</label>
+            <input type="text" name="industry" placeholder="e.g. Roofing / HVAC" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-600" required />
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Phone Number</label>
+            <input type="tel" name="phone" placeholder="e.g. (555) 019-2834" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-600" required />
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Primary Contact Email</label>
+            <input type="email" name="email" placeholder="e.g. info@smithroofing.com" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-600" required />
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Lead Booking Link (Calendly, etc.)</label>
+            <input type="url" name="bookingUrl" placeholder="e.g. https://calendly.com/smith" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-600" />
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Main Call-To-Action Title</label>
+            <input type="text" name="mainCta" placeholder="e.g. Get a Free Estimate" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-600" required />
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Years in Business</label>
+            <input type="number" name="yearsInBusiness" placeholder="e.g. 12" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-600" />
+          </div>
+
+          <div class="space-y-2 sm:col-span-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Certifications / Badges (comma-separated)</label>
+            <input type="text" name="certifications" placeholder="e.g. GAF Certified, A+ BBB Rated, Licensed & Insured" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-600" />
+          </div>
+
+          <div class="space-y-2 sm:col-span-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Target Cities / Service Areas (comma-separated)</label>
+            <input type="text" name="locations" placeholder="e.g. Nashville, Murfreesboro, Franklin, Lebanon" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-600" required />
+          </div>
+        </div>
+      </section>
+
+      <!-- Card 2: Brand & Colors (Design Tokens) -->
+      <section class="glass-panel p-8 sm:p-10 rounded-3xl bg-slate-950/40 border border-slate-800/80 space-y-6">
+        <h2 class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+          <span class="w-6 h-6 rounded bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xs">2</span>
+          Daystar Design Tokens Configuration
+        </h2>
+        <p class="text-sm text-slate-400">Tailor styling options. CSS Custom Variables will be generated automatically to power Tailwind v4 variables.</p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Primary Color</label>
+            <div class="flex gap-2">
+              <input type="color" id="primary-picker" name="theme_primaryColor" value="#3b82f6" class="w-12 h-11 bg-slate-900 border border-slate-800 rounded-lg cursor-pointer" />
+              <input type="text" id="primary-text" placeholder="#3b82f6" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100" />
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Primary Hover Color</label>
+            <div class="flex gap-2">
+              <input type="color" id="hover-picker" name="theme_primaryColorHover" value="#2563eb" class="w-12 h-11 bg-slate-900 border border-slate-800 rounded-lg cursor-pointer" />
+              <input type="text" id="hover-text" placeholder="#2563eb" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100" />
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Accent Color</label>
+            <div class="flex gap-2">
+              <input type="color" id="accent-picker" name="theme_accentColor" value="#f59e0b" class="w-12 h-11 bg-slate-900 border border-slate-800 rounded-lg cursor-pointer" />
+              <input type="text" id="accent-text" placeholder="#f59e0b" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100" />
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Secondary Color (Bg)</label>
+            <div class="flex gap-2">
+              <input type="color" id="secondary-picker" name="theme_secondaryColor" value="#0f172a" class="w-12 h-11 bg-slate-900 border border-slate-800 rounded-lg cursor-pointer" />
+              <input type="text" id="secondary-text" placeholder="#0f172a" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100" />
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Border Radius</label>
+            <select name="theme_borderRadius" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100">
+              <option value="0.375rem">Small (6px)</option>
+              <option value="0.5rem">Medium (8px)</option>
+              <option value="0.75rem" selected>Large (12px)</option>
+              <option value="1rem">X-Large (16px)</option>
+              <option value="1.5rem">Full Rounded (24px)</option>
+            </select>
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Theme Style Variant</label>
+            <select name="theme_style" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100">
+              <option value="modern-glass" selected>Luxury Glassmorphism</option>
+              <option value="split">Clean Split Box</option>
+              <option value="minimal">Industrial Minimal</option>
+              <option value="sharp-contractor">Sharp Contractor (Basic)</option>
+              <option value="oak-city">Oak City / Contractor Pro (Video & Marquee)</option>
+            </select>
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Typography Font (Google Font)</label>
+            <select name="theme_fontFamily" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100">
+              <option value="Outfit" selected>Outfit (Premium Geometrics)</option>
+              <option value="Inter">Inter (Sleek Professional)</option>
+              <option value="Montserrat">Montserrat (Classic Editorial)</option>
+              <option value="Playfair Display">Playfair Display (Classy Serif)</option>
+            </select>
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Dark Mode default</label>
+            <select name="theme_darkMode" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100">
+              <option value="false" selected>Light Theme</option>
+              <option value="true">Dark Theme</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Card 2.5: Aesthetic Enhancements (Oak City Theme Options) -->
+      <section class="glass-panel p-8 sm:p-10 rounded-3xl bg-slate-950/40 border border-slate-800/80 space-y-6">
+        <h2 class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+          <span class="w-6 h-6 rounded bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xs">2.5</span>
+          Aesthetic Enhancements (Oak City Options)
+        </h2>
+        <p class="text-sm text-slate-400">Configure visual upgrades like typewriter titles, background video headers, and infinite scrolling ribbons.</p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Hero Background Video URL (Optional)</label>
+            <input type="text" name="theme_heroVideo" placeholder="e.g. /hero-bg.mp4 or YouTube URL" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-600" />
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Typewriter Phrases (comma-separated)</label>
+            <input type="text" name="theme_typewriterWords" placeholder="e.g. Tree Care, Emergency Response, Stump Removal" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-600" />
+          </div>
+
+          <div class="space-y-2 sm:col-span-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Scrolling Marquee Ribbon Text (comma-separated)</label>
+            <input type="text" name="theme_marqueePhrases" placeholder="e.g. 🌲 Full Tree Care • 🛠️ Licensed & Insured • 🚨 24 Hour Dispatch • ⭐⭐⭐⭐⭐ 5-Star Reviews" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-600" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Card 3: AI-Generated Website Copy (Paste and Edit) -->
+      <section class="glass-panel p-8 sm:p-10 rounded-3xl bg-slate-950/40 border border-slate-800/80 space-y-6">
+        <h2 class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+          <span class="w-6 h-6 rounded bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xs">3</span>
+          Website Copywriting Package
+        </h2>
+        <p class="text-sm text-slate-400">Import copy generated by your Claude website strategist script. Edit details directly below to review before compiling.</p>
+        
+        <div class="space-y-4">
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 font-semibold">Hero Heading H1</label>
+            <input type="text" name="copy_heroH1" placeholder="e.g. Premium Roofing & Restoration Services In Nashville" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-700" required />
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 font-semibold">Hero Supporting Text</label>
+            <textarea name="copy_heroSupporting" rows="3" placeholder="Get industry-leading workmanship for your property. Fully licensed, local professionals serving your area." class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-700" required></textarea>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+            <div class="space-y-2">
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 font-semibold">About Section Title</label>
+              <input type="text" name="copy_aboutTitle" placeholder="Trusted by Over 1,500 Homeowners" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-700" required />
+            </div>
+
+            <div class="space-y-2">
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 font-semibold">About Section Text Body</label>
+              <textarea name="copy_aboutText" rows="4" placeholder="For years we've been the name local property owners trust. We use top-tier materials and guarantee all projects with a lifetime warranty package." class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-700" required></textarea>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Card 4: Services Package Configuration -->
+      <section class="glass-panel p-8 sm:p-10 rounded-3xl bg-slate-950/40 border border-slate-800/80 space-y-6">
+        <div class="flex items-center justify-between">
+          <h2 class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+            <span class="w-6 h-6 rounded bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xs">4</span>
+            Services Library Configurations
+          </h2>
+          <button type="button" id="add-service-btn" class="text-xs font-bold text-indigo-400 border border-indigo-500/30 hover:border-indigo-500 px-3 py-1.5 rounded-lg bg-indigo-500/5 hover:bg-indigo-500/10 transition-colors">
+            + Add Service
+          </button>
+        </div>
+        <p class="text-sm text-slate-400">Define the core services for the client. Dynamic landing pages will be built automatically for each service.</p>
+
+        <!-- Services Container -->
+        <div id="services-container" class="space-y-6">
+          <!-- Initial service block (will be populated dynamically via client script) -->
+        </div>
+      </section>
+
+      <!-- Card 5: Reviews & FAQs Input -->
+      <section class="glass-panel p-8 sm:p-10 rounded-3xl bg-slate-950/40 border border-slate-800/80 space-y-6">
+        <h2 class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+          <span class="w-6 h-6 rounded bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xs">5</span>
+          Social Proof & FAQs
+        </h2>
+        
+        <div class="space-y-4">
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 font-semibold">Client Reviews (One per line: Name | Town | Text)</label>
+            <textarea name="reviews" rows="5" placeholder="Mark S. | Nashville, TN | Outstanding roofing team! Highly recommend them.&#10;Jessica L. | Murfreesboro, TN | Fixed our AC within 2 hours. Professional work!" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-700"></textarea>
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 font-semibold">Frequently Asked Questions (One per line: Question | Answer)</label>
+            <textarea name="faqs" rows="5" placeholder="Are you fully licensed? | Yes, we hold complete general liability insurance and worker compensation.&#10;Do you offer financing? | We partner with premium lenders to offer monthly interest programs." class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100 placeholder-slate-700"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- Submit area -->
+      <div class="pt-4 flex justify-end">
+        <button type="submit" id="generate-btn" class="px-8 py-4 font-bold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl shadow-lg shadow-indigo-600/25 transition-all hover:scale-102 cursor-pointer flex items-center gap-2">
+          <span>⚙️</span> Generate Website & Deploy to Git
+        </button>
+      </div>
+
+    </form>
+
+    <!-- Side Preview Panel -->
+    <div class="lg:col-span-4 space-y-8">
+      <div class="glass-panel p-6 rounded-3xl bg-slate-950/20 border border-slate-800/80 sticky top-32">
+        <h3 class="font-bold text-slate-200 text-sm border-b border-slate-800 pb-3 uppercase tracking-wider">Live Design Preview</h3>
+        <p class="text-xs text-slate-500 mt-1 mb-6">See visual tokens render dynamically.</p>
+
+        <!-- Preview element mimicking the generated card visual style -->
+        <div class="space-y-6">
+          <div class="p-6 rounded-2xl border border-slate-800 bg-slate-950/65 flex flex-col gap-4">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">CTA Card Preview</span>
+            <div id="preview-badge" class="inline-flex max-w-fit px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/10 text-indigo-400">
+              ⭐⭐⭐⭐⭐ Top Rated
+            </div>
+            
+            <h4 id="preview-heading" class="text-lg font-bold text-white leading-tight">
+              Premium Home Care
+            </h4>
+            
+            <p class="text-xs text-slate-400">
+              High-performance solutions designed for local Tennessee weather.
+            </p>
+
+            <div class="flex gap-2 pt-2">
+              <button type="button" id="preview-btn-primary" class="w-full py-2.5 text-xs font-bold text-white bg-indigo-600 rounded-lg shadow-md transition-all">
+                Estimate
+              </button>
+              <button type="button" id="preview-btn-secondary" class="w-full py-2.5 text-xs font-semibold text-slate-400 border border-slate-800 bg-transparent rounded-lg">
+                Call
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick actions / Claude Helper Prompts -->
+        <div class="mt-8 pt-8 border-t border-slate-800/80 space-y-4">
+          <h4 class="font-bold text-xs text-slate-400 uppercase tracking-widest">Claude Strategist Prompts</h4>
+          <p class="text-[11px] text-slate-500 leading-normal">Use this pre-configured prompt to fetch highly optimized, conversion-focused copywriting packages from Claude.</p>
+          <button type="button" id="copy-prompt-btn" class="w-full py-2.5 text-xs font-bold text-indigo-400 border border-indigo-500/20 hover:border-indigo-500 px-3 rounded-xl bg-indigo-500/5 transition-colors">
+            Copy Claude Prompt
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Success Modal -->
+  <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-sm hidden">
+    <div class="glass-panel p-8 sm:p-10 rounded-3xl bg-slate-900 border border-slate-800 max-w-md w-full shadow-2xl space-y-6 text-center animate-fade-in-up">
+      <div class="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-3xl mx-auto">
+        &check;
+      </div>
+      <div>
+        <h3 class="text-2xl font-bold text-white">Generation Success!</h3>
+        <p class="text-slate-400 text-sm mt-2 leading-relaxed">The Astro site has been fully scaffolded, configurations written, git repository initialized, and pushed to GitHub.</p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-left space-y-2 text-xs">
+        <p class="text-slate-500 font-semibold uppercase tracking-wider">Project Folder Path:</p>
+        <code id="modal-folder-path" class="block text-slate-300 break-all select-all font-mono"></code>
+        
+        <p class="text-slate-500 font-semibold uppercase tracking-wider mt-4">GitHub Pages Live URL:</p>
+        <a id="modal-live-link" href="#" target="_blank" class="block text-indigo-400 underline font-medium hover:text-indigo-300"></a>
+      </div>
+
+      <button type="button" id="close-modal-btn" class="w-full py-3 font-bold text-white bg-slate-800 hover:bg-slate-700 rounded-xl transition-all">
+        Close Dashboard
+      </button>
+    </div>
+  </div>
+
+  <!-- Loading Overlay -->
+  <div id="loading-overlay" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-slate-950/75 backdrop-blur-sm hidden">
+    <div class="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
+    <p class="mt-4 font-bold text-indigo-400 text-sm tracking-wider uppercase">Scaffolding, compiling & deploying site...</p>
+  </div>
+
+  <script>
+    // Sync text inputs with color pickers
+    const bindColor = (pickerId: string, textId: string, styleProp: string) => {
+      const picker = document.getElementById(pickerId) as HTMLInputElement;
+      const text = document.getElementById(textId) as HTMLInputElement;
+      
+      if (picker && text) {
+        text.value = picker.value;
+        picker.addEventListener('input', () => {
+          text.value = picker.value;
+          document.documentElement.style.setProperty(styleProp, picker.value);
+        });
+        text.addEventListener('input', () => {
+          if (text.value.startsWith('#') && text.value.length === 7) {
+            picker.value = text.value;
+            document.documentElement.style.setProperty(styleProp, text.value);
+          }
+        });
+      }
+    };
+
+    bindColor('primary-picker', 'primary-text', '--primary-color');
+    bindColor('hover-picker', 'hover-text', '--primary-color-hover');
+    bindColor('secondary-picker', 'secondary-text', '--secondary-color');
+    bindColor('accent-picker', 'accent-text', '--accent-color');
+
+    // Custom preview updating
+    const updatePreviewTheme = () => {
+      const heading = document.getElementById('preview-heading');
+      const badge = document.getElementById('preview-badge');
+      const btnPrimary = document.getElementById('preview-btn-primary');
+      const nameInput = document.querySelector('input[name="businessName"]') as HTMLInputElement;
+      const primaryColor = (document.getElementById('primary-picker') as HTMLInputElement)?.value;
+      const borderRadius = (document.querySelector('select[name="theme_borderRadius"]') as HTMLInputElement)?.value;
+
+      if (heading && nameInput && nameInput.value) {
+        heading.innerText = nameInput.value;
+      }
+      if (badge && primaryColor) {
+        badge.style.color = primaryColor;
+        badge.style.backgroundColor = `${primaryColor}15`;
+      }
+      if (btnPrimary && primaryColor) {
+        btnPrimary.style.backgroundColor = primaryColor;
+      }
+      if (btnPrimary && borderRadius) {
+        btnPrimary.style.borderRadius = borderRadius;
+      }
+    };
+
+    document.querySelector('input[name="businessName"]')?.addEventListener('input', updatePreviewTheme);
+    document.querySelector('select[name="theme_borderRadius"]')?.addEventListener('change', updatePreviewTheme);
+
+    // Initial load
+    updatePreviewTheme();
+
+    // Automate pre-populating contractor values
+    const themeStyleSelect = document.querySelector('select[name="theme_style"]') as HTMLSelectElement;
+    themeStyleSelect?.addEventListener('change', () => {
+      const setVal = (pickerId: string, textId: string, color: string, styleVar: string) => {
+        const picker = document.getElementById(pickerId) as HTMLInputElement;
+        const text = document.getElementById(textId) as HTMLInputElement;
+        if (picker && text) {
+          picker.value = color;
+          text.value = color;
+          document.documentElement.style.setProperty(styleVar, color);
+        }
+      };
+
+      if (themeStyleSelect.value === 'sharp-contractor') {
+        setVal('primary-picker', 'primary-text', '#16a34a', '--primary-color');
+        setVal('hover-picker', 'hover-text', '#15803d', '--primary-color-hover');
+        setVal('secondary-picker', 'secondary-text', '#0f172a', '--secondary-color');
+        setVal('accent-picker', 'accent-text', '#f97316', '--accent-color');
+        
+        const radiusSelect = document.querySelector('select[name="theme_borderRadius"]') as HTMLSelectElement;
+        if (radiusSelect) radiusSelect.value = '0.375rem';
+        const fontSelect = document.querySelector('select[name="theme_fontFamily"]') as HTMLSelectElement;
+        if (fontSelect) fontSelect.value = 'Outfit';
+        updatePreviewTheme();
+      } else if (themeStyleSelect.value === 'oak-city') {
+        setVal('primary-picker', 'primary-text', '#15803d', '--primary-color');
+        setVal('hover-picker', 'hover-text', '#166534', '--primary-color-hover');
+        setVal('secondary-picker', 'secondary-text', '#0a0f1d', '--secondary-color');
+        setVal('accent-picker', 'accent-text', '#10b981', '--accent-color');
+        
+        const radiusSelect = document.querySelector('select[name="theme_borderRadius"]') as HTMLSelectElement;
+        if (radiusSelect) radiusSelect.value = '0.375rem';
+        const fontSelect = document.querySelector('select[name="theme_fontFamily"]') as HTMLSelectElement;
+        if (fontSelect) fontSelect.value = 'Outfit';
+
+        // Prepopulate Oak City text enhancements
+        const videoInput = document.querySelector('input[name="theme_heroVideo"]') as HTMLInputElement;
+        if (videoInput && !videoInput.value) videoInput.value = '/hero-bg.mp4';
+        
+        const typewriterInput = document.querySelector('input[name="theme_typewriterWords"]') as HTMLInputElement;
+        if (typewriterInput && !typewriterInput.value) typewriterInput.value = 'Tree Care, Emergency Response, Stump Removal';
+
+        const marqueeInput = document.querySelector('input[name="theme_marqueePhrases"]') as HTMLInputElement;
+        if (marqueeInput && !marqueeInput.value) marqueeInput.value = '🌲 Full Tree Care • 🛠️ Licensed & Insured • 🚨 24 Hour Dispatch • ⭐⭐⭐⭐⭐ 5-Star Reviews';
+
+        updatePreviewTheme();
+      }
+    });
+
+    // Services Manager
+    const container = document.getElementById('services-container');
+    const addBtn = document.getElementById('add-service-btn');
+
+    let serviceCount = 0;
+    const addServiceBlock = (title = '', desc = '', features = '') => {
+      if (!container) return;
+      const block = document.createElement('div');
+      block.className = 'p-6 rounded-2xl border border-slate-800 bg-slate-950/20 space-y-4 relative';
+      block.innerHTML = `
+        <button type="button" class="absolute top-4 right-4 text-xs font-bold text-red-400 hover:text-red-300 remove-service-btn">Remove</button>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500">Service Title</label>
+            <input type="text" name="service_title_${serviceCount}" value="${title}" placeholder="e.g. Roof Replacement" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100" required />
+          </div>
+          <div class="space-y-2">
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500">Highlights / Features (comma-separated)</label>
+            <input type="text" name="service_features_${serviceCount}" value="${features}" placeholder="e.g. 50-year warranty, GAF shingle, free inspection" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100" />
+          </div>
+          <div class="space-y-2 sm:col-span-2">
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500">Short Description</label>
+            <input type="text" name="service_desc_${serviceCount}" value="${desc}" placeholder="A short 1-sentence synopsis." class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-100" />
+          </div>
+        </div>
+      `;
+      container.appendChild(block);
+      
+      block.querySelector('.remove-service-btn')?.addEventListener('click', () => {
+        block.remove();
+      });
+      serviceCount++;
+    };
+
+    // Pre-populate with typical home services
+    addServiceBlock('Roof Replacement', 'Full architectural shingle replacement with premium GAF warranties.', '50-year GAF warranty, Certified GAF Installers, Clean site guarantee');
+    addServiceBlock('Roof Repair & Maintenance', 'Leak patching, flashing repairs, and general preventative checkups.', '24-hour dispatch, Emergency leaks, Flashing repair');
+    addServiceBlock('HVAC System Install', 'High efficiency AC and heating upgrades for maximum comfort.', '10-year parts warranty, Energy-efficient design, Financing available');
+
+    addBtn?.addEventListener('click', () => addServiceBlock());
+
+    // Claude Prompt Clipboard
+    document.getElementById('copy-prompt-btn')?.addEventListener('click', () => {
+      const bizName = (document.querySelector('input[name="businessName"]') as HTMLInputElement)?.value || '[Business Name]';
+      const industry = (document.querySelector('input[name="industry"]') as HTMLInputElement)?.value || '[Industry]';
+      const locations = (document.querySelector('input[name="locations"]') as HTMLInputElement)?.value || '[Cities/Towns]';
+      
+      const prompt = `You are a conversion-focused website strategist. Create website copy for this local business:
+Business Name: ${bizName}
+Industry: ${industry}
+Target Cities/Locations: ${locations}
+
+Generate the following package in JSON structure:
+{
+  "heroH1": "Hero H1 sentence (under 12 words, conversion focused, local hooks)",
+  "heroSupporting": "Hero paragraph text highlighting benefits, values, and certifications",
+  "aboutTitle": "About Section Title",
+  "aboutText": "About Section body copy, emphasizing years in service and quality guarantee",
+  "services": [
+    {
+      "title": "Service Title",
+      "shortDescription": "1-sentence descriptive summary",
+      "longDescription": "Detailed paragraph detailing products and workflow",
+      "features": ["Feature A", "Feature B", "Feature C"]
+    }
+  ]
+}`;
+      navigator.clipboard.writeText(prompt);
+      alert('Claude strategist prompt copied to clipboard!');
+    });
+
+    // Form Submission & API Trigger
+    const form = document.getElementById('intake-form');
+    const loading = document.getElementById('loading-overlay');
+    const successModal = document.getElementById('success-modal');
+    const folderPath = document.getElementById('modal-folder-path');
+    const liveLink = document.getElementById('modal-live-link') as HTMLAnchorElement;
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      if (!loading) return;
+      loading.classList.remove('hidden');
+
+      // Gather form inputs
+      const formData = new FormData(form as HTMLFormElement);
+      const data: Record<string, any> = {
+        theme: {},
+        copy: {},
+        services: []
+      };
+
+      // Loop services
+      const serviceTitles = document.querySelectorAll('input[name^="service_title_"]');
+      serviceTitles.forEach((el, index) => {
+        const idPart = el.getAttribute('name')?.split('_').pop();
+        const title = (document.querySelector(`input[name="service_title_${idPart}"]`) as HTMLInputElement)?.value;
+        const desc = (document.querySelector(`input[name="service_desc_${idPart}"]`) as HTMLInputElement)?.value;
+        const features = (document.querySelector(`input[name="service_features_${idPart}"]`) as HTMLInputElement)?.value;
+        
+        if (title) {
+          data.services.push({ title, shortDescription: desc, features });
+        }
+      });
+
+      formData.forEach((value, key) => {
+        if (key.startsWith('theme_')) {
+          const themeKey = key.replace('theme_', '');
+          data.theme[themeKey] = value;
+        } else if (key.startsWith('copy_')) {
+          const copyKey = key.replace('copy_', '');
+          data.copy[copyKey] = value;
+        } else if (!key.startsWith('service_')) {
+          data[key] = value;
+        }
+      });
+
+      try {
+        const response = await fetch('/api/generate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        const res = await response.json();
+        loading.classList.add('hidden');
+
+        if (res.success) {
+          if (successModal && folderPath && liveLink) {
+            folderPath.innerText = res.clientPath;
+            if (res.githubUrl) {
+              liveLink.innerText = res.githubUrl;
+              liveLink.href = res.githubUrl;
+            } else {
+              liveLink.innerText = 'Skipped Git setup or gh CLI credentials not active';
+              liveLink.removeAttribute('href');
+            }
+            successModal.classList.remove('hidden');
+          }
+        } else {
+          alert(`Error: ${res.error}`);
+        }
+      } catch (err: any) {
+        loading.classList.add('hidden');
+        alert(`API Error: ${err.message}`);
+      }
+    });
+
+    document.getElementById('close-modal-btn')?.addEventListener('click', () => {
+      successModal?.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>

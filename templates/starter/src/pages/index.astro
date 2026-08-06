@@ -1,0 +1,42 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/Hero.astro';
+import Marquee from '../components/Marquee.astro';
+import TrustBar from '../components/TrustBar.astro';
+import Services from '../components/Services.astro';
+import Reviews from '../components/Reviews.astro';
+import Gallery from '../components/Gallery.astro';
+import FAQ from '../components/FAQ.astro';
+import CTA from '../components/CTA.astro';
+import QuoteFunnel from '../components/QuoteFunnel.astro';
+import businessData from '../data/business.json';
+---
+
+<MainLayout>
+  <!-- Hero Section -->
+  <Hero />
+
+  <!-- Infinite Scrolling Marquee (Only active for Oak City theme) -->
+  <Marquee />
+
+  <!-- Trust Seal / Review Summary -->
+  <TrustBar />
+
+  <!-- Services Grid -->
+  <Services />
+
+  <!-- Core Conversion Section -->
+  <CTA />
+
+  <!-- Reviews Testimonials Section -->
+  <Reviews />
+
+  <!-- Work Portfolio Gallery -->
+  <Gallery />
+
+  <!-- Interactive FAQ -->
+  <FAQ />
+
+  <!-- Lead Capture Funnel -->
+  <QuoteFunnel />
+</MainLayout>
