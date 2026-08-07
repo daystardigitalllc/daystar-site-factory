@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import themeConfig from '../data/theme.config.json';
 import businessData from '../data/business.json';
+import contentData from '../data/content.json';
 import Header from '../components/Header.astro';
 import NavbarPill from '../components/NavbarPill.astro';
 import Footer from '../components/Footer.astro';
@@ -19,7 +20,7 @@ interface Props {
 
 const { 
   title = `${businessData.name} | Professional Home Services`, 
-  description = `Welcome to ${businessData.name}. We provide premium ${businessData.services.join(', ')} services locally.`, 
+  description = `Welcome to ${businessData.name}. We provide premium ${(contentData.services || []).map((s) => s.title).join(', ')} services locally.`,
   ogImage = '/og-image.jpg' 
 } = Astro.props;
 

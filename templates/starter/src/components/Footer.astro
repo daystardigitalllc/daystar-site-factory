@@ -14,7 +14,7 @@ import contentData from '../data/content.json';
         <span class="font-bold text-xl tracking-tight">{businessData.name}</span>
       </a>
       <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
-        Providing top-tier {businessData.services.join(', ')} services with guaranteed quality. Fully licensed and locally owned.
+        Providing top-tier {contentData.services.map((s) => s.title).join(', ')} services with guaranteed quality. Fully licensed and locally owned.
       </p>
       <div class="flex gap-4">
         {businessData.socials?.facebook && (

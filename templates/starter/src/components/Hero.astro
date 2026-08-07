@@ -105,8 +105,8 @@ const bgImage = contentData.home.hero.bgImage || '/hero-bg.jpg';
                 <div>
                   <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">What service do you need?</label>
                   <select class="w-full px-4 py-3 bg-slate-100 dark:bg-slate-800 border-0 rounded-lg text-sm text-slate-700 dark:text-slate-300 focus:ring-2 focus:ring-primary">
-                    {businessData.services.map((service) => (
-                      <option>{service}</option>
+                    {contentData.services.map((service) => (
+                      <option>{service.title}</option>
                     ))}
                   </select>
                 </div>
