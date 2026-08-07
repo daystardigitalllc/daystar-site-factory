@@ -7,6 +7,16 @@
       { "label": "FAQ", "href": "#faq" }
     ]
   },
+  "splitNav": {
+    "leftLinks": [
+      { "label": "About", "href": "#about" },
+      { "label": "Services", "href": "#services" }
+    ],
+    "rightLinks": [
+      { "label": "Reviews", "href": "#reviews" },
+      { "label": "FAQ", "href": "#faq" }
+    ]
+  },
   "footerBigText": {
     "tagline": "Let's build something that lasts."
   },
@@ -19,6 +29,71 @@
       "primaryCtaHref": "#quote-funnel",
       "secondaryCtaText": "Call Us Now",
       "secondaryCtaHref": "tel:"
+    },
+    "servicesBento": {
+      "badge": "What We Do",
+      "heading": "Services Built for",
+      "headingAccent": "Your Home",
+      "items": [
+        {
+          "src": "/bento-roofing.jpg",
+          "alt": "Newly installed architectural shingle roof",
+          "title": "Roofing",
+          "description": "Full-service roof installations, leaks, shingle replacements, and inspections.",
+          "href": "/services/roofing"
+        },
+        {
+          "src": "/bento-hvac.jpg",
+          "alt": "Outdoor HVAC condenser unit installation",
+          "title": "HVAC",
+          "description": "High-efficiency heating, cooling, and air quality system maintenance.",
+          "href": "/services/hvac"
+        },
+        {
+          "src": "/bento-plumbing.jpg",
+          "alt": "Plumber repairing a residential water line",
+          "title": "Plumbing",
+          "description": "Leak repairs, fixture installs, and full plumbing line replacements.",
+          "href": "/services"
+        },
+        {
+          "src": "/bento-electrical.jpg",
+          "alt": "Electrician working on a home panel upgrade",
+          "title": "Electrical",
+          "description": "Panel upgrades, rewiring, and safety inspections for peace of mind.",
+          "href": "/services"
+        }
+      ]
+    },
+    "featureVideoSplit": {
+      "badge": "See The Difference",
+      "heading": "We Walk It First.",
+      "headingAccent": "Then We Build.",
+      "paragraphs": [
+        "Every project starts with a real conversation about your home, your budget, and what the right call is. Sometimes that's a full system replacement. Sometimes it's a simple repair.",
+        "We'll tell you straight either way. No high-pressure sales and no disappearing acts."
+      ],
+      "checklist": [
+        "Free on-site walkthroughs",
+        "Work done by our own licensed crew",
+        "Clear, written scope on every job",
+        "Locally based, year-round"
+      ],
+      "ctaText": "Meet Our Team",
+      "ctaHref": "#quote-funnel",
+      "mediaSrc": "/feature-split.jpg",
+      "mediaAlt": "Crew member walking a property with a homeowner",
+      "isVideo": false,
+      "caption": "Featured · Full System Replacement"
+    },
+    "reviewsMarquee": {
+      "badge": "What Clients Say",
+      "heading": "Real Reviews From Real Homeowners"
+    },
+    "faqNumbered": {
+      "badge": "Got Questions?",
+      "heading": "Let's Clear It Up",
+      "subtitle": "Straight answers to what homeowners ask us most often."
     },
     "featureCards": {
       "badge": "Why Homeowners Choose Us",
