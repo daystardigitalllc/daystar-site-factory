@@ -45,6 +45,7 @@ const defaultHours: OpeningHour[] = [
 
 const hours = hoursOverride || data?.hours || defaultHours;
 const address = addressOverride || businessData.address || '12 rue du Docteur Paccard, 74400 Chamonix-Mont-Blanc';
+const formattedAddress = typeof address === 'object' ? `${address.street || ''}, ${address.city || ''}, ${address.state || ''} ${address.zip || ''}` : address;
 const phone = phoneOverride || businessData.phone || '+33 4 50 00 00 00';
 ---
 
@@ -95,13 +96,13 @@ const phone = phoneOverride || businessData.phone || '+33 4 50 00 00 00';
             <div class="flex items-start gap-3">
               <i class="fa-solid fa-location-dot text-orange-600 mt-1"></i>
               <p class="text-slate-650 leading-relaxed font-semibold">
-                {address.includes(',') ? (
+                {formattedAddress.includes(',') ? (
                   <>
-                    {address.split(',')[0]}
+                    {formattedAddress.split(',')[0]}
                     <br />
-                    {address.split(',').slice(1).join(',')}
+                    {formattedAddress.split(',').slice(1).join(',')}
                   </>
-                ) : address}
+                ) : formattedAddress}
               </p>
             </div>
             
