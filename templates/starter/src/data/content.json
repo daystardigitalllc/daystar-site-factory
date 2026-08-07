@@ -1,285 +1,154 @@
 {
+  "layout": [
+    "HeroChalet",
+    "ServicesChalet",
+    "StoryChalet",
+    "ReviewsChalet",
+    "InfoChalet"
+  ],
   "navbarPill": {
     "links": [
       { "label": "Home", "href": "/" },
       { "label": "Services", "href": "#services" },
+      { "label": "About", "href": "#about" },
       { "label": "Reviews", "href": "#reviews" },
-      { "label": "FAQ", "href": "#faq" }
+      { "label": "Contact", "href": "#info" }
     ]
   },
   "footerBigText": {
-    "tagline": "Let's build something that lasts."
+    "tagline": "Treating your furry family like our own."
   },
   "home": {
-    "heroAnimated": {
-      "badge": "⭐⭐⭐⭐⭐ Top Rated Local Business",
-      "heading": "Premium Home Services You Can Count On",
-      "subtitle": "Fully licensed, local professionals specializing in Roofing, HVAC, Plumbing, and Electrical services across Greater Nashville.",
-      "primaryCtaText": "Get Your Free Quote",
-      "primaryCtaHref": "#quote-funnel",
-      "secondaryCtaText": "Call Us Now",
-      "secondaryCtaHref": "tel:"
+    "heroChalet": {
+      "eyebrow": "Loving Pet Care in Clarksville, TN",
+      "title": "Real love for your pets, *guaranteed*",
+      "subtitle": "Professional dog sitting, drop-in visits, and specialized medication administration prepared with care and sweet daily updates.",
+      "bgImage": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80",
+      "highlights": [
+        "★ Recommended on Facebook",
+        "Medication & Seizure Support",
+        "Peace of Mind Updates"
+      ]
     },
-    "featureCards": {
-      "badge": "Why Homeowners Choose Us",
-      "heading": "Built On Trust, Backed By Results",
-      "subtitle": "Hover a card to see what sets our service apart.",
+    "servicesChalet": {
+      "badge": "What We Provide",
+      "title": "Bespoke Pet Care Services",
+      "subtitle": "Everything is tailored around your dog's routines, medical needs, and comfort.",
       "items": [
         {
-          "src": "/feature-warranty.jpg",
-          "alt": "Roofer shaking hands with a satisfied homeowner",
-          "icon": "fa-solid fa-shield-halved",
-          "title": "Lifetime Workmanship Warranty",
-          "description": "Every project is backed by our signature warranty, so defects never become your problem."
+          "index": "01",
+          "title": "Drop-in Visits",
+          "description": "Quick check-ins to feed your pets, refill water bowls, clean litter boxes, and ensure they have playtime.",
+          "iconName": "pastry"
         },
         {
-          "src": "/feature-pricing.jpg",
-          "alt": "Estimator reviewing an itemized quote with a client",
-          "icon": "fa-solid fa-file-invoice-dollar",
-          "title": "Transparent, Itemized Pricing",
-          "description": "Upfront estimates with no hidden fees, so you always know exactly what you're paying for."
+          "index": "02",
+          "title": "Dog Sitting & Boarding",
+          "description": "Overnight and extended day care keeping your pup relaxed and well-loved in their natural home environment.",
+          "iconName": "loaf"
         },
         {
-          "src": "/feature-response.jpg",
-          "alt": "Technician arriving at a job site in a branded truck",
-          "icon": "fa-solid fa-bolt",
-          "title": "Fast Emergency Response",
-          "description": "Same-day and emergency service available when storms or breakdowns can't wait."
+          "index": "03",
+          "title": "Medication Support",
+          "description": "Certified timed dosage administration. Highly experienced in handling seizure medications and critical medical timelines.",
+          "iconName": "sandwich"
         },
         {
-          "src": "/feature-bbb.jpg",
-          "alt": "A+ BBB accreditation seal",
-          "icon": "fa-solid fa-award",
-          "title": "A+ BBB Rated",
-          "description": "A long track record of excellence, backed by real reviews from Tennessee homeowners."
-        },
-        {
-          "src": "/feature-crew.jpg",
-          "alt": "Licensed and insured crew working on a residential job",
-          "icon": "fa-solid fa-user-check",
-          "title": "Licensed & Insured Crews",
-          "description": "Every technician is fully licensed, background-checked, and insured for your peace of mind."
-        },
-        {
-          "src": "/feature-financing.jpg",
-          "alt": "Homeowner reviewing financing options on a tablet",
-          "icon": "fa-solid fa-hand-holding-dollar",
-          "title": "Flexible Financing",
-          "description": "0% interest plans and flexible monthly payments available for qualified customers."
+          "index": "04",
+          "title": "Dog Walking & Playtime",
+          "description": "Energizing outdoor walks, customized exercise routes, and direct sweet updates sent straight to your phone.",
+          "iconName": "cake"
         }
       ]
     },
-    "hero": {
-      "h1": "Premium Local Contractor Serving Greater Nashville",
-      "supporting": "Get reliable, industry-leading workmanship for your home. Fully licensed, local professionals specializing in Roofing, HVAC, Plumbing, and Electrical services.",
-      "ctaText": "Get Your Free Quote",
-      "badge": "⭐⭐⭐⭐⭐ Top Rated Local Business"
+    "storyChalet": {
+      "badge": "About Sarah",
+      "title": "Our story: Passion for paws",
+      "paragraph1": "S&P Ring Pet Care was founded by Sarah with a simple mission: to treat every animal as if they were her own family. Operating across Clarksville, TN, we offer reliable, personalized pet sitting and drop-in check-ups built on trust and absolute peace of mind.",
+      "paragraph2": "We specialize in accommodating pets with complex routines or medical profiles—ensuring seizure medications are given exactly on time, twice a day, so you can travel without worry.",
+      "imageSrc": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80",
+      "imageAlt": "A happy dog playing outdoors with its walker"
     },
-    "about": {
-      "title": "Trusted by Over 1,500 Homeowners in Tennessee",
-      "text": "For over 10 years, Daystar Demo Contractor has been the name Tennessee homeowners count on. We believe in transparency, premium materials, and unparalleled service. Our team of certified professionals handles everything from emergency repairs to complete system replacements."
-    },
-    "compareShowcase": {
-      "badge": "Real Results",
-      "heading": "See the Transformation",
-      "subtitle": "Drag the slider to compare before and after on a few recent jobs.",
-      "mode": "drag",
-      "initialPercentage": 50,
-      "showHandle": true,
-      "autoplay": false,
-      "autoplayDuration": 4000,
+    "reviewsChalet": {
+      "badge": "Recommended",
+      "title": "What Clarksville Pet Parents Say",
       "items": [
         {
-          "before": { "src": "/compare-roof-before.jpg", "alt": "Worn shingle roof before replacement" },
-          "after": { "src": "/compare-roof-after.jpg", "alt": "New architectural shingle roof after replacement" },
-          "label": "Full Roof Replacement — Nashville, TN"
+          "name": "Ariana Cruz",
+          "avatar": "AC",
+          "quote": "“We couldn’t be happier with Sara! She took such amazing care of our pup while we were away! Lots of walks, playtime, and sweet updates that gave us total peace of mind. Highly recommend!”",
+          "stars": 5
         },
         {
-          "before": { "src": "/compare-yard-before.jpg", "alt": "Overgrown storm-damaged yard before cleanup" },
-          "after": { "src": "/compare-yard-after.jpg", "alt": "Cleared and restored yard after storm cleanup" },
-          "label": "Storm Damage Cleanup — Murfreesboro, TN"
+          "name": "Krystal Mackenzie E.",
+          "avatar": "KM",
+          "quote": "“Sara helped me out with making sure my pets were fed and most importantly my dog had her medicine when I was out of town. My dog has seizures so it was important it was on time. She didn't fail me!!”",
+          "stars": 5
+        },
+        {
+          "name": "Logan York",
+          "avatar": "LY",
+          "quote": "“Always trust her with our baby Merlin. She's come over and done drop-ins for us multiple times and is always respectful of our home and our pup loves her.”",
+          "stars": 5
         }
       ]
     },
-    "cardsCarousel": {
-      "badge": "Explore",
-      "heading": "Get to Know Daystar Demo",
-      "subtitle": "A closer look at the services and guarantees homeowners count on.",
-      "items": [
-        {
-          "src": "/card-roofing.jpg",
-          "alt": "Roofing crew installing architectural shingles",
-          "category": "Roofing",
-          "title": "Premium Roofing Services",
-          "content": [
-            "Your roof is your home's first line of defense. We provide complete architectural shingle replacements, metal roofing installation, leakage diagnostics, and certified storm damage inspections.",
-            "Using premium GAF materials, we guarantee a roof that will protect your family for decades."
-          ]
-        },
-        {
-          "src": "/card-hvac.jpg",
-          "alt": "Technician servicing an outdoor HVAC unit",
-          "category": "HVAC",
-          "title": "Expert HVAC Services",
-          "content": [
-            "Keep your home comfortable all year long. From high-efficiency heat pumps to routine filter maintenance and system tune-ups, our certified technicians ensure your HVAC runs at peak performance."
-          ]
-        },
-        {
-          "src": "/card-warranty.jpg",
-          "alt": "Contractor shaking hands with a homeowner",
-          "category": "Guarantee",
-          "title": "Guaranteed Workmanship",
-          "content": [
-            "Every project we complete is backed by our signature lifetime workmanship warranty, so you never have to worry about hidden defects down the line."
-          ]
-        },
-        {
-          "src": "/card-pricing.jpg",
-          "alt": "Estimator reviewing a project quote with a client",
-          "category": "Pricing",
-          "title": "Transparent Pricing",
-          "content": [
-            "We offer upfront, itemized estimates with no hidden fees and no sudden surprise costs, so you always know exactly what you're paying for."
-          ]
-        },
-        {
-          "src": "/card-bbb.jpg",
-          "alt": "A+ BBB accreditation seal on an office window",
-          "category": "Trust",
-          "title": "A+ BBB Rating",
-          "content": [
-            "Our long track record of excellence shows in our review history and ratings. It's one more reason over 1,500 Tennessee homeowners trust us with their homes."
-          ]
-        }
-      ]
-    },
-    "scrollShowcase": {
-      "badge": "Our Craftsmanship",
-      "heading": "See Daystar Demo in Action",
-      "subtitle": "Scroll to watch a few of our favorite Tennessee projects come together.",
-      "images": {
-        "topLeft": { "src": "/gallery-1.jpg", "alt": "Precision tree removal near a residential roof" },
-        "topRight": { "src": "/gallery-2.jpg", "alt": "Emergency storm cleanup crew clearing debris" },
-        "bottomLeft": { "src": "/gallery-3.jpg", "alt": "Canopy pruning and thinning on a large oak" },
-        "bottomRight": { "src": "/gallery-4.jpg", "alt": "Full stump grinding down to grade" },
-        "hero": { "src": "/gallery-hero.jpg", "alt": "Finished roofing project on a Nashville home" }
-      },
-      "heroCaption": "Our Signature Work",
-      "ctaText": "Get Your Free Quote",
-      "ctaHref": "#quote-funnel"
-    },
-    "whyChooseUs": {
-      "title": "Why Choose Daystar Demo",
-      "subtitle": "We set a higher standard for local home services.",
-      "items": [
-        {
-          "title": "Guaranteed Workmanship",
-          "description": "Every project we complete is backed by our signature lifetime workmanship warranty."
-        },
-        {
-          "title": "Transparent Pricing",
-          "description": "We offer upfront, itemized estimates. No hidden fees, no sudden surprise costs."
-        },
-        {
-          "title": "A+ BBB Rating",
-          "description": "Our long track record of excellence shows in our review history and ratings."
-        }
+    "infoChalet": {
+      "badge": "Details",
+      "title": "Schedule a Visit",
+      "hours": [
+        { "day": "Monday - Friday", "hours": "06:30 – 19:30" },
+        { "day": "Saturday", "hours": "07:00 – 18:00" },
+        { "day": "Sunday", "hours": "08:00 – 16:00" }
       ]
     }
   },
   "services": [
     {
-      "slug": "roofing",
-      "title": "Premium Roofing Services",
-      "shortDescription": "Full-service roof installations, leaks, shingle replacements, and inspections.",
-      "longDescription": "Your roof is your home's first line of defense. We provide complete architectural shingle replacements, metal roofing installation, leakage diagnostics, and certified storm damage inspections. Using premium GAF materials, we guarantee a roof that will protect your family for decades.",
+      "slug": "pet-sitting",
+      "title": "Dog Sitting & Boarding",
+      "shortDescription": "Overnight care in your home or ours to keep your pet relaxed and loved.",
+      "longDescription": "We understand pets are happiest in their familiar environments. Our overnight pet sitting ensures your dog keeps their standard sleeping schedule, morning walks, and feeding patterns intact.",
       "features": [
-        "Architectural & Metal Roofing",
-        "Leak Detection & Repairs",
-        "Storm Damage Restoration",
-        "50-Year GAF Warranty"
+        "In-home overnight stays",
+        "Feeding & watering schedules",
+        "Daily play updates",
+        "Mail & house monitoring"
       ],
       "faq": [
         {
-          "q": "How long does a typical roof replacement take?",
-          "a": "Most residential roof replacements are completed in just 1-2 days, depending on weather and size."
-        },
-        {
-          "q": "Do you work with homeowners insurance?",
-          "a": "Yes! We work directly with insurance adjusters to document storm damage and process claims."
-        }
-      ]
-    },
-    {
-      "slug": "hvac",
-      "title": "Expert HVAC Services",
-      "shortDescription": "High-efficiency heating, cooling, and air quality system maintenance.",
-      "longDescription": "Keep your home comfortable all year long. From high-efficiency heat pumps to routine filter maintenance and system tune-ups, our certified technicians ensure your HVAC runs at peak performance, saving you money on utility bills.",
-      "features": [
-        "High-Efficiency AC & Heating",
-        "Smart Thermostat Installs",
-        "Preventative Maintenance Plans",
-        "Emergency AC Repair"
-      ],
-      "faq": [
-        {
-          "q": "How often should I service my HVAC system?",
-          "a": "We recommend professional service twice a year—once in spring for AC, once in autumn for heating."
+          "q": "Do you watch dogs of all breeds?",
+          "a": "Yes, we are highly experienced with dogs of all shapes, sizes, and temperaments."
         }
       ]
     }
   ],
   "locations": [
     {
-      "slug": "nashville",
-      "name": "Nashville",
-      "seoTitle": "Premium Local Contractor in Nashville TN | Daystar Demo",
-      "seoDescription": "Need expert home services in Nashville, TN? Daystar Demo Contractor offers premium roofing, HVAC, and plumbing with guaranteed satisfaction.",
-      "intro": "Daystar Demo Contractor proudly serves the city of Nashville, TN. From historic East Nashville properties to modern builds, we provide residential services designed for Tennessee weather.",
-      "ctaText": "Book a Nashville Specialist"
-    },
-    {
-      "slug": "murfreesboro",
-      "name": "Murfreesboro",
-      "seoTitle": "Reliable Home Contractor in Murfreesboro TN",
-      "seoDescription": "Top-rated Murfreesboro home services. Contact Daystar Demo Contractor today for professional roofing and HVAC repair services near you.",
-      "intro": "As one of Murfreesboro's most trusted service providers, we handle local roofing replacements and emergency AC outages with speed and expertise.",
-      "ctaText": "Call Our Murfreesboro Office"
+      "slug": "clarksville",
+      "name": "Clarksville",
+      "seoTitle": "Trusted Pet Care Services in Clarksville TN",
+      "seoDescription": "Need professional, reliable pet care in Clarksville, TN? S&P Ring Pet Care offers dog sitting, drop-in visits, and specialized medicine administration.",
+      "intro": "We proudly serve pet parents across Clarksville, TN, offering customizable pet sitting options tailored to your puppy's exact medical and exercise requirements.",
+      "ctaText": "Book Clarksville Pet Care"
     }
   ],
   "reviews": [
     {
-      "author": "Mark S.",
-      "location": "Nashville, TN",
+      "author": "Ariana Cruz",
+      "location": "Clarksville, TN",
       "rating": 5,
-      "text": "The roofing team was professional, fast, and cleaned up everything. Best contractor experience I've had!"
-    },
-    {
-      "author": "Jessica L.",
-      "location": "Murfreesboro, TN",
-      "rating": 5,
-      "text": "My AC went out in 90-degree weather. They showed up within two hours and fixed the capacitor in 15 minutes. Absolute lifesavers."
-    },
-    {
-      "author": "David R.",
-      "location": "Franklin, TN",
-      "rating": 5,
-      "text": "Daystar replaced our plumbing lines and did an exceptional job. Fair price and great crew."
+      "text": "Sara took such amazing care of our pup while we were away! Highly recommend!"
     }
   ],
   "faqs": [
     {
-      "q": "Are you fully licensed and insured?",
-      "a": "Yes, we are fully licensed and hold $2M general liability insurance for your complete peace of mind."
+      "q": "What medical experience do you have?",
+      "a": "Sarah is highly experienced in handling timed dosages, including twice-a-day seizure medications for dogs with neurological profiles."
     },
     {
-      "q": "Do you offer financing?",
-      "a": "Yes! We partner with premier lenders to offer flexible monthly payments and 0% interest programs for qualified customers."
-    },
-    {
-      "q": "How do I get an estimate?",
-      "a": "Click any of our CTA buttons or give us a call at (555) 019-2834 to schedule a free onsite assessment."
+      "q": "How do we get started?",
+      "a": "Give us a call at (931) 802-3567 or send a Facebook message to schedule an initial meet-and-greet."
     }
   ]
 }

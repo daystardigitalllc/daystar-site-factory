@@ -1,28 +1,28 @@
 {
-  "name": "Daystar Demo Contractor",
-  "industry": "Home Services",
-  "logo": "/logo.svg",
-  "phone": "(555) 019-2834",
-  "email": "info@daystardemo.com",
-  "bookingUrl": "https://calendly.com/daystar-demo",
-  "mainCta": "Get a Free Estimate",
-  "yearsInBusiness": "10",
-  "certifications": ["Licensed & Insured", "A+ BBB Rated", "Local Favorite"],
+  "name": "S&P Ring Pet Care",
+  "industry": "Pet Service",
+  "logo": "/spring-logo.jpg",
+  "phone": "(931) 802-3567",
+  "email": "SandPRing@gmail.com",
+  "bookingUrl": "https://www.facebook.com/springpetcare/",
+  "mainCta": "Book Pet Care",
+  "yearsInBusiness": "5",
+  "certifications": ["Reliable & Trustworthy", "Highly Recommended", "Specialized Medication Support"],
   "socials": {
-    "facebook": "https://facebook.com/daystardemo",
-    "instagram": "https://instagram.com/daystardemo",
-    "google": "https://g.page/daystardemo"
+    "facebook": "https://www.facebook.com/springpetcare/",
+    "instagram": "https://www.facebook.com/springpetcare/",
+    "google": "https://www.facebook.com/springpetcare/reviews"
   },
   "address": {
-    "street": "123 Main Street",
-    "city": "Nashville",
+    "street": "Servicing Clarksville & Surrounding Areas",
+    "city": "Clarksville",
     "state": "TN",
-    "zip": "37203"
+    "zip": "37040"
   },
   "geo": {
-    "latitude": "36.1627",
-    "longitude": "-86.7816"
+    "latitude": "36.5298",
+    "longitude": "-87.3595"
   },
-  "locations": ["Nashville", "Murfreesboro", "Franklin", "Brentwood", "Hendersonville"],
-  "services": ["Roofing", "HVAC", "Plumbing", "Electrical"]
+  "locations": ["Clarksville", "Fort Campbell", "Sango", "Woodlawn", "Oak Grove"],
+  "services": ["Pet Sitting", "Drop-in Visits", "Medication Support", "Dog Walking"]
 }
