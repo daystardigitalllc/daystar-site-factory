@@ -27,6 +27,8 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
     *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `bgImageOverride`, `formTitle`.
 *   **[`HeroChalet.astro`](file:///templates/starter/src/components/HeroChalet.astro)**: Cozy, warm alpine-editorial hero section featuring a full-width background photo, bold serif typography, custom bulleted highlights, and a signature **mountain-ridge SVG divider** that clips the bottom edge of the banner.
     *   **Props**: `eyebrowOverride`, `headingOverride`, `subtitleOverride`, `primaryCtaText`, `primaryCtaHref`, `secondaryCtaText`, `secondaryCtaHref`, `bgImageOverride`, `dividerColorClass`.
+*   **[`HeroHealNet.astro`](file:///templates/starter/src/components/HeroHealNet.astro)**: Premium digital healthcare hero in the HealNet theme. Features gradient-colored titles, a primary action chevron link, and three floating badges (avatars/rating grid, appointment badge, quote block) overlaying the specialist photo.
+    *   **Props**: `headingOverride`, `subTitleHighlight`, `subtitleOverride`, `primaryCtaText`, `primaryCtaHref`, `imageSrcOverride`, `brandLogosOverride`.
 *   **[`HeroKepler.astro`](file:///templates/starter/src/components/HeroKepler.astro)**: Neo-brutalist Saturn-themed opener with background radial glows, floating stickers, a custom hand-drawn SVG title underline, and an active revolving CSS planet orbit system on the right.
     *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `primaryCtaText`, `primaryCtaHref`, `secondaryCtaText`, `secondaryCtaHref`.
 *   **[`HeroChip.astro`](file:///templates/starter/src/components/HeroChip.astro)**: A pill-shaped micro-action alert badge. Designed to sit inside heroes or headers to highlight news, versions, or special discount promos.
@@ -44,6 +46,10 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
     *   **Props**: `badgeOverride`, `headingOverride`, `servicesOverride` (array of `ServiceItem` objects).
 *   **[`ServicesChalet.astro`](file:///templates/starter/src/components/ServicesChalet.astro)**: Cozy, warm alpine-style service list. Cards are detailed with large faded background indexes (`01`, `02`), clean outline SVG icon shapes, and border highlights.
     *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `servicesOverride` (array of `ServiceItem` objects).
+*   **[`AppointmentFormHealNet.astro`](file:///templates/starter/src/components/AppointmentFormHealNet.astro)**: Inline 4-column scheduling booking bar housed in a rounded, border-accented soft gradient box. Renders labeled fields with lucide icon symbols (Email, Phone, Date) followed by a gradient submit button.
+    *   **Props**: `headingOverride`, `submitButtonText`.
+*   **[`ServicesHealNet.astro`](file:///templates/starter/src/components/ServicesHealNet.astro)**: Integrated digital services grid in the HealNet theme. Features a 3-column layout where the primary featured service card spans two columns, detailed with clean outline SVGs, thin blue borders, and soft background gradients.
+    *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `servicesOverride` (array of `ServiceItem` values).
 *   **[`PestRibbon.astro`](file:///templates/starter/src/components/PestRibbon.astro)**: Accent red banner showing service categories. Renders a grid of rounded white pill boxes containing custom icons and labels, completed with an accent bottom callout.
     *   **Props**: `badgeOverride`, `headingOverride`, `pestsOverride` (array of `PestItem` objects), `ctaText`, `ctaHref`.
 *   **[`PlansThreeTier.astro`](file:///templates/starter/src/components/PlansThreeTier.astro)**: Three-tier service plan comparison cards matching the WordPress mockup colors: Gold, Red, and Dark Grey accent banners, detailed checklists, and request CTAs.
@@ -81,6 +87,8 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
     *   **Props**: `badgeOverride`, `headingOverride`, `descriptionOverride`, `buttonHrefOverride`, `imageSrcOverride`, `imageAltOverride`.
 *   **[`FeatureCardsDoa.astro`](file:///templates/starter/src/components/FeatureCardsDoa.astro)**: "The DOA Difference" 3-column feature grid. Each card details a value proposition and features a red circular number badge overlapping the bottom border.
     *   **Props**: `badgeOverride`, `headingOverride`, `featuresOverride` (array of `FeatureCard` elements).
+*   **[`ProcessHealNet.astro`](file:///templates/starter/src/components/ProcessHealNet.astro)**: Numbered vertical process timeline in the HealNet theme style. Renders step numbers (1, 2, 3) connected by a dashed line on the left, and a mockup image overlayed with a floating label widget on the right.
+    *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `stepsOverride` (array of `Step` structures), `imageSrcOverride`, `floatingText`.
 *   **[`StoryChalet.astro`](file:///templates/starter/src/components/StoryChalet.astro)**: Cozy, split-screen about storytelling section in the Chalet alpine-editorial style. Pairs a clean floured workspace photo on one side with structured paragraph copy on the other.
     *   **Props**: `badgeOverride`, `headingOverride`, `paragraph1Override`, `paragraph2Override`, `imageSrcOverride`, `imageAltOverride`.
 *   **[`InfoChalet.astro`](file:///templates/starter/src/components/InfoChalet.astro)**: Practical notice board split panel. Renders a structured day-by-day weekly opening hours table on one side, and map location pointers/action dials on the other.
@@ -103,6 +111,8 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
     *   **Props**: `badgeOverride`, `headingOverride`, `reviewsOverride` (array of `ReviewItem` elements).
 *   **[`ReviewsChalet.astro`](file:///templates/starter/src/components/ReviewsChalet.astro)**: Cozy customer review board. Features a header displaying overall rating scores and stars next to a 3-column review card grid featuring giant quotation mark tags ("“") and initial avatars.
     *   **Props**: `badgeOverride`, `headingOverride`, `ratingScore`, `ratingLabel`, `reviewsOverride` (array of `ReviewItem` entries), `googleReviewUrl`.
+*   **[`TestimonialsHealNet.astro`](file:///templates/starter/src/components/TestimonialsHealNet.astro)**: Premium testimonial grid layout in the HealNet theme. Features two rows of quote cards detailed with avatar photo slots, flanking a central highlighted 4-column statistic milestones board.
+    *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `topTestimonials` (array of `Testimonial` items), `bottomTestimonials` (array of `Testimonial` items), `statsOverride` (array of `StatItem` indicators).
 
 ### 📢 Call to Action Blocks
 *   **[`CtaAccentCard.astro`](file:///templates/starter/src/components/CtaAccentCard.astro)**: High-impact CTA banner housed within a rounded capsule, featuring bold gradient backgrounds, custom mascot illustrations, and contrasting pill action buttons. Best for email signups, beta program announcements, or newsletter signups.
