@@ -4,6 +4,8 @@
     "ServicesChalet",
     "StoryChalet",
     "ReviewsChalet",
+    "PricingTable",
+    "QuoteFunnel",
     "InfoChalet"
   ],
   "navbarPill": {
@@ -12,6 +14,8 @@
       { "label": "Services", "href": "#services" },
       { "label": "About", "href": "#about" },
       { "label": "Reviews", "href": "#reviews" },
+      { "label": "Pricing", "href": "#pricing-table" },
+      { "label": "Sign Up", "href": "#quote-funnel" },
       { "label": "Contact", "href": "#info" }
     ]
   },
@@ -20,9 +24,9 @@
   },
   "home": {
     "heroChalet": {
-      "eyebrow": "Loving Pet Care in Clarksville, TN",
-      "title": "Real love for your pets, *guaranteed*",
-      "subtitle": "Professional dog sitting, drop-in visits, and specialized medication administration prepared with care and sweet daily updates.",
+      "eyebrow": "Loving Pet & Kitty Care in Clarksville, TN",
+      "title": "Real love for your pups and kitties, *guaranteed*",
+      "subtitle": "Professional dog sitting, kitty care, drop-in visits, and specialized medication administration with sweet daily updates.",
       "bgImage": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80",
       "highlights": [
         "★ Recommended on Facebook",
@@ -33,18 +37,18 @@
     "servicesChalet": {
       "badge": "What We Provide",
       "title": "Bespoke Pet Care Services",
-      "subtitle": "Everything is tailored around your dog's routines, medical needs, and comfort.",
+      "subtitle": "Tailored care plans for dogs, cats, and all members of your furry family.",
       "items": [
         {
           "index": "01",
           "title": "Drop-in Visits",
-          "description": "Quick check-ins to feed your pets, refill water bowls, clean litter boxes, and ensure they have playtime.",
+          "description": "Quick check-ins to feed your pets, refill water bowls, scoop kitty litter boxes, and ensure they have playtime.",
           "iconName": "pastry"
         },
         {
           "index": "02",
-          "title": "Dog Sitting & Boarding",
-          "description": "Overnight and extended day care keeping your pup relaxed and well-loved in their natural home environment.",
+          "title": "Dog & Cat Sitting",
+          "description": "Overnight and extended day care keeping your pup or kitty relaxed and well-loved in their natural home environment.",
           "iconName": "loaf"
         },
         {
@@ -55,7 +59,7 @@
         },
         {
           "index": "04",
-          "title": "Dog Walking & Playtime",
+          "title": "Walking & Playtime",
           "description": "Energizing outdoor walks, customized exercise routes, and direct sweet updates sent straight to your phone.",
           "iconName": "cake"
         }
@@ -64,7 +68,7 @@
     "storyChalet": {
       "badge": "About Sarah",
       "title": "Our story: Passion for paws",
-      "paragraph1": "S&P Ring Pet Care was founded by Sarah with a simple mission: to treat every animal as if they were her own family. Operating across Clarksville, TN, we offer reliable, personalized pet sitting and drop-in check-ups built on trust and absolute peace of mind.",
+      "paragraph1": "S&P Ring Pet Care was founded by Sarah with a simple mission: to treat every dog and cat as if they were her own family. Operating across Clarksville, TN, we offer reliable, personalized pet sitting and drop-in check-ups built on trust and absolute peace of mind.",
       "paragraph2": "We specialize in accommodating pets with complex routines or medical profiles—ensuring seizure medications are given exactly on time, twice a day, so you can travel without worry.",
       "imageSrc": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80",
       "imageAlt": "A happy dog playing outdoors with its walker"
@@ -93,6 +97,63 @@
         }
       ]
     },
+    "pricing": {
+      "badge": "Simple Pricing",
+      "title": "Rates Built for Every Pet's Needs",
+      "subtitle": "Transparent, flat rates with no hidden fees. Select your package or request a custom plan below.",
+      "plans": [
+        {
+          "id": "drop-in",
+          "name": "Drop-in Visit",
+          "tagline": "Perfect for cat feeding, quick walks, or litter scooping.",
+          "priceMonthly": 25,
+          "priceAnnually": 20,
+          "features": [
+            { "label": "30-Minute Home Visit", "included": true },
+            { "label": "Feed, Fresh Water & Litter scoop", "included": true },
+            { "label": "Sweet photo updates & status report", "included": true },
+            { "label": "Administer simple pills", "included": true },
+            { "label": "Overnight companion care", "included": false }
+          ],
+          "ctaText": "Book Visit",
+          "ctaHref": "#quote-funnel"
+        },
+        {
+          "id": "day-sitting",
+          "name": "Companion sitting",
+          "tagline": "Full day attention keeping your pup/kitty active and safe.",
+          "priceMonthly": 55,
+          "priceAnnually": 45,
+          "features": [
+            { "label": "8-Hour Continuous Sitting", "included": true },
+            { "label": "Multiple walks & outdoor playtime", "included": true },
+            { "label": "Timed medication administration", "included": true },
+            { "label": "Cat & Dog feeding / cleanup", "included": true },
+            { "label": "Overnight sleeping coverage", "included": false }
+          ],
+          "highlighted": true,
+          "badge": "Most Popular",
+          "ctaText": "Book Sitting",
+          "ctaHref": "#quote-funnel"
+        },
+        {
+          "id": "overnight",
+          "name": "Overnight Boarding",
+          "tagline": "Peace of mind while you are out of town.",
+          "priceMonthly": 85,
+          "priceAnnually": 75,
+          "features": [
+            { "label": "24-Hour dedicated companion boarding", "included": true },
+            { "label": "Strict medication timing (seizures/timed meds)", "included": true },
+            { "label": "Unlimited walks, playtime & socialization", "included": true },
+            { "label": "Detailed morning & evening updates", "included": true },
+            { "label": "Basic house monitoring & mail collection", "included": true }
+          ],
+          "ctaText": "Book Overnight",
+          "ctaHref": "#quote-funnel"
+        }
+      ]
+    },
     "infoChalet": {
       "badge": "Details",
       "title": "Schedule a Visit",
@@ -106,9 +167,9 @@
   "services": [
     {
       "slug": "pet-sitting",
-      "title": "Dog Sitting & Boarding",
+      "title": "Dog & Cat Sitting",
       "shortDescription": "Overnight care in your home or ours to keep your pet relaxed and loved.",
-      "longDescription": "We understand pets are happiest in their familiar environments. Our overnight pet sitting ensures your dog keeps their standard sleeping schedule, morning walks, and feeding patterns intact.",
+      "longDescription": "We understand pets are happiest in their familiar environments. Our overnight pet sitting ensures your dog or cat keeps their standard sleeping schedule, morning walks, and feeding patterns intact.",
       "features": [
         "In-home overnight stays",
         "Feeding & watering schedules",
@@ -117,8 +178,8 @@
       ],
       "faq": [
         {
-          "q": "Do you watch dogs of all breeds?",
-          "a": "Yes, we are highly experienced with dogs of all shapes, sizes, and temperaments."
+          "q": "Do you watch dogs and cats of all breeds?",
+          "a": "Yes, we are highly experienced with dogs and cats of all shapes, sizes, and temperaments."
         }
       ]
     }
@@ -127,9 +188,9 @@
     {
       "slug": "clarksville",
       "name": "Clarksville",
-      "seoTitle": "Trusted Pet Care Services in Clarksville TN",
-      "seoDescription": "Need professional, reliable pet care in Clarksville, TN? S&P Ring Pet Care offers dog sitting, drop-in visits, and specialized medicine administration.",
-      "intro": "We proudly serve pet parents across Clarksville, TN, offering customizable pet sitting options tailored to your puppy's exact medical and exercise requirements.",
+      "seoTitle": "Trusted Pet & Cat Sitting in Clarksville TN",
+      "seoDescription": "Need professional, reliable dog or cat sitting in Clarksville, TN? S&P Ring Pet Care offers drop-in visits, boarding, and specialized medicine administration.",
+      "intro": "We proudly serve pet parents across Clarksville, TN, offering customizable pet sitting options tailored to your dog or cat's exact medical and exercise requirements.",
       "ctaText": "Book Clarksville Pet Care"
     }
   ],
@@ -144,7 +205,7 @@
   "faqs": [
     {
       "q": "What medical experience do you have?",
-      "a": "Sarah is highly experienced in handling timed dosages, including twice-a-day seizure medications for dogs with neurological profiles."
+      "a": "Sarah is highly experienced in handling timed dosages, including twice-a-day seizure medications for dogs and cats with neurological profiles."
     },
     {
       "q": "How do we get started?",
