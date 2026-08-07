@@ -3,7 +3,13 @@ import '../styles/global.css';
 import themeConfig from '../data/theme.config.json';
 import businessData from '../data/business.json';
 import Header from '../components/Header.astro';
+import NavbarPill from '../components/NavbarPill.astro';
 import Footer from '../components/Footer.astro';
+import FooterBigText from '../components/FooterBigText.astro';
+
+// Render the selected navbar and footer styles
+const navbarStyle = themeConfig.style === 'oak-city' ? 'pill' : (themeConfig.navbarStyle || 'standard');
+const footerStyle = themeConfig.style === 'oak-city' ? 'big-text' : (themeConfig.footerStyle || 'standard');
 
 interface Props {
   title?: string;
@@ -108,7 +114,7 @@ const schema = {
     </div>
 
     <!-- Header Navigation -->
-    <Header />
+    {navbarStyle === 'pill' ? <NavbarPill /> : <Header />}
 
     <!-- Main Content Area -->
     <main class="flex-grow z-10">
@@ -116,6 +122,6 @@ const schema = {
     </main>
 
     <!-- Footer -->
-    <Footer />
+    {footerStyle === 'big-text' ? <FooterBigText /> : <Footer />}
   </body>
 </html>

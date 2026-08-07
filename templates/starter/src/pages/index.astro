@@ -1,42 +1,156 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import contentData from '../data/content.json';
+
+// Import all layout components
 import Hero from '../components/Hero.astro';
+import HeroAnimatedEntry from '../components/HeroAnimatedEntry.astro';
 import Marquee from '../components/Marquee.astro';
 import TrustBar from '../components/TrustBar.astro';
 import Services from '../components/Services.astro';
 import Reviews from '../components/Reviews.astro';
 import Gallery from '../components/Gallery.astro';
+import GalleryScrollChoreography from '../components/GalleryScrollChoreography.astro';
+import CompareSlider from '../components/CompareSlider.astro';
+import FeatureOverlayCards from '../components/FeatureOverlayCards.astro';
+import CardsCarousel from '../components/CardsCarousel.astro';
 import FAQ from '../components/FAQ.astro';
 import CTA from '../components/CTA.astro';
 import QuoteFunnel from '../components/QuoteFunnel.astro';
-import businessData from '../data/business.json';
+import HeroCozy from '../components/HeroCozy.astro';
+import StoryGrid from '../components/StoryGrid.astro';
+import FeatureBento from '../components/FeatureBento.astro';
+import TeamSpotlight from '../components/TeamSpotlight.astro';
+import CtaAccentCard from '../components/CtaAccentCard.astro';
+import ScrollGradientHero from '../components/ScrollGradientHero.astro';
+import UspScrollCards from '../components/UspScrollCards.astro';
+import StepScroller from '../components/StepScroller.astro';
+import Reveal from '../components/Reveal.astro';
+import PricingTable from '../components/PricingTable.astro';
+import AddToCalendarButton from '../components/AddToCalendarButton.astro';
+import HeroChip from '../components/HeroChip.astro';
+import PromoBanner from '../components/PromoBanner.astro';
+import HeroRecruit from '../components/HeroRecruit.astro';
+import MissionRecruit from '../components/MissionRecruit.astro';
+import ServicesRecruit from '../components/ServicesRecruit.astro';
+import JobGrid from '../components/JobGrid.astro';
+import FormRecruit from '../components/FormRecruit.astro';
+import FileTree from '../components/FileTree.astro';
+import AsideExquisitus from '../components/AsideExquisitus.astro';
+import TabsExquisitus from '../components/TabsExquisitus.astro';
+import StepsExquisitus from '../components/StepsExquisitus.astro';
+import BadgeExquisitus from '../components/BadgeExquisitus.astro';
+import HeroKepler from '../components/HeroKepler.astro';
+import FeaturesKepler from '../components/FeaturesKepler.astro';
+import PricingKepler from '../components/PricingKepler.astro';
+import ReviewsKepler from '../components/ReviewsKepler.astro';
+import FaqKepler from '../components/FaqKepler.astro';
+import HeroChalet from '../components/HeroChalet.astro';
+import ServicesChalet from '../components/ServicesChalet.astro';
+import StoryChalet from '../components/StoryChalet.astro';
+import ReviewsChalet from '../components/ReviewsChalet.astro';
+import InfoChalet from '../components/InfoChalet.astro';
+import HeroContractor from '../components/HeroContractor.astro';
+import PestRibbon from '../components/PestRibbon.astro';
+import FeatureCardsDoa from '../components/FeatureCardsDoa.astro';
+import PlansThreeTier from '../components/PlansThreeTier.astro';
+import FaqAccordionDoa from '../components/FaqAccordionDoa.astro';
+import HeroHealNet from '../components/HeroHealNet.astro';
+import AppointmentFormHealNet from '../components/AppointmentFormHealNet.astro';
+import ServicesHealNet from '../components/ServicesHealNet.astro';
+import ProcessHealNet from '../components/ProcessHealNet.astro';
+import TestimonialsHealNet from '../components/TestimonialsHealNet.astro';
+import ProductShowcaseChoreography from '../components/ProductShowcaseChoreography.astro';
+import PricingMatrix from '../components/PricingMatrix.astro';
+import InteractiveVideoPopup from '../components/InteractiveVideoPopup.astro';
+import MasonryMediaFilter from '../components/MasonryMediaFilter.astro';
+
+// Map component names to actual Astro exports
+const ComponentMap: Record<string, any> = {
+  Hero,
+  HeroAnimatedEntry,
+  HeroCozy,
+  ScrollGradientHero,
+  Marquee,
+  TrustBar,
+  Services,
+  Reviews,
+  Gallery,
+  GalleryScrollChoreography,
+  CompareSlider,
+  FeatureOverlayCards,
+  CardsCarousel,
+  FAQ,
+  CTA,
+  QuoteFunnel,
+  StoryGrid,
+  FeatureBento,
+  TeamSpotlight,
+  CtaAccentCard,
+  UspScrollCards,
+  StepScroller,
+  Reveal,
+  PricingTable,
+  AddToCalendarButton,
+  HeroChip,
+  PromoBanner,
+  HeroRecruit,
+  MissionRecruit,
+  ServicesRecruit,
+  JobGrid,
+  FormRecruit,
+  FileTree,
+  AsideExquisitus,
+  TabsExquisitus,
+  StepsExquisitus,
+  BadgeExquisitus,
+  HeroKepler,
+  FeaturesKepler,
+  PricingKepler,
+  ReviewsKepler,
+  FaqKepler,
+  HeroChalet,
+  ServicesChalet,
+  StoryChalet,
+  ReviewsChalet,
+  InfoChalet,
+  HeroContractor,
+  PestRibbon,
+  FeatureCardsDoa,
+  PlansThreeTier,
+  FaqAccordionDoa,
+  HeroHealNet,
+  AppointmentFormHealNet,
+  ServicesHealNet,
+  ProcessHealNet,
+  TestimonialsHealNet,
+  ProductShowcaseChoreography,
+  PricingMatrix,
+  InteractiveVideoPopup,
+  MasonryMediaFilter
+};
+
+// Retrieve array of section names from contentData
+const layout: string[] = contentData.layout || [
+  'Hero',
+  'Marquee',
+  'TrustBar',
+  'Services',
+  'CTA',
+  'Reviews',
+  'Gallery',
+  'FAQ',
+  'QuoteFunnel'
+];
 ---
 
 <MainLayout>
-  <!-- Hero Section -->
-  <Hero />
-
-  <!-- Infinite Scrolling Marquee (Only active for Oak City theme) -->
-  <Marquee />
-
-  <!-- Trust Seal / Review Summary -->
-  <TrustBar />
-
-  <!-- Services Grid -->
-  <Services />
-
-  <!-- Core Conversion Section -->
-  <CTA />
-
-  <!-- Reviews Testimonials Section -->
-  <Reviews />
-
-  <!-- Work Portfolio Gallery -->
-  <Gallery />
-
-  <!-- Interactive FAQ -->
-  <FAQ />
-
-  <!-- Lead Capture Funnel -->
-  <QuoteFunnel />
+  {layout.map((componentName) => {
+    const Component = ComponentMap[componentName];
+    if (!Component) {
+      console.warn(`Component "${componentName}" was listed in layout but not found in ComponentMap.`);
+      return null;
+    }
+    return <Component />;
+  })}
 </MainLayout>

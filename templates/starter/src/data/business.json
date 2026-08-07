@@ -1,28 +1,20 @@
 {
-  "name": "Daystar Demo Contractor",
-  "industry": "Home Services",
+  "name": "Your Business Name",
+  "tagline": "Your tagline here",
   "logo": "/logo.svg",
-  "phone": "(555) 019-2834",
-  "email": "info@daystardemo.com",
-  "bookingUrl": "https://calendly.com/daystar-demo",
-  "mainCta": "Get a Free Estimate",
-  "yearsInBusiness": "10",
-  "certifications": ["Licensed & Insured", "A+ BBB Rated", "Local Favorite"],
-  "socials": {
-    "facebook": "https://facebook.com/daystardemo",
-    "instagram": "https://instagram.com/daystardemo",
-    "google": "https://g.page/daystardemo"
-  },
+  "phone": "(000) 000-0000",
+  "email": "hello@yourbusiness.com",
   "address": {
     "street": "123 Main Street",
-    "city": "Nashville",
+    "city": "Your City",
     "state": "TN",
-    "zip": "37203"
+    "zip": "00000"
   },
-  "geo": {
-    "latitude": "36.1627",
-    "longitude": "-86.7816"
+  "locations": ["Your City", "Nearby City"],
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "yelp": ""
   },
-  "locations": ["Nashville", "Murfreesboro", "Franklin", "Brentwood", "Hendersonville"],
-  "services": ["Roofing", "HVAC", "Plumbing", "Electrical"]
+  "googleMapsEmbed": ""
 }

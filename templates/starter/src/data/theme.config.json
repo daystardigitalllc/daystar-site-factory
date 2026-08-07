@@ -1,10 +1,8 @@
 {
-  "primaryColor": "#2563eb",
-  "primaryColorHover": "#1d4ed8",
-  "secondaryColor": "#0f172a",
-  "accentColor": "#f59e0b",
-  "borderRadius": "0.75rem",
-  "fontFamily": "Outfit",
-  "style": "modern-glass",
-  "darkMode": false
+  "primary": "#1a1a2e",
+  "secondary": "#4f46e5",
+  "accent": "#8b5cf6",
+  "primaryHover": "#16213e",
+  "font": "Outfit",
+  "radius": "0.75rem"
 }
