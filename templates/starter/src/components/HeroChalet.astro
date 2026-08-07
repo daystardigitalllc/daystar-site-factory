@@ -63,7 +63,7 @@ const highlights = data?.highlights || defaultHighlights;
     <div class="max-w-2xl space-y-5">
       <!-- Eyebrow text -->
       {eyebrow && (
-        <p class="text-xs sm:text-sm font-semibold tracking-wider text-primary uppercase">
+        <p class="text-xs sm:text-sm font-semibold tracking-wider text-secondary uppercase">
           {eyebrow}
         </p>
       )}
@@ -73,7 +73,7 @@ const highlights = data?.highlights || defaultHighlights;
         {heading.includes('*') ? (
           <>
             {heading.split('*')[0]}
-            <em class="italic text-primary">{heading.split('*')[1]}</em>
+            <em class="italic text-secondary">{heading.split('*')[1]}</em>
             {heading.split('*')[2]}
           </>
         ) : heading}
@@ -87,7 +87,7 @@ const highlights = data?.highlights || defaultHighlights;
       <div class="pt-4 flex flex-wrap gap-4">
         <a 
           href={primaryCtaHref} 
-          class="inline-flex items-center justify-center px-6 py-3 bg-primary hover:bg-primary-hover text-white text-xs sm:text-sm font-bold tracking-wider rounded transition-all cursor-pointer shadow-md"
+          class="inline-flex items-center justify-center px-6 py-3 bg-secondary hover:opacity-90 text-primary text-xs sm:text-sm font-bold tracking-wider rounded transition-all cursor-pointer shadow-md"
         >
           {primaryCtaText}
         </a>
@@ -104,7 +104,7 @@ const highlights = data?.highlights || defaultHighlights;
     <ul class="flex flex-wrap gap-x-8 gap-y-3 pt-6 border-t border-white/20 w-fit text-xs font-semibold text-slate-350 select-none">
       {highlights.map((item) => (
         <li class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
           {item}
         </li>
       ))}
