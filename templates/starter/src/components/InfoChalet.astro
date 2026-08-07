@@ -55,7 +55,7 @@ const phone = phoneOverride || businessData.phone || '+33 4 50 00 00 00';
     <!-- Section Header -->
     <div class="max-w-xl space-y-3 text-left">
       {badge && (
-        <span class="text-xs font-bold uppercase tracking-wider text-orange-600">
+        <span class="text-xs font-bold uppercase tracking-wider text-primary">
           {badge}
         </span>
       )}
@@ -94,7 +94,7 @@ const phone = phoneOverride || businessData.phone || '+33 4 50 00 00 00';
           
           <div class="space-y-4 text-xs sm:text-sm">
             <div class="flex items-start gap-3">
-              <i class="fa-solid fa-location-dot text-orange-600 mt-1"></i>
+              <i class="fa-solid fa-location-dot text-primary mt-1"></i>
               <p class="text-slate-650 leading-relaxed font-semibold">
                 {formattedAddress.includes(',') ? (
                   <>
@@ -107,8 +107,8 @@ const phone = phoneOverride || businessData.phone || '+33 4 50 00 00 00';
             </div>
             
             <div class="flex items-center gap-3">
-              <i class="fa-solid fa-phone text-orange-600"></i>
-              <a href={`tel:${phone.replace(/[^0-9+]/g, '')}`} class="font-semibold text-slate-900 hover:text-orange-600 transition-colors">
+              <i class="fa-solid fa-phone text-primary"></i>
+              <a href={`tel:${phone.replace(/[^0-9+]/g, '')}`} class="font-semibold text-slate-900 hover:text-primary transition-colors">
                 {phone}
               </a>
             </div>
@@ -121,7 +121,7 @@ const phone = phoneOverride || businessData.phone || '+33 4 50 00 00 00';
             href={directionsUrl} 
             target="_blank" 
             rel="noopener noreferrer" 
-            class="flex-1 py-3 text-center text-xs font-bold uppercase tracking-widest bg-orange-400 hover:bg-orange-500 text-slate-950 rounded transition-all shadow-sm cursor-pointer"
+            class="flex-1 py-3 text-center text-xs font-bold uppercase tracking-widest bg-primary hover:bg-primary-hover text-white rounded transition-all shadow-sm cursor-pointer"
           >
             Google Maps
           </a>
