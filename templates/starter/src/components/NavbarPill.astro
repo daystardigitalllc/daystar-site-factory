@@ -37,9 +37,9 @@ const uid = `navpill-${Math.random().toString(36).slice(2, 9)}`;
     >
       <a href="/" class="flex items-center gap-2 shrink-0 pr-2">
         {businessData.logo && businessData.logo !== '/logo.svg' && businessData.logo !== '' ? (
-          <img src={businessData.logo} alt={`${businessData.name} Logo`} class="h-7 w-auto object-contain" />
+          <img src={businessData.logo} alt={`${businessData.name} Logo`} class="h-8 w-8 rounded-full object-cover border border-slate-200/50 bg-white shadow-sm shrink-0" />
         ) : (
-          <div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-white font-extrabold text-xs">
+          <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-extrabold text-xs shrink-0">
             {businessData.name.charAt(0)}
           </div>
         )}

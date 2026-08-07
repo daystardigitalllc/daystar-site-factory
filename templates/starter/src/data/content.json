@@ -5,7 +5,6 @@
     "StoryChalet",
     "ReviewsChalet",
     "PricingTable",
-    "QuoteFunnel",
     "InfoChalet"
   ],
   "navbarPill": {
@@ -15,7 +14,6 @@
       { "label": "About", "href": "#about" },
       { "label": "Reviews", "href": "#reviews" },
       { "label": "Pricing", "href": "#pricing-table" },
-      { "label": "Sign Up", "href": "#quote-funnel" },
       { "label": "Contact", "href": "#info" }
     ]
   },
@@ -116,7 +114,7 @@
             { "label": "Overnight companion care", "included": false }
           ],
           "ctaText": "Book Visit",
-          "ctaHref": "#quote-funnel"
+          "ctaHref": "#info"
         },
         {
           "id": "day-sitting",
@@ -134,7 +132,7 @@
           "highlighted": true,
           "badge": "Most Popular",
           "ctaText": "Book Sitting",
-          "ctaHref": "#quote-funnel"
+          "ctaHref": "#info"
         },
         {
           "id": "overnight",
@@ -150,7 +148,7 @@
             { "label": "Basic house monitoring & mail collection", "included": true }
           ],
           "ctaText": "Book Overnight",
-          "ctaHref": "#quote-funnel"
+          "ctaHref": "#info"
         }
       ]
     },
@@ -182,6 +180,60 @@
           "a": "Yes, we are highly experienced with dogs and cats of all shapes, sizes, and temperaments."
         }
       ]
+    },
+    {
+      "slug": "dog-walking",
+      "title": "Dog Walking & Outdoor Exercise",
+      "shortDescription": "Structured walking routes to keep your puppy active, healthy, and happy.",
+      "longDescription": "We provide custom dog walking packages tailored to your puppy's physical endurance and age profile. Every walk includes fresh water refills, paw wipe-downs, and a detailed check-in report with route photos.",
+      "features": [
+        "Structured 30 or 60 minute walks",
+        "Individual attention (no pack walking)",
+        "GPS trace and photo check-ins",
+        "Fresh water & treats replenishment"
+      ],
+      "faq": [
+        {
+          "q": "Do you walk dogs in bad weather?",
+          "a": "Yes, but in extreme heat or severe storms, we will pivot to indoor mental play and shorter potty breaks to safeguard your dog."
+        }
+      ]
+    },
+    {
+      "slug": "cat-care",
+      "title": "Specialized Cat & Kitten Care",
+      "shortDescription": "Feline-focused visits covering food setups, litter box maintenance, and laser play.",
+      "longDescription": "Cats need stimulation and structured check-ins just as much as dogs. We provide specialized feline drop-ins focusing on refilling fresh water, scooping litter boxes, grooming, and interactive feather/laser play sessions.",
+      "features": [
+        "Fresh food & water preparation",
+        "Detailed litter box scooping",
+        "Interactive play & socialization",
+        "Supervision for senior or shy cats"
+      ],
+      "faq": [
+        {
+          "q": "How often should you visit my cat?",
+          "a": "We recommend at least one visit per day to ensure felines are safe, fed, and healthy."
+        }
+      ]
+    },
+    {
+      "slug": "medication-support",
+      "title": "Specialized Medication Support",
+      "shortDescription": "Certified administration of critical timed pills, injections, and medical care.",
+      "longDescription": "Our handlers are highly trained and experienced in administering complex pet medical routines. We handle twice-a-day seizure dosing timelines, insulin injections, and sub-Q fluid administration with extreme precision.",
+      "features": [
+        "Strict twice-a-day timeline scheduling",
+        "Insulin & Sub-Q injection experience",
+        "Detailed medication administration log",
+        "Comfort and stress-free dosing methods"
+      ],
+      "faq": [
+        {
+          "q": "Are you certified to give shots?",
+          "a": "Yes, we are highly experienced in standard subcutaneous injections for diabetic and senior pets."
+        }
+      ]
     }
   ],
   "locations": [
@@ -192,6 +244,38 @@
       "seoDescription": "Need professional, reliable dog or cat sitting in Clarksville, TN? S&P Ring Pet Care offers drop-in visits, boarding, and specialized medicine administration.",
       "intro": "We proudly serve pet parents across Clarksville, TN, offering customizable pet sitting options tailored to your dog or cat's exact medical and exercise requirements.",
       "ctaText": "Book Clarksville Pet Care"
+    },
+    {
+      "slug": "fort-campbell",
+      "name": "Fort Campbell",
+      "seoTitle": "Reliable Military Family Pet Care in Fort Campbell TN/KY",
+      "seoDescription": "Pet sitting, walking, and drop-in services for military families in Fort Campbell. S&P Ring Pet Care supports your deployments and schedules.",
+      "intro": "We support military families stationed at Fort Campbell with reliable pet sitting, flexible drop-in schedules, and specialized medication care.",
+      "ctaText": "Book Fort Campbell Pet Care"
+    },
+    {
+      "slug": "sango",
+      "name": "Sango",
+      "seoTitle": "Premium Dog & Cat Sitting in Sango TN",
+      "seoDescription": "Top-rated dog walking and cat sitting in Sango, TN. S&P Ring Pet Care offers premium drop-in visits and medication support near you.",
+      "intro": "S&P Ring Pet Care offers local Sango residents premium dog walking and kitty sitting services, detailed with photo updates and timed pill administration.",
+      "ctaText": "Book Sango Pet Care"
+    },
+    {
+      "slug": "woodlawn",
+      "name": "Woodlawn",
+      "seoTitle": "Local Woodlawn TN Pet Sitter & Dog Walker",
+      "seoDescription": "Professional, local pet sitting in Woodlawn, TN. Timed medication, dog walking, and overnight pet sitting by S&P Ring Pet Care.",
+      "intro": "For pet owners in Woodlawn, TN, we provide complete overnight sitting and drop-in visits to keep your furry family relaxed at home.",
+      "ctaText": "Book Woodlawn Pet Care"
+    },
+    {
+      "slug": "oak-grove",
+      "name": "Oak Grove",
+      "seoTitle": "Oak Grove KY Pet Sitting & Dog Walking Services",
+      "seoDescription": "Need a reliable pet sitter in Oak Grove, KY? S&P Ring Pet Care offers experienced cat sitting, dog walking, and medical care.",
+      "intro": "Servicing S&P families in Oak Grove, KY, we deliver custom dog walking, home drop-ins, and timed seizure medication support.",
+      "ctaText": "Book Oak Grove Pet Care"
     }
   ],
   "reviews": [
