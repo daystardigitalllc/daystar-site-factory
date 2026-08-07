@@ -1,28 +1,20 @@
 {
-  "name": "S&P Ring Pet Care",
-  "industry": "Pet Service",
-  "logo": "/spring-logo.jpg",
-  "phone": "(931) 802-3567",
-  "email": "SandPRing@gmail.com",
-  "bookingUrl": "https://www.facebook.com/springpetcare/",
-  "mainCta": "Book Pet Care",
-  "yearsInBusiness": "5",
-  "certifications": ["Reliable & Trustworthy", "Highly Recommended", "Specialized Medication Support"],
-  "socials": {
-    "facebook": "https://www.facebook.com/springpetcare/",
-    "instagram": "https://www.facebook.com/springpetcare/",
-    "google": "https://www.facebook.com/springpetcare/reviews"
-  },
+  "name": "Your Business Name",
+  "tagline": "Your tagline here",
+  "logo": "/logo.svg",
+  "phone": "(000) 000-0000",
+  "email": "hello@yourbusiness.com",
   "address": {
-    "street": "Servicing Clarksville & Surrounding Areas",
-    "city": "Clarksville",
+    "street": "123 Main Street",
+    "city": "Your City",
     "state": "TN",
-    "zip": "37040"
+    "zip": "00000"
   },
-  "geo": {
-    "latitude": "36.5298",
-    "longitude": "-87.3595"
+  "locations": ["Your City", "Nearby City"],
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "yelp": ""
   },
-  "locations": ["Clarksville", "Fort Campbell", "Sango", "Woodlawn", "Oak Grove"],
-  "services": ["Pet Sitting", "Drop-in Visits", "Medication Support", "Dog Walking"]
+  "googleMapsEmbed": ""
 }

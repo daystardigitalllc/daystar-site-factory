@@ -12,288 +12,173 @@
       { "label": "Home", "href": "/" },
       { "label": "Services", "href": "/services" },
       { "label": "Locations", "href": "/locations" },
-      { "label": "Reviews", "href": "/#reviews-chalet" },
-      { "label": "Pricing", "href": "/#pricing-table" },
+      { "label": "Reviews", "href": "/#reviews" },
       { "label": "Contact", "href": "/#info" }
     ]
   },
   "footerBigText": {
-    "tagline": "Treating your furry family like our own."
+    "tagline": "Quality service, every time."
   },
   "home": {
     "heroChalet": {
-      "eyebrow": "Loving Pet & Kitty Care in Clarksville, TN",
-      "title": "Real love for your pups and kitties, *guaranteed*",
-      "subtitle": "Professional dog sitting, kitty care, drop-in visits, and specialized medication administration with sweet daily updates.",
-      "bgImage": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80",
+      "eyebrow": "Professional Services in Your City, TN",
+      "title": "The service your *home* deserves",
+      "subtitle": "Professional, reliable service with transparent pricing and a satisfaction guarantee.",
+      "bgImage": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80",
       "highlights": [
-        "★ Recommended on Facebook",
-        "Medication & Seizure Support",
-        "Peace of Mind Updates"
+        "★ Top Rated",
+        "Licensed & Insured",
+        "Free Estimates"
       ]
     },
     "servicesChalet": {
       "badge": "What We Provide",
-      "title": "Bespoke Pet Care Services",
-      "subtitle": "Tailored care plans for dogs, cats, and all members of your furry family.",
+      "title": "Our Core Services",
+      "subtitle": "Professional services tailored to your needs.",
       "items": [
         {
           "index": "01",
-          "title": "Drop-in Visits",
-          "description": "Quick check-ins to feed your pets, refill water bowls, scoop kitty litter boxes, and ensure they have playtime.",
+          "title": "Service One",
+          "description": "A great description of your first service offering.",
           "iconName": "pastry"
         },
         {
           "index": "02",
-          "title": "Dog & Cat Sitting",
-          "description": "Overnight and extended day care keeping your pup or kitty relaxed and well-loved in their natural home environment.",
+          "title": "Service Two",
+          "description": "A great description of your second service offering.",
           "iconName": "loaf"
         },
         {
           "index": "03",
-          "title": "Medication Support",
-          "description": "Certified timed dosage administration. Highly experienced in handling seizure medications and critical medical timelines.",
+          "title": "Service Three",
+          "description": "A great description of your third service offering.",
           "iconName": "sandwich"
         },
         {
           "index": "04",
-          "title": "Walking & Playtime",
-          "description": "Warm exercise strolls, customized walking routes, and direct sweet updates sent straight to your phone.",
+          "title": "Service Four",
+          "description": "A great description of your fourth service offering.",
           "iconName": "cake"
         }
       ]
     },
     "storyChalet": {
-      "badge": "About Sarah",
-      "title": "Our story: Passion for paws",
-      "paragraph1": "S&P Ring Pet Care was founded by Sarah with a simple mission: to treat every dog and cat as if they were her own family. Operating across Clarksville, TN, we offer reliable, personalized pet sitting and drop-in check-ups built on trust and absolute peace of mind.",
-      "paragraph2": "We specialize in accommodating pets with complex routines or medical profiles—ensuring seizure medications are given exactly on time, twice a day, so you can travel without worry.",
-      "imageSrc": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80",
-      "imageAlt": "A happy dog playing outdoors with its walker"
+      "badge": "About Us",
+      "title": "Our story",
+      "paragraph1": "We are a passionate team dedicated to providing exceptional service to our local community.",
+      "paragraph2": "With years of experience and a commitment to quality, we deliver results that exceed expectations.",
+      "imageSrc": "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=800&q=80",
+      "imageAlt": "Our team at work"
     },
     "reviewsChalet": {
-      "badge": "Recommended",
-      "title": "What Clarksville Pet Parents Say",
+      "badge": "Reviews",
+      "title": "What Our Clients Say",
       "items": [
         {
-          "name": "Ariana Cruz",
-          "avatar": "AC",
-          "quote": "“We couldn’t be happier with Sara! She took such amazing care of our pup while we were away! Lots of walks, playtime, and sweet updates that gave us total peace of mind. Highly recommend!”",
+          "name": "Happy Customer",
+          "avatar": "HC",
+          "quote": ""Excellent service from start to finish. I couldn't be happier with the results!"",
           "stars": 5
         },
         {
-          "name": "Krystal Mackenzie E.",
-          "avatar": "KM",
-          "quote": "“Sara helped me out with making sure my pets were fed and most importantly my dog had her medicine when I was out of town. My dog has seizures so it was important it was on time. She didn't fail me!!”",
-          "stars": 5
-        },
-        {
-          "name": "Logan York",
-          "avatar": "LY",
-          "quote": "“Always trust her with our baby Merlin. She's come over and done drop-ins for us multiple times and is always respectful of our home and our pup loves her.”",
+          "name": "Satisfied Client",
+          "avatar": "SC",
+          "quote": ""Professional, reliable, and great value. Will definitely use again."",
           "stars": 5
         }
       ]
     },
     "pricing": {
       "badge": "Simple Pricing",
-      "title": "Rates Built for Every Pet's Needs",
-      "subtitle": "Transparent, flat rates with no hidden fees. Select your package or request a custom plan below.",
+      "title": "Transparent Rates",
+      "subtitle": "No hidden fees. Pick the plan that fits your needs.",
       "plans": [
         {
-          "id": "drop-in",
-          "name": "Drop-in Visit",
-          "tagline": "Perfect for cat feeding, quick walks, or litter scooping.",
-          "priceMonthly": 25,
-          "priceAnnually": 20,
+          "id": "basic",
+          "name": "Basic",
+          "tagline": "Great for getting started.",
+          "priceMonthly": 49,
+          "priceAnnually": 39,
           "features": [
-            { "label": "30-Minute Home Visit", "included": true },
-            { "label": "Feed, Fresh Water & Litter scoop", "included": true },
-            { "label": "Sweet photo updates & status report", "included": true },
-            { "label": "Administer simple pills", "included": true },
-            { "label": "Overnight companion care", "included": false }
+            { "label": "Feature One", "included": true },
+            { "label": "Feature Two", "included": true },
+            { "label": "Feature Three", "included": false }
           ],
-          "ctaText": "Book Visit",
+          "ctaText": "Get Started",
           "ctaHref": "#info"
         },
         {
-          "id": "day-sitting",
-          "name": "Companion sitting",
-          "tagline": "Full day attention keeping your pup/kitty active and safe.",
-          "priceMonthly": 55,
-          "priceAnnually": 45,
-          "features": [
-            { "label": "8-Hour Continuous Sitting", "included": true },
-            { "label": "Multiple walks & outdoor playtime", "included": true },
-            { "label": "Timed medication administration", "included": true },
-            { "label": "Cat & Dog feeding / cleanup", "included": true },
-            { "label": "Overnight sleeping coverage", "included": false }
-          ],
+          "id": "standard",
+          "name": "Standard",
+          "tagline": "The most popular choice.",
+          "priceMonthly": 99,
+          "priceAnnually": 79,
           "highlighted": true,
           "badge": "Most Popular",
-          "ctaText": "Book Sitting",
+          "features": [
+            { "label": "Feature One", "included": true },
+            { "label": "Feature Two", "included": true },
+            { "label": "Feature Three", "included": true }
+          ],
+          "ctaText": "Choose Standard",
           "ctaHref": "#info"
         },
         {
-          "id": "overnight",
-          "name": "Overnight Boarding",
-          "tagline": "Peace of mind while you are out of town.",
-          "priceMonthly": 85,
-          "priceAnnually": 75,
+          "id": "premium",
+          "name": "Premium",
+          "tagline": "Full-service, everything included.",
+          "priceMonthly": 149,
+          "priceAnnually": 119,
           "features": [
-            { "label": "24-Hour dedicated companion boarding", "included": true },
-            { "label": "Strict medication timing (seizures/timed meds)", "included": true },
-            { "label": "Unlimited walks, playtime & socialization", "included": true },
-            { "label": "Detailed morning & evening updates", "included": true },
-            { "label": "Basic house monitoring & mail collection", "included": true }
+            { "label": "Feature One", "included": true },
+            { "label": "Feature Two", "included": true },
+            { "label": "Feature Three", "included": true }
           ],
-          "ctaText": "Book Overnight",
+          "ctaText": "Go Premium",
           "ctaHref": "#info"
         }
       ]
     },
     "infoChalet": {
-      "badge": "Details",
-      "title": "Schedule a Visit",
+      "badge": "Contact",
+      "title": "Get In Touch",
       "hours": [
-        { "day": "Monday - Friday", "hours": "06:30 – 19:30" },
-        { "day": "Saturday", "hours": "07:00 – 18:00" },
-        { "day": "Sunday", "hours": "08:00 – 16:00" }
+        { "day": "Monday - Friday", "hours": "8:00 AM – 6:00 PM" },
+        { "day": "Saturday", "hours": "9:00 AM – 4:00 PM" },
+        { "day": "Sunday", "hours": "Closed" }
       ]
     }
   },
   "services": [
     {
-      "slug": "pet-sitting",
-      "title": "Dog & Cat Sitting",
-      "shortDescription": "Overnight care in your home or ours to keep your pet relaxed and loved.",
-      "longDescription": "We understand pets are happiest in their familiar environments. Our overnight pet sitting ensures your dog or cat keeps their standard sleeping schedule, morning walks, and feeding patterns intact.",
+      "slug": "service-one",
+      "title": "Service One",
+      "shortDescription": "A detailed description of your first service.",
+      "longDescription": "This is the full description of service one. Explain what it includes, who it's for, and what makes it special.",
       "features": [
-        "In-home overnight stays",
-        "Feeding & watering schedules",
-        "Daily play updates",
-        "Mail & house monitoring"
+        "Feature highlight 1",
+        "Feature highlight 2",
+        "Feature highlight 3",
+        "Feature highlight 4"
       ],
       "faq": [
-        {
-          "q": "Do you watch dogs and cats of all breeds?",
-          "a": "Yes, we are highly experienced with dogs and cats of all shapes, sizes, and temperaments."
-        }
-      ]
-    },
-    {
-      "slug": "dog-walking",
-      "title": "Dog Walking & Outdoor Exercise",
-      "shortDescription": "Structured walking routes to keep your puppy active, healthy, and happy.",
-      "longDescription": "We provide custom dog walking packages tailored to your puppy's physical endurance and age profile. Every walk includes fresh water refills, paw wipe-downs, and a detailed check-in report with route photos.",
-      "features": [
-        "Structured 30 or 60 minute walks",
-        "Individual attention (no pack walking)",
-        "GPS trace and photo check-ins",
-        "Fresh water & treats replenishment"
-      ],
-      "faq": [
-        {
-          "q": "Do you walk dogs in bad weather?",
-          "a": "Yes, but in extreme heat or severe storms, we will pivot to indoor mental play and shorter potty breaks to safeguard your dog."
-        }
-      ]
-    },
-    {
-      "slug": "cat-care",
-      "title": "Specialized Cat & Kitten Care",
-      "shortDescription": "Feline-focused visits covering food setups, litter box maintenance, and laser play.",
-      "longDescription": "Cats need stimulation and structured check-ins just as much as dogs. We provide specialized feline drop-ins focusing on refilling fresh water, scooping litter boxes, grooming, and interactive feather/laser play sessions.",
-      "features": [
-        "Fresh food & water preparation",
-        "Detailed litter box scooping",
-        "Interactive play & socialization",
-        "Supervision for senior or shy cats"
-      ],
-      "faq": [
-        {
-          "q": "How often should you visit my cat?",
-          "a": "We recommend at least one visit per day to ensure felines are safe, fed, and healthy."
-        }
-      ]
-    },
-    {
-      "slug": "medication-support",
-      "title": "Specialized Medication Support",
-      "shortDescription": "Certified administration of critical timed pills, injections, and medical care.",
-      "longDescription": "Our handlers are highly trained and experienced in administering complex pet medical routines. We handle twice-a-day seizure dosing timelines, insulin injections, and sub-Q fluid administration with extreme precision.",
-      "features": [
-        "Strict twice-a-day timeline scheduling",
-        "Insulin & Sub-Q injection experience",
-        "Detailed medication administration log",
-        "Comfort and stress-free dosing methods"
-      ],
-      "faq": [
-        {
-          "q": "Are you certified to give shots?",
-          "a": "Yes, we are highly experienced in standard subcutaneous injections for diabetic and senior pets."
-        }
+        { "q": "What does this service include?", "a": "It includes all of the core elements listed above." }
       ]
     }
   ],
   "locations": [
     {
-      "slug": "clarksville",
-      "name": "Clarksville",
-      "seoTitle": "Trusted Pet & Cat Sitting in Clarksville TN",
-      "seoDescription": "Need professional, reliable dog or cat sitting in Clarksville, TN? S&P Ring Pet Care offers drop-in visits, boarding, and specialized medicine administration.",
-      "intro": "We proudly serve pet parents across Clarksville, TN, offering customizable pet sitting options tailored to your dog or cat's exact medical and exercise requirements.",
-      "ctaText": "Book Clarksville Pet Care"
-    },
-    {
-      "slug": "fort-campbell",
-      "name": "Fort Campbell",
-      "seoTitle": "Reliable Military Family Pet Care in Fort Campbell TN/KY",
-      "seoDescription": "Pet sitting, walking, and drop-in services for military families in Fort Campbell. S&P Ring Pet Care supports your deployments and schedules.",
-      "intro": "We support military families stationed at Fort Campbell with reliable pet sitting, flexible drop-in schedules, and specialized medication care.",
-      "ctaText": "Book Fort Campbell Pet Care"
-    },
-    {
-      "slug": "sango",
-      "name": "Sango",
-      "seoTitle": "Premium Dog & Cat Sitting in Sango TN",
-      "seoDescription": "Top-rated dog walking and cat sitting in Sango, TN. S&P Ring Pet Care offers premium drop-in visits and medication support near you.",
-      "intro": "S&P Ring Pet Care offers local Sango residents premium dog walking and kitty sitting services, detailed with photo updates and timed pill administration.",
-      "ctaText": "Book Sango Pet Care"
-    },
-    {
-      "slug": "woodlawn",
-      "name": "Woodlawn",
-      "seoTitle": "Local Woodlawn TN Pet Sitter & Dog Walker",
-      "seoDescription": "Professional, local pet sitting in Woodlawn, TN. Timed medication, dog walking, and overnight pet sitting by S&P Ring Pet Care.",
-      "intro": "For pet owners in Woodlawn, TN, we provide complete overnight sitting and drop-in visits to keep your furry family relaxed at home.",
-      "ctaText": "Book Woodlawn Pet Care"
-    },
-    {
-      "slug": "oak-grove",
-      "name": "Oak Grove",
-      "seoTitle": "Oak Grove KY Pet Sitting & Dog Walking Services",
-      "seoDescription": "Need a reliable pet sitter in Oak Grove, KY? S&P Ring Pet Care offers experienced cat sitting, dog walking, and medical care.",
-      "intro": "Servicing S&P families in Oak Grove, KY, we deliver custom dog walking, home drop-ins, and timed seizure medication support.",
-      "ctaText": "Book Oak Grove Pet Care"
+      "slug": "your-city",
+      "name": "Your City",
+      "seoTitle": "Professional Services in Your City TN",
+      "seoDescription": "Top-rated local services in Your City, TN. Contact us today for a free estimate.",
+      "intro": "We are proud to serve the Your City community with reliable, high-quality services.",
+      "ctaText": "Book Local Service"
     }
   ],
-  "reviews": [
-    {
-      "author": "Ariana Cruz",
-      "location": "Clarksville, TN",
-      "rating": 5,
-      "text": "Sara took such amazing care of our pup while we were away! Highly recommend!"
-    }
-  ],
+  "reviews": [],
   "faqs": [
-    {
-      "q": "What medical experience do you have?",
-      "a": "Sarah is highly experienced in handling timed dosages, including twice-a-day seizure medications for dogs and cats with neurological profiles."
-    },
-    {
-      "q": "How do we get started?",
-      "a": "Give us a call at (931) 802-3567 or send a Facebook message to schedule an initial meet-and-greet."
-    }
+    { "q": "Are you licensed and insured?", "a": "Yes, fully licensed and insured." },
+    { "q": "Do you offer free estimates?", "a": "Yes, we offer free no-obligation estimates." }
   ]
 }
