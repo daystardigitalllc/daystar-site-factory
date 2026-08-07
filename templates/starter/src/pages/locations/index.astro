@@ -1,0 +1,79 @@
+---
+// src/pages/locations/index.astro
+// Locations Hub Page - Lists and connects all S&P Ring Pet Care service areas.
+import MainLayout from '../../layouts/MainLayout.astro';
+import contentData from '../../data/content.json';
+import businessData from '../../data/business.json';
+---
+
+<MainLayout 
+  title={`Our Service Areas | ${businessData.name}`}
+  description={`S&P Ring Pet Care proudly serves pet families in Clarksville, Fort Campbell, Sango, Woodlawn, and Oak Grove.`}
+>
+  <!-- Hero Banner -->
+  <section class="relative py-24 bg-slate-900 text-white overflow-hidden text-center select-none">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/4 left-1/4 w-[350px] h-[350px] bg-secondary/20 rounded-full blur-[90px] animate-pulse-slow"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10 max-w-3xl space-y-6">
+      <span class="text-xs font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-3.5 py-1.5 rounded-full">
+        Locations Hub
+      </span>
+      <h1 class="text-4xl sm:text-6xl font-serif font-normal leading-tight tracking-tight text-white">
+        Our Service *Areas*
+      </h1>
+      <p class="text-base sm:text-lg text-slate-300 max-w-xl mx-auto leading-relaxed">
+        Providing reliable dog and cat sitting across Tennessee and Kentucky border communities.
+      </p>
+    </div>
+  </section>
+
+  <!-- Locations Grid -->
+  <section class="py-24 bg-[#FAF9F5] text-slate-800 select-none">
+    <div class="container mx-auto px-6 max-w-4xl space-y-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {contentData.locations.map((loc) => (
+          <div class="bg-white border border-slate-200/60 p-6 shadow-sm rounded-xl flex flex-col justify-between group transition-all duration-300 hover:border-slate-350 hover:shadow-md text-left">
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-secondary"></i>
+                <h3 class="text-lg font-bold text-slate-900 tracking-tight">{loc.name}</h3>
+              </div>
+              <p class="text-slate-500 text-xs leading-relaxed">{loc.intro.split('S&P Ring')[0] || 'Professional pet care services in Sango, Fort Campbell, Sango, Woodlawn and Clarksville service zones.'}</p>
+            </div>
+
+            <!-- Action Link -->
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <a 
+                href={`/locations/${loc.slug || loc.name.toLowerCase().replace(/ /g, '-')}`} 
+                class="text-[10px] font-extrabold uppercase tracking-wider text-[#002060] hover:text-[#7ba4db] transition-colors flex items-center gap-1"
+              >
+                Local Services <i class="fa-solid fa-arrow-right text-[8px]"></i>
+              </a>
+            </div>
+
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Area Map Notice -->
+  <section class="py-20 bg-white text-center border-t border-b border-slate-200/60 select-none">
+    <div class="container mx-auto px-6 max-w-2xl space-y-6">
+      <h3 class="text-2xl sm:text-3xl font-serif font-normal text-slate-950">Outside our core zones?</h3>
+      <p class="text-xs sm:text-sm text-slate-500 max-w-md mx-auto leading-relaxed">
+        We occasionally support families just outside Clarksville borders depending on helper availability. Contact us to inquire.
+      </p>
+      <div class="pt-2">
+        <a 
+          href={`tel:${businessData.phone}`} 
+          class="inline-flex items-center justify-center px-6 py-3.5 bg-primary hover:bg-primary-hover text-white text-xs sm:text-sm font-bold tracking-wider rounded-xl transition-all shadow-md"
+        >
+          Check Availability: {businessData.phone}
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

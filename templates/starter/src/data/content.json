@@ -10,11 +10,11 @@
   "navbarPill": {
     "links": [
       { "label": "Home", "href": "/" },
-      { "label": "Services", "href": "#services" },
-      { "label": "About", "href": "#about" },
-      { "label": "Reviews", "href": "#reviews" },
-      { "label": "Pricing", "href": "#pricing-table" },
-      { "label": "Contact", "href": "#info" }
+      { "label": "Services", "href": "/services" },
+      { "label": "Locations", "href": "/locations" },
+      { "label": "Reviews", "href": "/#reviews-chalet" },
+      { "label": "Pricing", "href": "/#pricing-table" },
+      { "label": "Contact", "href": "/#info" }
     ]
   },
   "footerBigText": {
@@ -58,7 +58,7 @@
         {
           "index": "04",
           "title": "Walking & Playtime",
-          "description": "Energizing outdoor walks, customized exercise routes, and direct sweet updates sent straight to your phone.",
+          "description": "Warm exercise strolls, customized walking routes, and direct sweet updates sent straight to your phone.",
           "iconName": "cake"
         }
       ]
