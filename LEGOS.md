@@ -60,6 +60,10 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
     *   **Props**: `badgeOverride`, `headingOverride`, `plansOverride` (array of `Plan` values).
 *   **[`PricingTable.astro`](file:///templates/starter/src/components/PricingTable.astro)**: High-performance plan comparison table. Features responsive cards, highlight badges, custom feature checklists, and a billing cycle toggle (Monthly vs. Annually) that dynamically swaps pricing and notes.
     *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `plansOverride` (array of `Plan` items), `currencySymbol`.
+*   **[`ProductShowcaseChoreography.astro`](file:///templates/starter/src/components/ProductShowcaseChoreography.astro)**: Interactive product card detail showcase. Features thumbnail image swapper controls, color/volume variant selectors, and a mock "Add to Cart" success toast popup.
+    *   **Props**: `badgeOverride`, `titleOverride`, `priceOverride`, `descriptionOverride`, `imagesOverride` (array of `ProductImage` details), `sizes`, `colors`.
+*   **[`PricingMatrix.astro`](file:///templates/starter/src/components/PricingMatrix.astro)**: Granular feature comparison matrix. Compares 3 plans side-by-side across detailed row items (e.g. checkmarks, custom labels).
+    *   **Props**: `badgeOverride`, `headingOverride`, `matrixGroupsOverride` (array of comparison specs).
 
 ### 🖼️ Showcase & Work Portfolios
 *   **[`Gallery.astro`](file:///templates/starter/src/components/Gallery.astro)**: Renders a 4-column portfolio overlay grid. Shows location badges, dynamic job labels, and hover details.
@@ -75,6 +79,10 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
     *   **Props**: `badgeOverride`, `headingOverride`, `itemsOverride` (array of `{ surtitle, title, description, src, alt }`).
 *   **[`StepScroller.astro`](file:///templates/starter/src/components/StepScroller.astro)**: Stacking card timeline scroller. Features cards that sticky-stack on top of each other as the user scrolls, combined with custom live-drawing SVG line charts and interface simulations. Perfect for multi-step onboarding explanations, "how it works" pages, or complex services walkthroughs.
     *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `stepsOverride` (array of `{ label, title, subTitle, description, ctaText, ctaHref, graphicType: 'phone' | 'install' | 'graph' }`).
+*   **[`InteractiveVideoPopup.astro`](file:///templates/starter/src/components/InteractiveVideoPopup.astro)**: Video thumbnail card that spawns a full-screen iframe video lightbox modal on click. Features a pulsing play button ripple and escape key capture to close.
+    *   **Props**: `badgeOverride`, `headingOverride`, `thumbnailSrc`, `videoEmbedUrl`.
+*   **[`MasonryMediaFilter.astro`](file:///templates/starter/src/components/MasonryMediaFilter.astro)**: Filterable project gallery grid using vanilla JS + CSS transforms. Features active tag filters that dynamically show/hide image items with smooth transitions.
+    *   **Props**: `badgeOverride`, `headingOverride`, `filters` (array of filter tags), `itemsOverride` (array of `GalleryItem` details).
 
 ### ✨ Feature / Highlight Grids
 *   **[`FeatureOverlayCards.astro`](file:///templates/starter/src/components/FeatureOverlayCards.astro)**: Grid of image cards where hovering (or tapping on touch) reveals an extended description over a gradient overlay (concept inspired by the "Background Overlay Card" style in Aceternity UI's card collection). Pure CSS `group-hover` — no JS. Best for a compact "why choose us" / guarantees grid with photo backing rather than plain icon cards; pairs well below `HeroAnimatedEntry.astro` or `Services.astro`.
