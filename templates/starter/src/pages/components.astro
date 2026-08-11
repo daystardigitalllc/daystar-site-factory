@@ -1,0 +1,576 @@
+---
+// src/pages/components.astro
+// Component Catalog - A visual playground to see and test all stored UI components.
+import MainLayout from '../layouts/MainLayout.astro';
+
+// Import Navigation showcase components
+import Header from '../components/Header.astro';
+import NavbarPill from '../components/NavbarPill.astro';
+import NavbarSplitLogo from '../components/NavbarSplitLogo.astro';
+
+// Import target showcase components
+import Hero from '../components/Hero.astro';
+import HeroAnimatedEntry from '../components/HeroAnimatedEntry.astro';
+import HeroCozy from '../components/HeroCozy.astro';
+import HeroChalet from '../components/HeroChalet.astro';
+import HeroKepler from '../components/HeroKepler.astro';
+import HeroContractor from '../components/HeroContractor.astro';
+import HeroHealNet from '../components/HeroHealNet.astro';
+
+import Services from '../components/Services.astro';
+import ServicesBento from '../components/ServicesBento.astro';
+import ServicesChalet from '../components/ServicesChalet.astro';
+import PricingTable from '../components/PricingTable.astro';
+import PlansThreeTier from '../components/PlansThreeTier.astro';
+
+import CompareSlider from '../components/CompareSlider.astro';
+import CardsCarousel from '../components/CardsCarousel.astro';
+import InteractiveVideoPopup from '../components/InteractiveVideoPopup.astro';
+
+import ReviewsChalet from '../components/ReviewsChalet.astro';
+import ReviewsMarquee from '../components/ReviewsMarquee.astro';
+import FAQ from '../components/FAQ.astro';
+import FAQNumbered from '../components/FAQNumbered.astro';
+
+// Setup Mock Data
+const mockServices = [
+  {
+    title: "Premium Care Service",
+    description: "Detailed description of a primary service offered to clients.",
+    src: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=600&q=80",
+    alt: "Service photo representation",
+    href: "#"
+  },
+  {
+    title: "Secondary Care Session",
+    description: "Detailed description of a secondary service offered to clients.",
+    src: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&q=80",
+    alt: "Service photo representation",
+    href: "#"
+  }
+];
+
+const mockCompareItems = [
+  {
+    before: { src: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80", alt: "Before work" },
+    after: { src: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80", alt: "After work" },
+    label: "Living Space Makeover"
+  }
+];
+---
+
+<MainLayout title="Component Library Catalog" description="Visual preview catalog of all stored UI components.">
+  <div class="bg-slate-950 text-white min-h-screen font-sans">
+    
+    <!-- Top Nav Banner -->
+    <header class="border-b border-slate-900 bg-slate-950/80 sticky top-0 z-50 backdrop-blur-md px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-primary to-accent flex items-center justify-center font-extrabold text-xs">DS</div>
+        <div>
+          <h1 class="text-sm font-bold tracking-tight">Daystar Site Factory</h1>
+          <p class="text-[10px] text-slate-500">Component Catalog & Visual Playground</p>
+        </div>
+      </div>
+      <div class="hidden sm:flex items-center gap-3 bg-slate-900 px-3 py-1 rounded-lg border border-slate-800 text-xs text-slate-400">
+        <span>Dev Mode Status:</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="font-semibold text-emerald-400">Active</span>
+      </div>
+    </header>
+
+    <!-- Hero Introduction -->
+    <section class="py-16 text-center max-w-3xl mx-auto px-6 space-y-4">
+      <span class="text-[10px] font-extrabold uppercase tracking-widest bg-primary/20 text-accent px-3.5 py-1 rounded-full border border-primary/20">Design System Systematics</span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Visual component *showcase*</h2>
+      <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-xl mx-auto">
+        Click the filters below to browse our library of layout blocks. Each section showcases live previews with direct usage keys so you can copy and reference them in your prompts.
+      </p>
+    </section>
+
+    <!-- CATEGORY FILTER MENU -->
+    <section class="max-w-5xl mx-auto px-6 mb-12">
+      <div class="flex flex-wrap gap-2 justify-center bg-slate-900/60 p-1.5 rounded-2xl border border-slate-900 backdrop-blur">
+        <button
+          data-filter="all"
+          class="px-4 py-2 text-xs font-bold rounded-xl bg-primary text-white transition-all shadow cursor-pointer"
+        >
+          All Blocks
+        </button>
+        <button
+          data-filter="navigation"
+          class="px-4 py-2 text-xs font-bold rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer"
+        >
+          Navigation
+        </button>
+        <button
+          data-filter="heroes"
+          class="px-4 py-2 text-xs font-bold rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer"
+        >
+          Heroes & Banners
+        </button>
+        <button
+          data-filter="services"
+          class="px-4 py-2 text-xs font-bold rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer"
+        >
+          Services & Pricing
+        </button>
+        <button
+          data-filter="showcase"
+          class="px-4 py-2 text-xs font-bold rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer"
+        >
+          Showcases & Galleries
+        </button>
+        <button
+          data-filter="social"
+          class="px-4 py-2 text-xs font-bold rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer"
+        >
+          Reviews & FAQs
+        </button>
+      </div>
+    </section>
+
+    <!-- CONTENT SECTIONS CONTAINER -->
+    <main class="space-y-24 pb-32">
+
+      <!-- ================= NAVIGATION SECTION ================= -->
+      <section data-category="navigation" class="space-y-16">
+        <div class="px-6 max-w-5xl mx-auto border-b border-slate-900 pb-4">
+          <h3 class="text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+            00. Navigation Bars
+          </h3>
+          <p class="text-xs text-slate-500 mt-1">Frosted headers, floating pills, and editorial split configurations. Note: to prevent overlap in this playground, headers are shown within sandboxed bounds.</p>
+        </div>
+
+        <!-- Block item: NavbarPill -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  NavbarPill.astro
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Floating pill-shaped glass navigation. Best for modern minimal designs.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"NavbarPill"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-slate-950/20 py-8 relative h-32 flex items-center justify-center overflow-hidden">
+            <div class="w-full max-w-xl scale-90 sm:scale-100">
+              <NavbarPill />
+            </div>
+          </div>
+        </div>
+
+        <!-- Block item: Header -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  Header.astro
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Standard full-width sticky header with dropdown support for Services and Locations.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"Header"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-slate-950/20 py-4 relative h-28 flex items-center justify-center overflow-hidden">
+            <div class="w-full max-w-3xl scale-90 sm:scale-100">
+              <Header />
+            </div>
+          </div>
+        </div>
+
+        <!-- Block item: NavbarSplitLogo -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  NavbarSplitLogo.astro
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Editorial navigation with the business logo centered and links split left/right.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"NavbarSplitLogo"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-slate-950/20 py-4 relative h-28 flex items-center justify-center overflow-hidden">
+            <div class="w-full max-w-3xl scale-90 sm:scale-100">
+              <NavbarSplitLogo />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= HEROES SECTION ================= -->
+      <section data-category="heroes" class="space-y-16">
+        <div class="px-6 max-w-5xl mx-auto border-b border-slate-900 pb-4">
+          <h3 class="text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+            01. Heroes & Entrance Blocks
+          </h3>
+          <p class="text-xs text-slate-500 mt-1">Stunning primary banners used at the top of landing pages to capture initial leads.</p>
+        </div>
+
+        <!-- Block item: HeroChalet -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  HeroChalet.astro
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Cozy, rustic alpine style with a customized mountain-ridge bottom SVG clip edge.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"HeroChalet"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-slate-950/20 py-2">
+            <HeroChalet 
+              eyebrowOverride="Specialized Alpine Living" 
+              headingOverride="A sanctuary in the *mountains*" 
+              subtitleOverride="Experience high-end design elements, premium wood structures, and custom architecture."
+            />
+          </div>
+        </div>
+
+        <!-- Block item: HeroAnimatedEntry -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  HeroAnimatedEntry.astro
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Centered clean layout with staggered word entrance animation on load.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"HeroAnimatedEntry"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-slate-950/20 py-8">
+            <HeroAnimatedEntry 
+              badgeOverride="NEW ENTRANCE ANIMATION"
+              headingOverride="Clean words staggered *animation*"
+              subtitleOverride="Minimal, fast-loading, and interactive entrance animations built with pure stylesheets."
+            />
+          </div>
+        </div>
+
+        <!-- Block item: HeroCozy -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  HeroCozy.astro
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Warm product layout with elevated mockups and clean details.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"HeroCozy"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-slate-950/20 py-2">
+            <HeroCozy 
+              badgeOverride="PRODUCT SHOWCASE"
+              headingOverride="Elegant hardware design for *studios*"
+              subtitleOverride="Curated templates featuring elevated card surfaces, clean headers, and soft glow parameters."
+            />
+          </div>
+        </div>
+
+        <!-- Block item: HeroKepler -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  HeroKepler.astro
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Saturn orbit space theme, orbiters system, retro sci-fi typography.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"HeroKepler"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-slate-950/20 py-2">
+            <HeroKepler 
+              badgeOverride="KEPLER ORBITS"
+              headingOverride="Revolving planet *orbits*"
+              subtitleOverride="Staggered retro-sci-fi blocks with active floating geometric components."
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SERVICES SECTION ================= -->
+      <section data-category="services" class="space-y-16">
+        <div class="px-6 max-w-5xl mx-auto border-b border-slate-900 pb-4">
+          <h3 class="text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+            02. Services & Pricing Modules
+          </h3>
+          <p class="text-xs text-slate-500 mt-1">Grids, bento tiles, and tables showing services, rates, and features comparison.</p>
+        </div>
+
+        <!-- Block item: ServicesBento -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  ServicesBento.astro
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Asymmetric bento block with full-bleed image overlays and hover reveals.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"ServicesBento"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-[#FAF9F5] text-slate-950 py-2">
+            <ServicesBento 
+              badgeOverride="BENTO MATRIX"
+              headingOverride="What we *specialize* in"
+              itemsOverride={mockServices}
+            />
+          </div>
+        </div>
+
+        <!-- Block item: ServicesChalet -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  ServicesChalet.astro
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Warm alpine-inspired service row cards with large numeric counts backdrop.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"ServicesChalet"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-[#FAF9F5] text-slate-950 py-2">
+            <ServicesChalet 
+              badgeOverride="COZY SOLUTIONS"
+              headingOverride="Our core *offerings*"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PORTFOLIOS & SHOWCASES ================= -->
+      <section data-category="showcase" class="space-y-16">
+        <div class="px-6 max-w-5xl mx-auto border-b border-slate-900 pb-4">
+          <h3 class="text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+            03. Portfolios & Showcase Blocks
+          </h3>
+          <p class="text-xs text-slate-500 mt-1">Interactive media items, swipe comparisons, and modal sliders.</p>
+        </div>
+
+        <!-- Block item: CompareSlider -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  CompareSlider.astro
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Before & After slider to swipe over changes in home/automotive care.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"CompareSlider"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-white text-slate-950 py-12">
+            <div class="max-w-4xl mx-auto px-6">
+              <CompareSlider 
+                badgeOverride="SWEEP TRANSFORMATION"
+                headingOverride="See changes *live*"
+                itemsOverride={mockCompareItems}
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Block item: InteractiveVideoPopup -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  InteractiveVideoPopup.astro
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Video thumbnail banner that triggers an overlay lightbox iframe modal.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"InteractiveVideoPopup"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-[#FAF9F5] text-slate-950 py-12">
+            <div class="max-w-4xl mx-auto px-6">
+              <InteractiveVideoPopup 
+                badgeOverride="VIDEO TOUR"
+                headingOverride="Watch our process *unfold*"
+                thumbnailSrc="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80"
+                videoEmbedUrl="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= REVIEWS & FAQS ================= -->
+      <section data-category="social" class="space-y-16">
+        <div class="px-6 max-w-5xl mx-auto border-b border-slate-900 pb-4">
+          <h3 class="text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+            04. Reviews, Social Proof & FAQs
+          </h3>
+          <p class="text-xs text-slate-500 mt-1">Review ribbons, quote bubbles, and multi-column FAQs lists.</p>
+        </div>
+
+        <!-- Block item: ReviewsMarquee -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  ReviewsMarquee.astro
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Horizontal infinite-scrolling marquee containing ratings and testimonials.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"ReviewsMarquee"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-slate-950/20 py-6">
+            <ReviewsMarquee />
+          </div>
+        </div>
+
+        <!-- Block item: ReviewsChalet -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  ReviewsChalet.astro
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Testimonials grid cards featuring bold stars, initials badges, and clean quotes.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"ReviewsChalet"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-[#FAF9F5] text-slate-950 py-2">
+            <ReviewsChalet 
+              badgeOverride="RECOMMENDATIONS"
+              headingOverride="What clients *say about us*"
+            />
+          </div>
+        </div>
+
+        <!-- Block item: FAQNumbered -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  FAQNumbered.astro
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Double-column numbered accordions with sticky lead capture details.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"FAQNumbered"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-[#FAF9F5] text-slate-950 py-2">
+            <FAQNumbered />
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+</MainLayout>
+
+<!-- JAVASCRIPT FILTERING ROUTINES -->
+<script>
+  const filterButtons = document.querySelectorAll('[data-filter]');
+  const categorySections = document.querySelectorAll('[data-category]');
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const selectedFilter = btn.getAttribute('data-filter') || 'all';
+
+      // 1. Update button styling classes
+      filterButtons.forEach((b) => {
+        b.classList.remove('bg-primary', 'text-white', 'shadow');
+        b.classList.add('text-slate-400', 'hover:text-white', 'hover:bg-slate-800');
+      });
+      btn.classList.add('bg-primary', 'text-white', 'shadow');
+      btn.classList.remove('text-slate-400', 'hover:text-white', 'hover:bg-slate-800');
+
+      // 2. Filter rendering sections
+      categorySections.forEach((section) => {
+        const category = section.getAttribute('data-category');
+        if (selectedFilter === 'all' || category === selectedFilter) {
+          section.classList.remove('hidden');
+        } else {
+          section.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
