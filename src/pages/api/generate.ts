@@ -234,6 +234,15 @@ export const POST: APIRoute = async ({ request }) => {
 
     const contentJson = {
       layout: layoutArray,
+      navbarPill: {
+        links: [
+          { label: 'Home', href: '/' },
+          { label: 'Services', href: '/services' },
+          { label: 'Locations', href: '/locations' },
+          { label: 'Reviews', href: '/#reviews' },
+          { label: 'FAQ', href: '/#faq' }
+        ]
+      },
       home: {
         hero: {
           h1: copy.heroH1 || `Premium ${industry} Services`,

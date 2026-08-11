@@ -88,7 +88,7 @@ const uid = `choreo-${Math.random().toString(36).slice(2, 9)}`;
     </div>
 
     {/* Quadrant grid */}
-    <div data-choreo-grid class="absolute inset-0 z-20">
+    <div data-choreo-grid class="absolute inset-0 z-20 pointer-events-none">
       <div data-choreo-quad="tl" class="absolute top-0 left-0 w-1/2 h-1/2 p-1.5 sm:p-3">
         <img src={images.topLeft.src} alt={images.topLeft.alt} class="w-full h-full object-cover rounded-custom shadow-2xl" />
       </div>

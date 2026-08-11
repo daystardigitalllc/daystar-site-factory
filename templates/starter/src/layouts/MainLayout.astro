@@ -9,7 +9,7 @@ import Footer from '../components/Footer.astro';
 import FooterBigText from '../components/FooterBigText.astro';
 
 // Render the selected navbar and footer styles
-const navbarStyle = themeConfig.style === 'oak-city' ? 'pill' : (themeConfig.navbarStyle || 'standard');
+const navbarStyle = themeConfig.navbarStyle || 'standard';
 const footerStyle = themeConfig.style === 'oak-city' ? 'big-text' : (themeConfig.footerStyle || 'standard');
 
 interface Props {
