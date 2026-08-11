@@ -52,7 +52,7 @@
 }
 
 .dark .contractor-panel {
-  background: var(--card-bg-dark, #0f172a);
+  background: var(--card-bg-dark, var(--color-secondary, #0f172a));
   border: 1px solid var(--card-border-dark, #1e293b);
 }
 

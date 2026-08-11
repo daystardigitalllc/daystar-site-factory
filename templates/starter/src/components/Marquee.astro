@@ -13,19 +13,19 @@ const defaultPhrases = [
 ---
 
 {themeConfig.style === 'oak-city' && (
-  <div class="w-full overflow-hidden bg-emerald-900 border-y border-emerald-800 text-emerald-100 py-4 uppercase tracking-widest text-sm font-extrabold select-none relative z-20">
+  <div class="w-full overflow-hidden bg-primary border-y border-primary-hover text-white py-4 uppercase tracking-widest text-sm font-extrabold select-none relative z-20">
     <div class="flex whitespace-nowrap min-w-full">
       <div class="inline-flex animate-marquee gap-16 shrink-0 items-center min-w-full">
         {hasCustomPhrases ? (
           customPhrases.map((phrase: string) => (
             <span class="mx-16 flex items-center gap-3 shrink-0">
-              <i class="fa-solid fa-star text-accent"></i> {phrase}
+              <i class="fa-solid fa-star text-white/90"></i> {phrase}
             </span>
           ))
         ) : (
           defaultPhrases.map((phrase) => (
             <span class="mx-16 flex items-center gap-3 shrink-0">
-              <i class={`${phrase.icon} text-accent`}></i> {phrase.text}
+              <i class={`${phrase.icon} text-white/90`}></i> {phrase.text}
             </span>
           ))
         )}
@@ -34,13 +34,13 @@ const defaultPhrases = [
         {hasCustomPhrases ? (
           customPhrases.map((phrase: string) => (
             <span class="mx-16 flex items-center gap-3 shrink-0">
-              <i class="fa-solid fa-star text-accent"></i> {phrase}
+              <i class="fa-solid fa-star text-white/90"></i> {phrase}
             </span>
           ))
         ) : (
           defaultPhrases.map((phrase) => (
             <span class="mx-16 flex items-center gap-3 shrink-0">
-              <i class={`${phrase.icon} text-accent`}></i> {phrase.text}
+              <i class={`${phrase.icon} text-white/90`}></i> {phrase.text}
             </span>
           ))
         )}
