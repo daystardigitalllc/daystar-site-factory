@@ -1,0 +1,34 @@
+{
+  "label": "Contractor / Remodeling / Roofing (Warm Amber)",
+  "description": "Warm, cinematic dark theme validated on Built Right Construction (remodeling). Good default starting point for contractors, roofers, remodelers, and similar trade businesses. Colors/copy should still be adjusted per client brand where they have one.",
+  "theme": {
+    "primaryColor": "#D97706",
+    "primaryColorHover": "#B45309",
+    "secondaryColor": "#18140f",
+    "accentColor": "#EAB308",
+    "borderRadius": "0.75rem",
+    "fontFamily": "Outfit",
+    "style": "oak-city",
+    "darkMode": true
+  },
+  "colorFamily": "stone",
+  "layout": [
+    "Hero",
+    "Marquee",
+    "TrustBar",
+    "Services",
+    "CTA",
+    "Reviews",
+    "GalleryScrollChoreography",
+    "FAQ",
+    "QuoteFunnel"
+  ],
+  "notes": [
+    "colorFamily 'stone' means generate.ts should replace Tailwind's cool-toned 'slate-*' classes with warm-toned 'stone-*' across the copied site (word-boundary safe: only 'slate-' tokens, never substrings like 'translate').",
+    "Header is already the shared-template default (transparent, fixed, solidifies on scroll) — no extra action needed.",
+    "Give each service in content.json an 'image' field (local /images/*.jpg or a verified real Unsplash URL) so Services.astro and the service detail page hero both show real photography instead of the missing /service-N.jpg default.",
+    "Populate home.scrollShowcase.images and home.hero.bgImage in content.json — GalleryScrollChoreography and Hero both silently fall back to non-existent /gallery-*.jpg / /hero-bg.jpg files if these are left unset.",
+    "Give every service and the homepage 4-6 FAQ entries, not just one placeholder 'Why choose us for X' each.",
+    "Avoid fabricating ratings/review counts/certifications not supplied by the client — TrustBar already computes its rating average from real content.json reviews rather than a hardcoded stat."
+  ]
+}

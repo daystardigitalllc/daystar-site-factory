@@ -30,6 +30,42 @@ function copyDir(src: string, dest: string) {
   }
 }
 
+// Load a named industry preset from templates/presets/<name>.json, if it exists
+function loadPreset(name: string | undefined | null) {
+  if (!name) return null;
+  try {
+    const presetPath = path.join(process.cwd(), 'templates', 'presets', `${name}.json`);
+    if (!fs.existsSync(presetPath)) return null;
+    return JSON.parse(fs.readFileSync(presetPath, 'utf8'));
+  } catch (err) {
+    console.error(`Failed to load preset "${name}":`, err);
+    return null;
+  }
+}
+
+// Word-boundary-safe Tailwind color-family swap across every .astro file in a
+// directory (e.g. "slate" -> "stone"). Only matches "<family>-" tokens, so it
+// never touches substrings like "translate-" the way a naive text replace would.
+function replaceColorFamily(dir: string, fromFamily: string, toFamily: string) {
+  const pattern = new RegExp(`\\b${fromFamily}-`, 'g');
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    const entryPath = path.join(dir, entry.name);
+    if (entry.name === 'node_modules' || entry.name === '.git') continue;
+
+    if (entry.isDirectory()) {
+      replaceColorFamily(entryPath, fromFamily, toFamily);
+    } else if (entry.name.endsWith('.astro')) {
+      const content = fs.readFileSync(entryPath, 'utf8');
+      const updated = content.replace(pattern, `${toFamily}-`);
+      if (updated !== content) {
+        fs.writeFileSync(entryPath, updated);
+      }
+    }
+  }
+}
+
 // Get authenticated GitHub username
 function getGithubUser() {
   try {
@@ -63,12 +99,16 @@ export const POST: APIRoute = async ({ request }) => {
       copy,
       reviews,
       faqs,
-      logoUrl
+      logoUrl,
+      industryPreset
     } = data;
 
     if (!slug) {
       return new Response(JSON.stringify({ success: false, error: 'Slug is required' }), { status: 400 });
     }
+
+    const preset = loadPreset(industryPreset);
+    const presetTheme = preset?.theme || {};
 
     const homeDir = process.env.USERPROFILE || 'C:\\Users\\AustinHayes';
     const clientSlug = slug.toLowerCase().replace(/[^a-z0-9-_]/g, '');
@@ -81,6 +121,11 @@ export const POST: APIRoute = async ({ request }) => {
     // 1. Copy Starter Template
     const starterPath = path.join(process.cwd(), 'templates', 'starter');
     copyDir(starterPath, clientDir);
+
+    // Apply preset's color-family swap (e.g. cool "slate" -> warm "stone") to the fresh copy
+    if (preset?.colorFamily && preset.colorFamily !== 'slate') {
+      replaceColorFamily(clientDir, 'slate', preset.colorFamily);
+    }
 
     // Download custom logo image if provided
     let hasCustomLogo = false;
@@ -128,14 +173,14 @@ export const POST: APIRoute = async ({ request }) => {
     // 3. Write theme.config.json
     const themeConfigPath = path.join(clientDir, 'src', 'data', 'theme.config.json');
     const themeJson = {
-      primaryColor: theme.primaryColor || '#2563eb',
-      primaryColorHover: theme.primaryColorHover || '#1d4ed8',
-      secondaryColor: theme.secondaryColor || '#0f172a',
-      accentColor: theme.accentColor || '#f59e0b',
-      borderRadius: theme.borderRadius || '0.75rem',
-      fontFamily: theme.fontFamily || 'Outfit',
-      style: theme.style || 'modern-glass',
-      darkMode: theme.darkMode === 'true' || theme.darkMode === true,
+      primaryColor: theme.primaryColor || presetTheme.primaryColor || '#2563eb',
+      primaryColorHover: theme.primaryColorHover || presetTheme.primaryColorHover || '#1d4ed8',
+      secondaryColor: theme.secondaryColor || presetTheme.secondaryColor || '#0f172a',
+      accentColor: theme.accentColor || presetTheme.accentColor || '#f59e0b',
+      borderRadius: theme.borderRadius || presetTheme.borderRadius || '0.75rem',
+      fontFamily: theme.fontFamily || presetTheme.fontFamily || 'Outfit',
+      style: theme.style || presetTheme.style || 'modern-glass',
+      darkMode: theme.darkMode !== undefined ? (theme.darkMode === 'true' || theme.darkMode === true) : (presetTheme.darkMode ?? true),
       heroVideo: theme.heroVideo || '',
       typewriterWords: theme.typewriterWords ? theme.typewriterWords.split(',').map((w: string) => w.trim()).filter(Boolean) : [],
       marqueePhrases: theme.marqueePhrases ? theme.marqueePhrases.split(',').map((p: string) => p.trim()).filter(Boolean) : []
@@ -196,7 +241,9 @@ export const POST: APIRoute = async ({ request }) => {
 
     let layoutArray = data.layout;
     if (!layoutArray || !Array.isArray(layoutArray)) {
-      if (theme?.style === 'oak-city') {
+      if (preset?.layout && Array.isArray(preset.layout)) {
+        layoutArray = preset.layout;
+      } else if (theme?.style === 'oak-city') {
         layoutArray = [
           'Hero',
           'Marquee',

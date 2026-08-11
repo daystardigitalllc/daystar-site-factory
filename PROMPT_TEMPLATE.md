@@ -57,7 +57,7 @@ Build a premium, high-converting Astro website for the company specified in the 
 
 ### 6. PAGE LAYOUT & LEGOS BLOCK CHECKLIST
 Assemble the homepage using the following premium catalog components:
-1. [NavbarPill]: Floating glass-effect navigation pill fixed at the top of the viewport.
+1. [Header]: Transparent, fixed navigation that sits over the hero and solidifies with a blurred background on scroll.
 2. [HeroVideo]: Full-bleed video background hero showing the scraped team/project footage, overlayed with typewriter animations.
 3. [Marquee]: Trust ribbon showing certification logos and brand badges.
 4. [Services (Aspect Image)]: Aspect-ratio grid cards presenting core offerings.
