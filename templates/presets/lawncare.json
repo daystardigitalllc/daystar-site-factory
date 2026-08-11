@@ -1,0 +1,31 @@
+{
+  "label": "Lawn Care & Landscaping (Forest Emerald)",
+  "description": "Cinematic dark forest-green theme with vibrant lime/grass-green accents. Perfect for lawn maintenance, landscaping, sod installation, and hardscaping. Uses the cozy editorial Chalet style with rounded corners and card borders.",
+  "theme": {
+    "primaryColor": "#15803d",
+    "primaryColorHover": "#166534",
+    "secondaryColor": "#052e16",
+    "accentColor": "#4ade80",
+    "borderRadius": "1rem",
+    "fontFamily": "Outfit",
+    "style": "chalet",
+    "darkMode": false
+  },
+  "colorFamily": "emerald",
+  "layout": [
+    "HeroChalet",
+    "ServicesChalet",
+    "StoryChalet",
+    "CompareSlider",
+    "ReviewsChalet",
+    "InfoChalet"
+  ],
+  "notes": [
+    "colorFamily 'emerald' replaces Tailwind's cool 'slate-*' background and border classes with rich organic 'emerald-*' classes across all elements.",
+    "Style 'chalet' uses cozy serif-like headlines, soft cream surfaces (#FAF9F5), and rounded details.",
+    "Services.astro and ServicesChalet should feature high-quality lawn care images: mowing lines, sod laying, clean hedges, and patio stones.",
+    "Configure CompareSlider with high-contrast before/after items: e.g. overgrown weed yard vs. clean manicured lawn, or raw dirt vs. freshly rolled green sod.",
+    "HeroChalet requires a background image (bgImage) of a beautiful landscaped yard with sharp grass lines, and a signature bottom mountain-ridge clip shape.",
+    "Keep headlines highly active: use strong words like 'transform', 'manicure', 'craft', and 'prune' instead of generic service lists."
+  ]
+}
