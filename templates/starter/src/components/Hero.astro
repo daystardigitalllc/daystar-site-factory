@@ -29,7 +29,7 @@ const bgImage = contentData.home.hero.bgImage || '/hero-bg.jpg';
     "relative overflow-hidden py-20 lg:py-36",
     isContractor ? "bg-slate-950 text-white bg-cover bg-center" : "bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white"
   ]}
-  style={layout === 'contractor' ? `background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.8)), url('${bgImage}');` : ''}
+  style={isContractor ? `background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.8)), url('${bgImage}');` : ''}
 >
   {/* Conditionally render video background for Oak City theme */}
   {layout === 'oak-city' && themeConfig.heroVideo && (
@@ -37,7 +37,7 @@ const bgImage = contentData.home.hero.bgImage || '/hero-bg.jpg';
       <source src={themeConfig.heroVideo} type="video/mp4" />
     </video>
   )}
-  {layout === 'oak-city' && (
+  {layout === 'oak-city' && themeConfig.heroVideo && (
     <div class="absolute inset-0 bg-slate-950/70 z-0"></div>
   )}
 
