@@ -32,7 +32,76 @@ import ReviewsMarquee from '../components/ReviewsMarquee.astro';
 import FAQ from '../components/FAQ.astro';
 import FAQNumbered from '../components/FAQNumbered.astro';
 
+// Import Fulldev UI components for showcase
+import LogosOne from '../components/LogosOne.astro';
+import LogosTwo from '../components/LogosTwo.astro';
+import Hero1 from '../components/blocks/hero-1.astro';
+import Hero5 from '../components/blocks/hero-5.astro';
+import Pricing1 from '../components/blocks/pricing-1.astro';
+import Faqs1 from '../components/blocks/faqs-1.astro';
+
 // Setup Mock Data
+const mockBrands = [
+  { name: "Google", href: "#" },
+  { name: "Microsoft", href: "#" },
+  { name: "Apple", href: "#" },
+  { name: "Amazon", href: "#" },
+  { name: "Meta", href: "#" }
+];
+
+const mockImage = {
+  src: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80",
+  alt: "Mock Image representation"
+};
+
+const mockButtons = [
+  { label: "Primary Action", href: "#", variant: "default" },
+  { label: "Secondary Action", href: "#", variant: "outline" }
+];
+
+const mockFeatures = [
+  "Premium materials and custom builds",
+  "Lifetime service guarantee",
+  "24/7 dedicated local support"
+];
+
+const mockSocialProof = {
+  avatars: [
+    { initials: "JD", name: "John Doe" },
+    { initials: "AS", name: "Alice Smith" },
+    { initials: "MB", name: "Michael Brown" }
+  ],
+  rating: 5,
+  text: "Trusted by 10,000+ local customers"
+};
+
+const mockFaqs = [
+  { id: "faq-1", question: "What is your turnaround time?", answer: "Usually 24-48 hours for standard projects." },
+  { id: "faq-2", question: "Do you offer licensing support?", answer: "Yes, our team holds full licensing and active commercial liability coverage." }
+];
+
+const mockPlans = [
+  {
+    name: "Starter",
+    description: "Ideal for individuals and side-projects.",
+    price: 19,
+    currency: "USD",
+    unit: "/month",
+    features: ["Astro Integration", "Vite Configured", "Clean layouts"],
+    button: { label: "Get Started", href: "#" }
+  },
+  {
+    name: "Growth",
+    description: "Best for scaling agencies and businesses.",
+    price: 49,
+    currency: "USD",
+    unit: "/month",
+    featured: true,
+    features: ["All templates", "Priority updates", "Unlimited websites"],
+    button: { label: "Go Pro", href: "#" }
+  }
+];
+
 const mockServices = [
   {
     title: "Premium Care Service",
@@ -251,6 +320,63 @@ const mockCompareItems = [
           </div>
         </div>
 
+        <!-- Block item: Hero1 (Fulldev) -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  Hero1 (Fulldev UI)
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Centered minimalistic layout with a large typography heading and secondary action anchor.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"Hero1"</code>
+              </div>
+            </div>
+          <div class="border-y border-slate-900 bg-slate-950/20 py-2">
+            <Hero1 
+              title="Modern design systems, simplified."
+              description="A library of content-driven Astro components styled dynamically using your custom Tailwind CSS configuration variables."
+              buttons={mockButtons}
+              image={mockImage}
+            />
+          </div>
+        </div>
+
+        <!-- Block item: Hero5 (Fulldev) -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  Hero5 (Fulldev UI)
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Two-column split hero showing text content side-by-side with secondary actions list.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"Hero5"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-slate-950/20 py-2">
+            <Hero5 
+              title="Built for the modern web."
+              description="Deploy high-performance, responsive pages backed by standard components and custom preset styling tokens."
+              features={mockFeatures}
+              buttons={mockButtons}
+              socialProof={mockSocialProof}
+              image={mockImage}
+            />
+          </div>
+        </div>
+
+
+
         <!-- Block item: HeroAnimatedEntry -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
@@ -339,6 +465,83 @@ const mockCompareItems = [
           </h3>
           <p class="text-xs text-slate-500 mt-1">Grids, bento tiles, and tables showing services, rates, and features comparison.</p>
         </div>
+
+        <!-- Block item: LogosOne (Fulldev) -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  LogosOne (Fulldev UI)
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Responsive grid of grayscale partner logos highlighting local authority and client trust.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"LogosOne"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-[#FAF9F5] text-slate-950 py-6">
+            <LogosOne 
+              title="Trusted by industry leaders worldwide" 
+              brands={mockBrands}
+            />
+          </div>
+        </div>
+
+        <!-- Block item: LogosTwo (Fulldev) -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  LogosTwo (Fulldev UI)
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Infinite auto-scrolling partner logo marquee supporting hover pause triggers.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"LogosTwo"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-[#FAF9F5] text-slate-950 py-6">
+            <LogosTwo 
+              title="Authorized Partnerships" 
+              brands={mockBrands}
+            />
+          </div>
+        </div>
+
+        <!-- Block item: Pricing1 (Fulldev) -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  Pricing1 (Fulldev UI)
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Three-tiered pricing tables displaying service rates and benefits checkmarks.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"Pricing1"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-[#FAF9F5] text-slate-950 py-6">
+            <Pricing1 
+              title="Simple pricing plans" 
+              description="Choose the tier that fits your business goals and service scopes."
+              plans={mockPlans}
+            />
+          </div>
+        </div>
+
 
         <!-- Block item: ServicesBento -->
         <div class="space-y-4">
@@ -469,6 +672,33 @@ const mockCompareItems = [
           </h3>
           <p class="text-xs text-slate-500 mt-1">Review ribbons, quote bubbles, and multi-column FAQs lists.</p>
         </div>
+
+        <!-- Block item: Faqs1 (Fulldev) -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  Faqs1 (Fulldev UI)
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Interactive FAQ accordion list using client-side data-slot details toggle controls.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"Faqs1"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-[#FAF9F5] text-slate-950 py-6">
+            <Faqs1 
+              title="Frequently Asked Questions" 
+              description="Everything you need to know about our services and scheduling procedures."
+              faqs={mockFaqs}
+            />
+          </div>
+        </div>
+
 
         <!-- Block item: ReviewsMarquee -->
         <div class="space-y-4">
