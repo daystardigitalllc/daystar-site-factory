@@ -1,21 +1,30 @@
 ---
 import businessData from '../data/business.json';
+import contentData from '../data/content.json';
+
+const reviews = contentData.reviews || [];
+const reviewCount = reviews.length;
+const avgRating = reviewCount > 0
+  ? (reviews.reduce((sum: number, r: any) => sum + r.rating, 0) / reviewCount).toFixed(1)
+  : null;
 ---
 
 <section class="py-10 border-y border-slate-200/50 dark:border-slate-800/50 bg-slate-50/50 dark:bg-slate-900/10">
   <div class="container mx-auto px-6">
     <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
       <!-- Ratings Summary -->
-      <div class="flex items-center gap-4 text-center md:text-left shrink-0">
-        <div class="text-3xl font-extrabold text-slate-900 dark:text-white flex items-center gap-1 justify-center">
-          4.9
-          <span class="text-accent text-2xl">★</span>
+      {avgRating && (
+        <div class="flex items-center gap-4 text-center md:text-left shrink-0">
+          <div class="text-3xl font-extrabold text-slate-900 dark:text-white flex items-center gap-1 justify-center">
+            {avgRating}
+            <span class="text-accent text-2xl">★</span>
+          </div>
+          <div>
+            <div class="flex text-accent text-sm">★★★★★</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">From {reviewCount} Client Testimonials</p>
+          </div>
         </div>
-        <div>
-          <div class="flex text-accent text-sm">★★★★★</div>
-          <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Over 250+ Verified Google Reviews</p>
-        </div>
-      </div>
+      )}
 
       <!-- Certifications Logo/Ticker -->
       <div class="w-full overflow-hidden">
