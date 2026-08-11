@@ -41,8 +41,47 @@ import Pricing1 from '../components/blocks/pricing-1.astro';
 import Faqs1 from '../components/blocks/faqs-1.astro';
 import Header1 from '../components/blocks/header-1.astro';
 import Header5 from '../components/blocks/header-5.astro';
+import Footer1 from '../components/blocks/footer-1.astro';
+import Footer2 from '../components/blocks/footer-2.astro';
 
 // Setup Mock Data
+const mockFooterColumns = [
+  {
+    title: "Company",
+    links: [
+      { label: "About Us", href: "#" },
+      { label: "Careers", href: "#" },
+      { label: "Contact", href: "#" }
+    ]
+  },
+  {
+    title: "Services",
+    links: [
+      { label: "Residential", href: "#" },
+      { label: "Commercial", href: "#" },
+      { label: "Custom Layouts", href: "#" }
+    ]
+  },
+  {
+    title: "Legal",
+    links: [
+      { label: "Privacy Policy", href: "#" },
+      { label: "Terms of Service", href: "#" }
+    ]
+  }
+];
+
+const mockFooterLinks = [
+  { label: "Privacy Policy", href: "#" },
+  { label: "Terms of Service", href: "#" },
+  { label: "Cookies Settings", href: "#" }
+];
+
+const mockSocials = [
+  { label: "Twitter", href: "#", icon: "twitter" },
+  { label: "GitHub", href: "#", icon: "git-branch" }
+];
+
 const mockLogo = {
   label: "Daystar",
   href: "#"
@@ -227,6 +266,12 @@ const mockCompareItems = [
         >
           Reviews & FAQs
         </button>
+        <button
+          data-filter="footers"
+          class="px-4 py-2 text-xs font-bold rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer"
+        >
+          Footers
+        </button>
       </div>
     </section>
 
@@ -242,12 +287,7 @@ const mockCompareItems = [
           </h3>
           <p class="text-xs text-slate-500 mt-1">Frosted headers, floating pills, and editorial split configurations. Note: to prevent overlap in this playground, headers are shown within sandboxed bounds.</p>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: NavbarPill -->
+                <!-- Block item: NavbarPill -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -270,12 +310,7 @@ const mockCompareItems = [
             </div>
           </div>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: Header -->
+                <!-- Block item: Header -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -298,12 +333,7 @@ const mockCompareItems = [
             </div>
           </div>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: NavbarSplitLogo -->
+                <!-- Block item: NavbarSplitLogo -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -326,12 +356,7 @@ const mockCompareItems = [
             </div>
           </div>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: Header1 (Fulldev) -->
+                <!-- Block item: Header1 (Fulldev) -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -354,12 +379,7 @@ const mockCompareItems = [
             </div>
           </div>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: Header5 (Fulldev) -->
+                <!-- Block item: Header5 (Fulldev) -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -394,12 +414,7 @@ const mockCompareItems = [
           </h3>
           <p class="text-xs text-slate-500 mt-1">Stunning primary banners used at the top of landing pages to capture initial leads.</p>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: HeroChalet -->
+                <!-- Block item: HeroChalet -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -424,12 +439,7 @@ const mockCompareItems = [
             />
           </div>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: Hero1 (Fulldev) -->
+                <!-- Block item: Hero1 (Fulldev) -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -454,12 +464,7 @@ const mockCompareItems = [
             />
           </div>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: Hero5 (Fulldev) -->
+                <!-- Block item: Hero5 (Fulldev) -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -515,12 +520,7 @@ const mockCompareItems = [
             />
           </div>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: HeroCozy -->
+                <!-- Block item: HeroCozy -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -545,12 +545,7 @@ const mockCompareItems = [
             />
           </div>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: HeroKepler -->
+                <!-- Block item: HeroKepler -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -586,12 +581,7 @@ const mockCompareItems = [
           </h3>
           <p class="text-xs text-slate-500 mt-1">Grids, bento tiles, and tables showing services, rates, and features comparison.</p>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: LogosOne (Fulldev) -->
+                <!-- Block item: LogosOne (Fulldev) -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -615,12 +605,7 @@ const mockCompareItems = [
             />
           </div>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: LogosTwo (Fulldev) -->
+                <!-- Block item: LogosTwo (Fulldev) -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -644,12 +629,7 @@ const mockCompareItems = [
             />
           </div>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: Pricing1 (Fulldev) -->
+                <!-- Block item: Pricing1 (Fulldev) -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -701,12 +681,7 @@ const mockCompareItems = [
             />
           </div>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: ServicesChalet -->
+                <!-- Block item: ServicesChalet -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -741,12 +716,7 @@ const mockCompareItems = [
           </h3>
           <p class="text-xs text-slate-500 mt-1">Interactive media items, swipe comparisons, and modal sliders.</p>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: CompareSlider -->
+                <!-- Block item: CompareSlider -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -773,12 +743,7 @@ const mockCompareItems = [
             </div>
           </div>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: InteractiveVideoPopup -->
+                <!-- Block item: InteractiveVideoPopup -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -817,12 +782,7 @@ const mockCompareItems = [
           </h3>
           <p class="text-xs text-slate-500 mt-1">Review ribbons, quote bubbles, and multi-column FAQs lists.</p>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: Faqs1 (Fulldev) -->
+                <!-- Block item: Faqs1 (Fulldev) -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -870,12 +830,7 @@ const mockCompareItems = [
             <ReviewsMarquee />
           </div>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: ReviewsChalet -->
+                <!-- Block item: ReviewsChalet -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -899,12 +854,7 @@ const mockCompareItems = [
             />
           </div>
         </div>
-        <!-- 100px Red Divider -->
-        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
-          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
-        </div>
-
-        <!-- Block item: FAQNumbered -->
+                <!-- Block item: FAQNumbered -->
         <div class="space-y-4">
           <div class="max-w-5xl mx-auto px-6">
             <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -923,6 +873,83 @@ const mockCompareItems = [
           </div>
           <div class="border-y border-slate-900 bg-[#FAF9F5] text-slate-950 py-2">
             <FAQNumbered />
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FOOTERS SECTION ================= -->
+      <section data-category="footers" class="space-y-16">
+        <div class="px-6 max-w-5xl mx-auto border-b border-slate-900 pb-4">
+          <h3 class="text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+            05. Page Footers
+          </h3>
+          <p class="text-xs text-slate-500 mt-1">Multi-column layouts and simplified centered legal footnotes.</p>
+        </div>
+        <!-- 100px Red Divider -->
+        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
+          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
+        </div>
+
+        <!-- Block item: Footer1 (Fulldev) -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  Footer1 (Fulldev UI)
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Robust multi-column footer displaying descriptive taglines, socials, and directory links.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"Footer1"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-[#FAF9F5] text-slate-950 py-2">
+            <Footer1 
+              brandName="Daystar Site Factory" 
+              brandHref="#" 
+              description="Custom luxury websites generated automatically from structured templates." 
+              socials={mockSocials} 
+              columns={mockFooterColumns} 
+              copyright="© 2026 Daystar Digital LLC. All rights reserved." 
+            />
+          </div>
+        </div>
+        <!-- 100px Red Divider -->
+        <div class="h-[100px] flex items-center justify-center my-12 pointer-events-none">
+          <div class="w-full max-w-5xl h-[4px] bg-red-600 rounded-full opacity-70 shadow-[0_0_12px_rgba(220,38,38,0.5)]"></div>
+        </div>
+
+        <!-- Block item: Footer2 (Fulldev) -->
+        <div class="space-y-4">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  Footer2 (Fulldev UI)
+                  <span class="text-[9px] font-semibold bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/10">Active Block</span>
+                </h4>
+                <p class="text-xs text-slate-400">Minimalistic centered brand footer with horizontal page anchors and copyright footnote.</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-[10px] text-slate-500 font-mono">Use key:</span>
+                <code class="bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-xs font-mono text-accent select-all">"Footer2"</code>
+              </div>
+            </div>
+          </div>
+          <div class="border-y border-slate-900 bg-[#FAF9F5] text-slate-950 py-2">
+            <Footer2 
+              brandName="Daystar Site Factory" 
+              brandHref="#" 
+              description="Deploying high-quality contractor and medical SEO marketing systems globally." 
+              links={mockFooterLinks} 
+              socials={mockSocials} 
+              copyright="© 2026 Daystar Digital LLC. All rights reserved." 
+            />
           </div>
         </div>
       </section>
