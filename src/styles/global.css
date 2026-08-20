@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
 /* Premium spacing & theme configurations for Factory Dashboard */
 @theme {
