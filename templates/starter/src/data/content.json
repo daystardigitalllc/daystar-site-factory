@@ -101,6 +101,28 @@
       "badge": "What Clients Say",
       "heading": "Real Reviews From Real Homeowners"
     },
+    "statCounters": {
+      "badge": "",
+      "heading": "Why Homeowners Choose Us",
+      "variant": "dark",
+      "items": [
+        { "value": 50, "suffix": "+", "label": "Projects Completed" },
+        { "value": 15, "suffix": "+", "label": "Years in Business" },
+        { "value": 100, "suffix": "%", "label": "Locally Owned" },
+        { "value": 5, "decimals": 1, "suffix": ".0", "label": "Average Rating" }
+      ]
+    },
+    "videoTestimonialWall": {
+      "badge": "In Their Words",
+      "heading": "What Our Clients Say",
+      "subtitle": "Hover to preview, tap to watch with sound.",
+      "items": [
+        { "videoSrc": "/testimonials/client-1.mp4", "poster": "/testimonials/client-1-poster.jpg", "name": "Client Name", "location": "Your City, ST", "quote": "Short pull-quote from the video." },
+        { "videoSrc": "/testimonials/client-2.mp4", "poster": "/testimonials/client-2-poster.jpg", "name": "Client Name", "location": "Your City, ST", "quote": "Short pull-quote from the video." },
+        { "videoSrc": "/testimonials/client-3.mp4", "poster": "/testimonials/client-3-poster.jpg", "name": "Client Name", "location": "Your City, ST", "quote": "Short pull-quote from the video." },
+        { "videoSrc": "/testimonials/client-4.mp4", "poster": "/testimonials/client-4-poster.jpg", "name": "Client Name", "location": "Your City, ST", "quote": "Short pull-quote from the video." }
+      ]
+    },
     "faqNumbered": {
       "badge": "Got Questions?",
       "heading": "Let's Clear It Up",
