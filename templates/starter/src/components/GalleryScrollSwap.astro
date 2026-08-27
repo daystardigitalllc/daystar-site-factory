@@ -1,0 +1,242 @@
+---
+// GalleryScrollSwap.astro
+// Scroll-pinned "swap" choreography: four photos start scattered around the
+// center, two of them cross paths diagonally (top-left <-> bottom-left,
+// bottom-right <-> top-right) as you scroll, all four converge to a stacked
+// center point, then the top-right photo expands to fill the entire
+// viewport. Concept ported from a React `scroll-choreography.tsx` component
+// (framer-motion `useScroll` + `useSpring`), rebuilt from scratch as a
+// dependency-free Astro component — a hand-rolled critically-damped spring
+// integrator (matching framer-motion's default stiffness/damping/mass
+// model) drives the same motion via a scroll listener + `requestAnimationFrame`,
+// no React or framer-motion required.
+//
+// Distinct from `GalleryScrollChoreography.astro` (which assembles a 2x2
+// grid first, then expands a *separate* fifth hero photo): this one never
+// forms a grid — it's a tighter, punchier "4 photos swap then 1 takes over
+// the screen" spectacle. Best as a standalone visual break with no other
+// content competing for attention — portfolio reveals, brand films, agency
+// sites. Needs ~300vh of scroll room and reads best with only 4 strong,
+// same-mood photos (the top-right one is the "hero" and should be your best).
+import contentData from '../data/content.json';
+import businessData from '../data/business.json';
+
+interface SwapImage {
+  src: string;
+  alt: string;
+}
+
+interface Props {
+  imagesOverride?: {
+    topLeft: SwapImage;
+    topRight: SwapImage;
+    bottomLeft: SwapImage;
+    bottomRight: SwapImage;
+  };
+  badgeOverride?: string;
+  headingOverride?: string;
+  subtitleOverride?: string;
+  /** Caption shown over the fully-expanded hero photo at the very end of the scroll. */
+  heroCaptionOverride?: string;
+  ctaTextOverride?: string;
+  ctaHrefOverride?: string;
+}
+
+const {
+  imagesOverride,
+  badgeOverride,
+  headingOverride,
+  subtitleOverride,
+  heroCaptionOverride,
+  ctaTextOverride,
+  ctaHrefOverride,
+} = Astro.props;
+
+const data = contentData.home?.scrollSwap;
+
+const images = imagesOverride ||
+  data?.images || {
+    topLeft: { src: '/gallery-1.jpg', alt: 'Project photo, top left' },
+    topRight: { src: '/gallery-2.jpg', alt: 'Signature project photo' },
+    bottomLeft: { src: '/gallery-3.jpg', alt: 'Project photo, bottom left' },
+    bottomRight: { src: '/gallery-4.jpg', alt: 'Project photo, bottom right' },
+  };
+
+const badge = badgeOverride || data?.badge || '';
+const heading = headingOverride || data?.heading || '';
+const subtitle = subtitleOverride || data?.subtitle || '';
+const heroCaption = heroCaptionOverride || data?.heroCaption || '';
+const ctaText = ctaTextOverride || data?.ctaText || businessData.mainCta || 'Get a Free Estimate';
+const ctaHref = ctaHrefOverride || data?.ctaHref || '#quote-funnel';
+
+const uid = `swap-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<section
+  data-swap-root
+  data-swap-id={uid}
+  class="relative bg-slate-950"
+  style="height: 300vh;"
+>
+  <div class="sticky top-0 h-screen w-full overflow-hidden">
+    <div class="absolute inset-0 flex items-center justify-center">
+      {(badge || heading || subtitle) && (
+        <div data-swap-heading class="absolute inset-0 z-50 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
+          {badge && (
+            <span class="text-xs font-bold uppercase tracking-wider text-accent bg-accent/15 px-3.5 py-1.5 rounded-md border border-accent/25 mb-5">
+              {badge}
+            </span>
+          )}
+          {heading && (
+            <h2 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight uppercase leading-[1.1] max-w-3xl text-white">
+              {heading}
+            </h2>
+          )}
+          {subtitle && <p class="mt-4 max-w-xl text-sm sm:text-base text-slate-300">{subtitle}</p>}
+        </div>
+      )}
+
+      <div data-swap-img="tl" class="absolute left-1/2 top-1/2 w-[36vw] h-[24vh] overflow-hidden bg-muted shadow-2xl will-change-transform z-10">
+        <img src={images.topLeft.src} alt={images.topLeft.alt} class="h-full w-full object-cover" />
+      </div>
+      <div data-swap-img="br" class="absolute left-1/2 top-1/2 w-[36vw] h-[24vh] overflow-hidden bg-muted shadow-2xl will-change-transform z-20">
+        <img src={images.bottomRight.src} alt={images.bottomRight.alt} class="h-full w-full object-cover" />
+      </div>
+      <div data-swap-img="bl" class="absolute left-1/2 top-1/2 w-[36vw] h-[24vh] overflow-hidden bg-muted shadow-2xl will-change-transform z-30">
+        <img src={images.bottomLeft.src} alt={images.bottomLeft.alt} class="h-full w-full object-cover" />
+      </div>
+      <div data-swap-img="tr" class="absolute left-1/2 top-1/2 w-[36vw] h-[24vh] overflow-hidden bg-black/5 shadow-2xl will-change-transform z-40 origin-center">
+        <img src={images.topRight.src} alt={images.topRight.alt} class="h-full w-full object-cover" />
+        {(heroCaption || ctaText) && (
+          <div data-swap-hero-caption class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/10 to-transparent opacity-0">
+            <div class="absolute bottom-10 left-0 right-0 flex flex-col items-center text-center px-6">
+              {heroCaption && (
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-white/80 mb-3">
+                  {heroCaption}
+                </span>
+              )}
+              {ctaText && (
+                <a
+                  href={ctaHref}
+                  class="inline-flex items-center justify-center px-6 py-3 bg-primary hover:bg-primary-hover rounded-custom text-xs font-bold uppercase tracking-widest text-white transition-all hover:scale-105"
+                >
+                  {ctaText}
+                </a>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ uid }}>
+  (() => {
+    const root = document.querySelector(`[data-swap-id="${uid}"]`);
+    if (!root) return;
+
+    const heading = root.querySelector('[data-swap-heading]');
+    const tl = root.querySelector('[data-swap-img="tl"]');
+    const tr = root.querySelector('[data-swap-img="tr"]');
+    const bl = root.querySelector('[data-swap-img="bl"]');
+    const br = root.querySelector('[data-swap-img="br"]');
+    const heroCaption = root.querySelector('[data-swap-hero-caption]');
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+
+    // Piecewise-linear interpolation across breakpoints, matching
+    // framer-motion's useTransform([inputs], [outputs]) behavior.
+    function interpolate(t, inputs, outputs) {
+      if (t <= inputs[0]) return outputs[0];
+      const last = inputs.length - 1;
+      if (t >= inputs[last]) return outputs[last];
+      for (let i = 0; i < last; i++) {
+        if (t >= inputs[i] && t <= inputs[i + 1]) {
+          const localT = (t - inputs[i]) / (inputs[i + 1] - inputs[i]);
+          return outputs[i] + (outputs[i + 1] - outputs[i]) * localT;
+        }
+      }
+      return outputs[last];
+    }
+
+    const XL = -20, XR = 20, YT = -14, YB = 14; // vw / vh
+    const STOPS = [0, 0.3, 0.35, 0.65, 1];
+
+    function render(p) {
+      heading && (heading.style.opacity = String(1 - clamp(p / 0.25, 0, 1)));
+
+      const tlX = interpolate(p, STOPS, [XL, XL, XL, 0, 0]);
+      const tlY = interpolate(p, STOPS, [YT, YB, YB, 0, 0]);
+      const brX = interpolate(p, STOPS, [XR, XR, XR, 0, 0]);
+      const brY = interpolate(p, STOPS, [YB, YT, YT, 0, 0]);
+      const blX = interpolate(p, STOPS, [XL, XL, XL, 0, 0]);
+      const blY = interpolate(p, STOPS, [YB, YB, YB, 0, 0]);
+      const trX = interpolate(p, STOPS, [XR, XR, XR, 0, 0]);
+      const trY = interpolate(p, STOPS, [YT, YT, YT, 0, 0]);
+
+      const underOpacity = 1 - clamp((p - 0.75) / 0.1, 0, 1);
+
+      tl.style.transform = `translate(calc(-50% + ${tlX}vw), calc(-50% + ${tlY}vh))`;
+      tl.style.opacity = String(underOpacity);
+      br.style.transform = `translate(calc(-50% + ${brX}vw), calc(-50% + ${brY}vh))`;
+      br.style.opacity = String(underOpacity);
+      bl.style.transform = `translate(calc(-50% + ${blX}vw), calc(-50% + ${blY}vh))`;
+      bl.style.opacity = String(underOpacity);
+
+      const heroW = interpolate(p, [0.65, 0.7, 0.9, 1], [36, 36, 100, 100]);
+      const heroH = interpolate(p, [0.65, 0.7, 0.9, 1], [24, 24, 100, 100]);
+      tr.style.transform = `translate(calc(-50% + ${trX}vw), calc(-50% + ${trY}vh))`;
+      tr.style.width = `${heroW}vw`;
+      tr.style.height = `${heroH}vh`;
+
+      if (heroCaption) {
+        heroCaption.style.opacity = String(clamp((p - 0.92) / 0.08, 0, 1));
+      }
+    }
+
+    function rawProgress() {
+      const rect = root.getBoundingClientRect();
+      const total = root.offsetHeight - window.innerHeight;
+      return total > 0 ? clamp(-rect.top / total, 0, 1) : 0;
+    }
+
+    if (prefersReducedMotion) {
+      render(rawProgress());
+      window.addEventListener('scroll', () => render(rawProgress()), { passive: true });
+      window.addEventListener('resize', () => render(rawProgress()), { passive: true });
+      return;
+    }
+
+    // Critically-damped-ish spring integrator matching framer-motion's
+    // useSpring({ stiffness: 400, damping: 50, mass: 1.2 }) — the target
+    // (raw scroll progress) can jump instantly on scroll, but the rendered
+    // value chases it smoothly frame to frame.
+    const stiffness = 400, damping = 50, mass = 1.2, restDelta = 0.001;
+    let current = 0, velocity = 0, lastTime = null;
+
+    function tick(now) {
+      if (lastTime === null) lastTime = now;
+      const dt = Math.min((now - lastTime) / 1000, 0.05);
+      lastTime = now;
+
+      const target = rawProgress();
+      const springForce = -stiffness * (current - target);
+      const dampingForce = -damping * velocity;
+      const accel = (springForce + dampingForce) / mass;
+      velocity += accel * dt;
+      current += velocity * dt;
+
+      if (Math.abs(current - target) < restDelta && Math.abs(velocity) < restDelta) {
+        current = target;
+        velocity = 0;
+      }
+
+      render(current);
+      requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  })();
+</script>
