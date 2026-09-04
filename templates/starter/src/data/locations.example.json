@@ -1,0 +1,12 @@
+[
+  {
+    "slug": "example-city",
+    "name": "Example City",
+    "county": "Example County",
+    "lat": 36.1627,
+    "lng": -86.7816,
+    "countyIds": ["Davidson"],
+    "character": "One or two sentences describing what this town/neighborhood is actually like - used on its /locations/[slug] page, not the map.",
+    "angle": "What makes work here different from the other service areas (older trees, newer subdivisions, lake winds, etc.) - also for the /locations/[slug] page."
+  }
+]

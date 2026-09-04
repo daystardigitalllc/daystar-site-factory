@@ -33,13 +33,31 @@ This document catalogs the modular UI "Lego blocks" available in the starter tem
     *   **Props**: `headingOverride`, `subTitleHighlight`, `subtitleOverride`, `primaryCtaText`, `primaryCtaHref`, `imageSrcOverride`, `brandLogosOverride`.
 *   **[`HeroKepler.astro`](file:///templates/starter/src/components/HeroKepler.astro)**: Neo-brutalist Saturn-themed opener with background radial glows, floating stickers, a custom hand-drawn SVG title underline, and an active revolving CSS planet orbit system on the right.
     *   **Props**: `badgeOverride`, `headingOverride`, `subtitleOverride`, `primaryCtaText`, `primaryCtaHref`, `secondaryCtaText`, `secondaryCtaHref`.
+*   **[`image-stream-hero.tsx`](file:///components/ui/image-stream-hero.tsx)**: React component that displays a cinematic 3D corridor of flowing images that mirror and move towards the viewer. Best for creative agencies, photographers, visual contractors, or any brand that needs to display their recent work, portfolio, or gallery assets directly in the hero section.
+    *   **Props**:
+        *   `images`: Array of `{ src: string; alt?: string }` to cycle on the rails.
+        *   `cards` (optional, default: 9): Number of cards on each rail at once.
+        *   `speed` (optional, default: 18): Seconds for one card to travel the whole corridor.
+        *   `axis` (optional, default: 55): Vertical placement of the corridor's axis, as a percentage of height.
+        *   `path` (optional): Custom corridor geometry paths (perspective, cardWidth, cardHeight, etc.).
 *   **[`HeroChip.astro`](file:///templates/starter/src/components/HeroChip.astro)**: A pill-shaped micro-action alert badge. Designed to sit inside heroes or headers to highlight news, versions, or special discount promos.
     *   **Props**: `text`, `link`, `icon`, `class`.
 *   **[`PromoBanner.astro`](file:///templates/starter/src/components/PromoBanner.astro)**: High-visibility announcement bar that sits at the very top of the webpage. Features a CTA link and a persistent dismiss close button that saves visitor preferences in LocalStorage.
     *   **Props**: `text`, `ctaText`, `ctaHref`, `id`, `class`.
 
+
 ### 🎀 Highlight ribbons
 *   **[`Marquee.astro`](file:///templates/starter/src/components/Marquee.astro)**: Infinite looping marquee track. Fits right below the Hero to immediately build trust using FontAwesome icons.
+
+### 🗺️ Location / Service Area Maps
+*   **[`ServiceAreaMap.astro`](file:///templates/starter/src/components/ServiceAreaMap.astro)**: "Areas We Serve" section built around a *real* state county map (US Census Bureau boundary data, CC0 / public domain, via Wikimedia Commons' standardized "cb_500k" county locator series — one exists for every US state). Crops the map down to just the counties the client serves and two-way links it to a city chip list: hovering/focusing a county on the map highlights its matching city chip(s), and hovering/focusing a city chip highlights its county back on the map (clicking a county jumps to its first city's page). Non-service counties render flat/inert, for geographic context only. Pure Astro + vanilla JS, no map library or API key. Best for any multi-location service business (contractors, home services, franchises) that already has a `/locations/[slug]` hub-and-spoke page structure — skip it for single-location businesses.
+    *   **Setup required (do this before importing the component into a new project)**:
+        1.  `node scripts/fetch-county-map.mjs "<ClientState>"` — pulls that state's county map from Wikimedia Commons into `src/data/county-map.svg`. Re-run it any time to swap states for a new client.
+        2.  Open `src/data/county-map.svg` and find which county each client city falls in — each is its own `<path id="CountyName">`.
+        3.  Add real `lat`, `lng`, and `countyIds` (array, matching those path `id`s exactly — a city can list more than one county if it straddles a line) to every entry in `src/data/locations.json`. See `src/data/locations.example.json` for the shape.
+        4.  Import `<ServiceAreaMap />` into `index.astro` like any other lego.
+    *   **Props**: all optional, falling back to `content.json`'s `home.serviceAreaMap` block and `business.json`/`locations.json`: `badgeOverride`, `headingOverride`, `headingAccentOverride` (the primary-colored second half of the heading), `subtitleOverride`, `hubSlugOverride` (which `locations.json` entry to reference by name in the default subtitle copy — purely cosmetic, every location gets equal map/list treatment).
+    *   **Why this and not a Google/Mapbox embed**: no API key, no per-load billing, no third-party script weight, and it looks intentional/custom rather than a generic embedded iframe. The tradeoff is it's US-only (county-level Census data) and needs the one-time per-project setup above.
 
 ### 🛠️ Services Grids
 *   **[`Services.astro`](file:///templates/starter/src/components/Services.astro) (Standard)**: Renders service card details in a clean flat grid with numbered badge indicators.
@@ -176,6 +194,7 @@ When you receive a prompt to generate or modify a client website, **do not feel 
     *   *Contractors (Roofers, Tree Crews, Painters)*: Choose `HeroVideo` (or `HeroContractor`), `Marquee`, `Services` (Aspect Image), `Reviews` (Snap Slider), `Gallery` (or `GalleryScrollChoreography` for a more premium, visual-heavy brand), and `FAQ` (Double Column).
     *   *Professional/B2B Services (Accountants, Agencies)*: Choose `HeroSplit`, `Services` (Standard), `Reviews` (Grid), and `FAQ` (Accordion).
     *   *Luxury/Lifestyle (Spas, Salons, Boutique Stores)*: Choose `HeroGlass` (with custom background blurs), `Services` (Standard), and `Reviews` (Grid).
+    *   *Any multi-city/multi-county service business* (tree care, roofing, HVAC, pest control, etc. covering more than one town): add `ServiceAreaMap` — see its setup steps above — right around where `Reviews`/`Gallery` sit, before the closing FAQ/CTA. Skip it if the client only serves a single city/location.
 2.  **Assemble the Homepage**:
     *   Open `src/pages/index.astro` in the client directory.
     *   Import only the selected components.

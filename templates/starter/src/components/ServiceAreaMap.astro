@@ -1,0 +1,245 @@
+---
+// Reusable "areas we serve" section: a real state county map (US Census
+// Bureau boundary data, CC0 / public domain, via Wikimedia Commons'
+// standardized "cb_500k" county locator map series) cropped down to
+// just the counties this client serves, with two-way hover linking
+// between the map and a city chip list.
+//
+// SETUP REQUIRED before using this component on a new project:
+//   1. Run `node scripts/fetch-county-map.mjs "<ClientState>"` to pull
+//      that state's county map into src/data/county-map.svg.
+//   2. Open src/data/county-map.svg and find the county name(s) each
+//      client city falls in - they're each a <path id="CountyName">.
+//   3. Add `lat`, `lng`, and `countyIds` (array, matching those path
+//      ids exactly) to every entry in src/data/locations.json.
+//   4. Import <ServiceAreaMap /> into index.astro like any other lego.
+//
+// Skip this component entirely for projects that don't need a
+// locations hub (no city-by-city pages) - it depends on locations.json
+// having real lat/lng/countyIds, not just names.
+import locationsData from '../data/locations.json';
+import businessData from '../data/business.json';
+import contentData from '../data/content.json';
+import rawCountyMap from '../data/county-map.svg?raw';
+
+interface Props {
+  badgeOverride?: string;
+  headingOverride?: string;
+  headingAccentOverride?: string;
+  subtitleOverride?: string;
+  /** Which of locations.json's entries counts as the "hub" city for copy purposes (falls back to the first entry). Purely cosmetic - every location gets equal map/list treatment. */
+  hubSlugOverride?: string;
+}
+
+const {
+  badgeOverride,
+  headingOverride,
+  headingAccentOverride,
+  subtitleOverride,
+  hubSlugOverride,
+} = Astro.props;
+
+const block = contentData.home?.serviceAreaMap;
+const badge = badgeOverride || block?.badge || 'Service Area';
+const heading = headingOverride || block?.heading || 'Proudly Serving';
+const headingAccent = headingAccentOverride || block?.headingAccent || 'Our Area';
+const subtitle = subtitleOverride || block?.subtitle;
+const hub = locationsData.find((l) => l.slug === (hubSlugOverride || block?.hubSlug)) || locationsData[0];
+
+const serviceCountyIds = [...new Set(locationsData.flatMap((l) => l.countyIds || []))];
+
+const citiesByCounty = new Map<string, string[]>();
+for (const loc of locationsData) {
+  for (const county of loc.countyIds || []) {
+    citiesByCounty.set(county, [...(citiesByCounty.get(county) || []), loc.name]);
+  }
+}
+
+// Pull the county <path> group out of the source file (strip the outer
+// <svg>/<g> wrapper and per-county fill colors) so our own CSS drives
+// the styling and our own <svg> controls the viewBox.
+const innerMatch = rawCountyMap.match(/<g[^>]*>([\s\S]*)<\/g>/);
+const countyPathsMarkup = (innerMatch ? innerMatch[1] : '')
+  .replace(/\s+fill="#[0-9a-fA-F]{3,6}"/g, '')
+  .replace(/<path /g, '<path tabindex="0" ');
+
+// Parse each served county's own <path d="..."> to get its bounding box
+// (this source file only uses absolute M/L commands - no curves - so
+// every number in `d` is a plain x/y coordinate) and crop the map's
+// viewBox to just those counties, padded and forced to a widescreen
+// ratio so it reads as "zoomed into the service area" rather than the
+// whole state.
+function parseNumbers(d: string): number[] {
+  return (d.match(/-?\d+(?:\.\d+)?/g) || []).map(Number);
+}
+
+let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+for (const id of serviceCountyIds) {
+  const re = new RegExp(`<path[^>]*\\bd="([^"]+)"[^>]*\\bid="${id}"`);
+  const altRe = new RegExp(`<path[^>]*\\bid="${id}"[^>]*\\bd="([^"]+)"`);
+  const match = rawCountyMap.match(re) || rawCountyMap.match(altRe);
+  if (!match) continue;
+  const nums = parseNumbers(match[1]);
+  for (let i = 0; i < nums.length; i += 2) {
+    if (nums[i] < minX) minX = nums[i];
+    if (nums[i] > maxX) maxX = nums[i];
+    if (nums[i + 1] < minY) minY = nums[i + 1];
+    if (nums[i + 1] > maxY) maxY = nums[i + 1];
+  }
+}
+
+const PAD = 20;
+let vbX = minX - PAD;
+let vbY = minY - PAD;
+let vbW = maxX - minX + PAD * 2;
+let vbH = maxY - minY + PAD * 2;
+
+const TARGET_RATIO = 1.7;
+if (vbW / vbH > TARGET_RATIO) {
+  const neededH = vbW / TARGET_RATIO;
+  vbY -= (neededH - vbH) / 2;
+  vbH = neededH;
+} else {
+  const neededW = vbH * TARGET_RATIO;
+  vbX -= (neededW - vbW) / 2;
+  vbW = neededW;
+}
+const viewBox = `${vbX.toFixed(1)} ${vbY.toFixed(1)} ${vbW.toFixed(1)} ${vbH.toFixed(1)}`;
+---
+
+<section id="service-area-map" class="py-20 bg-neutral-950 border-t border-neutral-900 relative overflow-hidden text-white">
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="max-w-2xl mx-auto text-center space-y-4 mb-14">
+      <span class="text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 px-3.5 py-1.5 rounded-md border border-primary/20">
+        {badge}
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-black tracking-tight uppercase leading-[1.1]">
+        {heading} <span class="text-primary">{headingAccent}</span>
+      </h2>
+      <p class="text-neutral-400 text-base sm:text-lg leading-relaxed">
+        {subtitle || `${businessData.name} covers ${locationsData.length} communities across ${serviceCountyIds.length} counties${hub ? `, based out of ${hub.name}` : ''}.`}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-6 items-center">
+      {/* Map */}
+      <div class="lg:col-span-3" id="service-area-map-wrap">
+        <svg
+          viewBox={viewBox}
+          class="w-full h-auto"
+          role="img"
+          aria-label={`Map of counties served by ${businessData.name}`}
+        >
+          <Fragment set:html={countyPathsMarkup} />
+        </svg>
+      </div>
+
+      {/* City list */}
+      <div class="lg:col-span-2">
+        <div class="grid grid-cols-2 gap-3">
+          {locationsData.map((loc) => (
+            <a
+              href={`/locations/${loc.slug}`}
+              class="service-area-chip px-4 py-3 rounded-custom text-sm font-semibold bg-neutral-900/60 border border-neutral-800 text-neutral-200 hover:border-primary/50 hover:text-primary transition-all text-center"
+              data-counties={(loc.countyIds || []).join(',')}
+            >
+              {loc.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #service-area-map-wrap :global(path) {
+    fill: #1c1c1f;
+    stroke: #3f3f46;
+    stroke-width: 0.4;
+  }
+
+  /* Counties actually served get a visible tint and become interactive;
+     everything else is flat/inert - context only. */
+  #service-area-map-wrap :global(path.is-served) {
+    fill: color-mix(in srgb, var(--color-primary) 16%, #1c1c1f);
+    stroke: color-mix(in srgb, var(--color-primary) 45%, #3f3f46);
+    cursor: pointer;
+    transition: fill 0.25s ease, stroke 0.25s ease;
+  }
+  #service-area-map-wrap :global(path.is-served:hover),
+  #service-area-map-wrap :global(path.is-served.is-active) {
+    fill: var(--color-primary);
+    stroke: white;
+  }
+  #service-area-map-wrap :global(path.is-served:focus-visible) {
+    outline: 2px solid white;
+    outline-offset: 1px;
+  }
+
+  .service-area-chip.is-active {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: color-mix(in srgb, var(--color-primary) 12%, transparent);
+  }
+</style>
+
+<script define:vars={{ serviceCountyIds, citiesByCounty: Object.fromEntries(citiesByCounty) }}>
+  (() => {
+    const svg = document.querySelector('#service-area-map-wrap svg');
+    if (!svg) return;
+
+    const countyPaths = new Map();
+    svg.querySelectorAll('path[id]').forEach((path) => {
+      const id = path.getAttribute('id');
+      if (serviceCountyIds.includes(id)) {
+        path.classList.add('is-served');
+        path.setAttribute('role', 'link');
+        const cities = citiesByCounty[id] || [];
+        path.setAttribute('aria-label', `${id} County - ${cities.join(', ')}`);
+        const title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+        title.textContent = `${id} County: ${cities.join(', ')}`;
+        path.appendChild(title);
+        countyPaths.set(id, path);
+      } else {
+        path.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    const chips = document.querySelectorAll('.service-area-chip');
+
+    function setActive(countyIds, active) {
+      countyIds.forEach((id) => {
+        countyPaths.get(id)?.classList.toggle('is-active', active);
+      });
+    }
+
+    // Hovering/focusing a county on the map highlights it directly via
+    // CSS (:hover / .is-served), so JS only needs to handle the other
+    // direction: hovering a city chip highlights its county.
+    chips.forEach((chip) => {
+      const counties = (chip.getAttribute('data-counties') || '').split(',').filter(Boolean);
+      chip.addEventListener('mouseenter', () => setActive(counties, true));
+      chip.addEventListener('mouseleave', () => setActive(counties, false));
+      chip.addEventListener('focus', () => setActive(counties, true));
+      chip.addEventListener('blur', () => setActive(counties, false));
+    });
+
+    // Reverse: hovering/focusing a county highlights its matching city
+    // chip(s), and clicking a county jumps to its first city's page.
+    countyPaths.forEach((path, id) => {
+      const matchingChips = [...chips].filter((chip) =>
+        (chip.getAttribute('data-counties') || '').split(',').includes(id)
+      );
+      const activate = (on) => matchingChips.forEach((chip) => chip.classList.toggle('is-active', on));
+      path.addEventListener('mouseenter', () => activate(true));
+      path.addEventListener('mouseleave', () => activate(false));
+      path.addEventListener('focus', () => activate(true));
+      path.addEventListener('blur', () => activate(false));
+      path.addEventListener('click', () => {
+        const firstCity = matchingChips[0];
+        if (firstCity) window.location.href = firstCity.getAttribute('href');
+      });
+    });
+  })();
+</script>
